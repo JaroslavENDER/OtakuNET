@@ -2,19 +2,14 @@
 
 namespace OtakuNET.Web.Controllers
 {
-    public class AnimeController : Controller
+    public class StudioController : Controller
     {
-        public IActionResult Title(int id)
+        public IActionResult Name(string name)
         {
             return View();
         }
 
         public IActionResult List()
-        {
-            return View();
-        }
-
-        public IActionResult Season(string season)
         {
             return View();
         }
