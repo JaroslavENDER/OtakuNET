@@ -1,0 +1,181 @@
+﻿.section-ongoings__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 770px) {
+    #ongoings__title--7, #ongoings__title--8 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #ongoings__title--5, #ongoings__title--6 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    #ongoings__title--3, #ongoings__title--4 {
+        display: none;
+    }
+}
+
+/*---./ongoings---*/
+
+
+
+.middle-section {
+    position: relative;
+    margin: 3rem 0;
+}
+
+.middle-section__first {
+    width: 59%;
+    margin-left: 40%;
+}
+
+.middle-section__second {
+    width: 39%;
+    height: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    background-color: #E9F7FB;
+    border: 1px solid #C1E8F4;
+}
+
+@media screen and (max-width: 540px) {
+    .middle-section__first {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .middle-section__second {
+        width: 100%;
+        position: static;
+    }
+}
+
+.middle-section input[type="radio"] {
+    display: none;
+}
+
+.middle-section label {
+    margin-right: 2rem;
+}
+
+    .middle-section label:hover {
+        color: #f00;
+        text-decoration: underline;
+    }
+
+#middle-section__radio-button--anime:checked + label,
+#middle-section__radio-button--manga:checked + label {
+    color: #f00;
+}
+
+#middle-section__radio-button--anime:checked ~ .middle-section__container .middle-section__first #middle-section__first__radio-button-block--anime,
+#middle-section__radio-button--manga:checked ~ .middle-section__container .middle-section__first #middle-section__first__radio-button-block--manga {
+    display: flex;
+}
+
+#middle-section__radio-button--anime:checked ~ .middle-section__container .middle-section__second #middle-section__second__radio-button-block--anime,
+#middle-section__radio-button--manga:checked ~ .middle-section__container .middle-section__second #middle-section__second__radio-button-block--manga {
+    display: block;
+}
+
+.middle-section__first__container {
+    justify-content: space-between;
+}
+
+.middle-section__first__column {
+    width: 49%;
+}
+
+.middle-section__first__column__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.middle-section__first__column__list-item {
+    width: 100%;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    margin-bottom: .8rem;
+    background-color: #EEEEF1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    .middle-section__first__column__list-item:hover {
+        text-decoration: none;
+        background-color: #1D77B5;
+    }
+
+@media screen and (max-width: 370px) {
+    .middle-section__first__column__list-item {
+        font-size: 1.1rem;
+    }
+}
+
+.middle-section__container {
+    position: relative;
+}
+
+.middle-section__second__container:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.middle-section__second__header {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.middle-section__second__list {
+    clear: both;
+}
+
+.middle-section__second__list-name {
+    float: left;
+}
+
+.middle-section__second__list-counter {
+    float: right;
+}
+
+/*---./middle-section---*/
+
+
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-news {
+    width: 64%;
+}
+
+.section-updates {
+    width: 34%;
+}
+
+@media screen and (max-width: 770px) {
+    .section-updates {
+        display: none;
+    }
+
+    .section-news {
+        width: 100%;
+    }
+}
+
+/*---./news-container---*/

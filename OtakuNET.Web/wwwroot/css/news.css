@@ -1,0 +1,22 @@
+﻿.update-node {
+    padding-bottom: 3rem;
+}
+
+.update-node__container {
+    display: flex;
+}
+
+.update-node__image {
+    width: 12rem;
+}
+
+.update-node__image > img {
+    width: 100%;
+}
+
+.update-node__info {
+    width: 25rem;
+    padding: 1rem;
+}
+
+/*---./updates---*/

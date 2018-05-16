@@ -12,56 +12,56 @@
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--2">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--3">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--4">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--5">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--6">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--7">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
         <div class="title" id="ongoings__title--8">
             <a asp-controller="Anime" asp-action="List" class="title__link" title="Name">
                 <img src="~/images/missing.jpg" alt="" class="title__image" />
                 <p class="title__info">info</p>
-                <h3 class="title__name">Name</h3>
+                <h3 class="title__name title__name--absolute">Name</h3>
             </a>
         </div>
     </div>
@@ -189,11 +189,19 @@
 <div class="news-container">
 
     <section class="section-news">
-
+        <a asp-controller="News" asp-action="" title="">
+            <header class="section__header section__header--news">Лента новостей</header>
+        </a>
+        @*//TODO: Html.RenderPartial("_NewsPartial");*@
     </section>
 
     <section class="section-updates">
-
+        <a asp-controller="News" asp-action="Updates" title="">
+            <header class="section__header section__header--updates">Обновления аниме</header>
+        </a>
+        @{
+            Html.RenderPartial("_UpdatesPartial");
+        }
     </section>
 
 </div>
