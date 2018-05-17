@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace OtakuNET.Tests
+namespace OtakuNET.Web.Tests
 {
     public class UnitTest1
     {

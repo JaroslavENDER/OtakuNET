@@ -14,8 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OtakuNET.Domain\OtakuNET.Domain.csproj" />
-    <ProjectReference Include="..\OtakuNET.Web\OtakuNET.Web.csproj" />
+    <ProjectReference Include="..\..\OtakuNET.Web\OtakuNET.Web.csproj" />
   </ItemGroup>
 
 </Project>
