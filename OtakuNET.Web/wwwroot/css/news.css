@@ -20,3 +20,27 @@
 }
 
 /*---./updates---*/
+
+
+
+.news-node {
+    padding-bottom: 3rem;
+}
+
+    .news-node:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+.news-node__image {
+    float: left;
+    width: 20rem;
+    margin-right: 1rem;
+}
+
+.news__container {
+    max-width: 70rem;
+}
+
+/*---./news---*/
