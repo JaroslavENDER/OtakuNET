@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OtakuNET.Web.Data;
@@ -67,6 +63,14 @@ namespace OtakuNET.Web
                     name: "news",
                     template: "News/{action=News}",
                     defaults: new { controller = "News" });
+                routes.MapRoute(
+                    name: "studios",
+                    template: "Studios",
+                    defaults: new { controller = "Studios", action = "List" });
+                routes.MapRoute(
+                    name: "studio",
+                    template: "Studios/{name}",
+                    defaults: new { controller = "Studios", action = "Name" });
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
