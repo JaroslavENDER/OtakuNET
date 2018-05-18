@@ -8,5 +8,10 @@ namespace OtakuNET.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult Title()
+        {
+            return View();
+        }
     }
 }

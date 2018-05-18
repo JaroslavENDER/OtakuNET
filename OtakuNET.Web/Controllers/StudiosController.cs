@@ -2,7 +2,7 @@
 
 namespace OtakuNET.Web.Controllers
 {
-    public class StudioController : Controller
+    public class StudiosController : Controller
     {
         public IActionResult Name(string name)
         {
