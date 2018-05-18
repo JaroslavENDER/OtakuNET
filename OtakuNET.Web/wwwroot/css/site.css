@@ -118,26 +118,26 @@ dd {
 
 
 
-.title {
+.title-preview {
     padding: 0 1rem;
     flex-grow: 1;
     position: relative;
 }
 
-.title__link:hover {
+.title-preview__link:hover {
     text-decoration: none;
 }
 
-.title__image {
+.title-preview__image {
     width: 100%;
 }
 
-    .title__image:hover ~ .title__name {
+    .title-preview__image:hover ~ .title-preview__name {
         color: #f00;
         text-decoration: underline;
     }
 
-.title__name {
+.title-preview__name {
     color: #176093;
     font-weight: bold;
     font-size: 1.2rem;
@@ -145,37 +145,37 @@ dd {
     overflow: hidden;
 }
 
-    .title__name:hover {
+    .title-preview__name:hover {
         color: #f00;
         text-decoration: underline;
     }
 
-.title__name--big {
+.title-preview__name--big {
     font-size: 1.6rem;
 }
 
-.title__name--absolute {
+.title-preview__name--absolute {
     position: absolute;
     left: 8%;
     right: 8%;
     bottom: .7rem;
 }
 
-.title__info {
+.title-preview__info {
     color: #666;
     font-size: 1.2rem;
     margin: 0rem 1%;
     margin-top: 2rem;
 }
 
-    .title__info:hover {
+    .title-preview__info:hover {
         color: #666;
         text-decoration: none;
     }
 
-    .title__info:hover + .title__name {
-        color: #f00;
-        text-decoration: underline;
-    }
+        .title-preview__info:hover + .title-preview__name {
+            color: #f00;
+            text-decoration: underline;
+        }
 
-/*---./title---*/
+/*---./title-preview---*/
