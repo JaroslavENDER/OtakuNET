@@ -1,1 +1,96 @@
-﻿
+﻿.title__main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title__container {
+    width: 74%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title__right-panel {
+    width: 24%;
+}
+
+@media screen and (max-width: 1000px) {
+    .title__right-panel {
+        display: none;
+    }
+
+    .title__container {
+        width: 100%;
+    }
+}
+
+.title__section-art {
+    width: 32%;
+}
+
+.title__info-container {
+    width: 65%;
+}
+
+.title__info-container__flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title__info-container__flex-container > div {
+    width: 48%;
+}
+
+@media screen and (max-width: 770px) {
+    .title__section-art, .title__info-container {
+        width: 49%;
+    }
+
+    .title__info-container__flex-container > div {
+        width: 100%;
+    }
+
+    .title__info-container__flex-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .title__container {
+        display: block;
+    }
+
+    .title__section-art, .title__info-container {
+        width: 100%;
+    }
+}
+
+/*---./containers---*/
+
+
+
+.title__header {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.title__section-art__image {
+    width: 100%;
+}
+
+.title__episode-counter {
+    margin: 2rem 0;
+}
+
+.title__episode-counter__counter {
+    float: right;
+}
+
+.title__section-studio__image {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+.title__section-description__text {
+    text-align: justify;
+}

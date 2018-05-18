@@ -81,6 +81,19 @@ dd {
     border-color: #FCE4B3;
 }
 
+.section__header--min {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #000;
+    background-color: #E8EBEF;
+    border-color: #D8DDE4;
+    text-decoration: none;
+}
+
+    .section__header--min:hover {
+        color: #000;
+    }
+
 /*---./section__headers---*/
 
 
@@ -179,3 +192,76 @@ dd {
         }
 
 /*---./title-preview---*/
+
+
+
+.in-list {
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2rem 0;
+    padding-left: 1rem;
+    color: #176093;
+    background-color: #DAF1FF;
+    overflow: hidden;
+}
+
+/*---./in-list---*/
+
+
+
+.diagram, .diagram__line {
+    text-align: right;
+}
+
+.diagram {
+    margin-bottom: .4rem;
+    font-size: 1rem;
+}
+
+.diagram__line {
+    color: #fff;
+    background-color: #427AA8;
+    float: left;
+    padding-right: .5rem;
+}
+
+/*---./diagrams---*/
+
+
+
+.star {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background-image: url(/images/stars.png);
+    background-repeat: no-repeat;
+}
+
+.star--passive-fill {
+    background-position: 0 0;
+}
+
+.star--passive-part {
+    background-position: 50% 0;
+}
+
+.star--passive-empt {
+    background-position: 100% 0;
+}
+
+.star--active-fill {
+    background-position: 100% 0;
+}
+
+.star--active-part {
+    background-position: 100% 50%;
+}
+
+.star--active-empt {
+    background-position: 100% 100%;
+}
+
+/*---./stars---*/
