@@ -13,5 +13,10 @@ namespace OtakuNET.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult History(string login, string param)
+        {
+            return View();
+        }
     }
 }
