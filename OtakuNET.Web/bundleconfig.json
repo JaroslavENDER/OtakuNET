@@ -9,7 +9,8 @@
       "wwwroot/css/main-page.css",
       "wwwroot/css/news.css",
       "wwwroot/css/title.css",
-      "wwwroot/css/list.css"
+      "wwwroot/css/list.css",
+      "wwwroot/css/profile.css"
     ]
   },
   {

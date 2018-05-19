@@ -100,6 +100,10 @@ dd {
         color: #000;
     }
 
+.section__header--top {
+    margin-top: 0;
+}
+
 /*---./section__headers---*/
 
 
@@ -181,6 +185,7 @@ dd {
 }
 
 .title-preview__info {
+    display: block;
     color: #666;
     font-size: 1.2rem;
     margin: 0rem 2%;

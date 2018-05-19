@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="~/css/news.css" />
         <link rel="stylesheet" href="~/css/title.css" />
         <link rel="stylesheet" href="~/css/list.css" />
+        <link rel="stylesheet" href="~/css/profile.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -36,6 +37,7 @@
                     <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
                     <li><a asp-controller="Anime" asp-action="List">Аниме</a></li>
                     <li><a asp-controller="Manga" asp-action="List">Манга</a></li>
+                    <li><a asp-controller="Profile" asp-action="JaroslavENDER">Профиль</a></li>
                     <li><a asp-controller="Home" asp-action="About">О проекте</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")

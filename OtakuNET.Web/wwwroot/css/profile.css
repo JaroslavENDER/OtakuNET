@@ -1,0 +1,101 @@
+﻿.profile__section-avatar {
+    width: 19%;
+}
+
+.profile__section-central {
+    width: 49%;
+}
+
+.profile__section-history {
+    width: 29%;
+}
+
+@media screen and (max-width: 770px) {
+    .profile__section-history {
+        display: none;
+    }
+
+    .profile__section-central {
+        width: 79%;
+    }
+}
+
+.profile__first-block {
+    margin-top: 2rem;
+}
+
+/*---./profile__containers---*/
+
+
+
+.profile__history__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-wrap: none;
+}
+
+.profile__history__image-link {
+    width: 14%;
+}
+
+.profile__history__image {
+    width: 100%;
+}
+
+    .profile__history__image-link:hover + .profile__history__container > a > .history__title__name {
+        color: #f00;
+        text-decoration: underline;
+    }
+
+.profile__history__container {
+    width: 84%;
+}
+
+.history__title__name {
+    margin: 0;
+    max-height: 1.3rem;
+}
+
+.history__title__info {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/*---./profile__history---*/
+
+
+
+.profile__section-avatar__image {
+    width: 100%;
+}
+
+.profile__name {
+    margin: 0;
+}
+
+.profile__list-counters {
+    margin-top: 3rem;
+}
+
+.profile__list-counter {
+    margin-top: .8rem;
+}
+
+@media screen and (max-width: 770px) {
+    .profile__list-counters {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .profile__list-counters{
+        display: none;
+    }
+}
+
+.profile__list-counter__link {
+    color: #000;
+    font-size: 1.2rem;
+}
