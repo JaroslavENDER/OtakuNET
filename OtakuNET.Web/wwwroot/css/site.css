@@ -81,6 +81,12 @@ dd {
     border-color: #FCE4B3;
 }
 
+.section__header--anime-list {
+    color: #000;
+    background-color: #E8EBEF;
+    border-color: #D8DDE4;
+}
+
 .section__header--min {
     height: 2.5rem;
     line-height: 2.5rem;
@@ -177,7 +183,7 @@ dd {
 .title-preview__info {
     color: #666;
     font-size: 1.2rem;
-    margin: 0rem 1%;
+    margin: 0rem 2%;
     margin-top: 2rem;
 }
 
@@ -265,3 +271,30 @@ dd {
 }
 
 /*---./stars---*/
+
+
+
+.flex__flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex__main-container {
+    width: 74%;
+}
+
+.flex__right-panel {
+    width: 24%;
+}
+
+@media screen and (max-width: 1000px) {
+    .flex__right-panel {
+        display: none;
+    }
+
+    .flex__main-container {
+        width: 100%;
+    }
+}
+
+/*---./flex-page---*/

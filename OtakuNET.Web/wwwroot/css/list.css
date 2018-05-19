@@ -1,0 +1,23 @@
+﻿.title-preview {
+    width: 20%;
+    display: inline-block;
+    float: left;
+}
+
+@media screen and (max-width: 770px) {
+    .title-preview {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .title-preview {
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .title-preview {
+        width: 50%;
+    }
+}
