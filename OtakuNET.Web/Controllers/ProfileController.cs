@@ -9,7 +9,7 @@ namespace OtakuNET.Web.Controllers
             return View();
         }
 
-        public IActionResult List(string loging, string name)
+        public IActionResult List(string login, string param)
         {
             return View();
         }

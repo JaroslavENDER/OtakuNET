@@ -57,23 +57,15 @@ namespace OtakuNET.Web
             {
                 routes.MapRoute(
                     name: "profile",
-                    template: "Profile/{login}/{action=Profile}/{id?}",
+                    template: "Profile/{login}/{action=Profile}/{param?}",
                     defaults: new { controller = "Profile" });
                 routes.MapRoute(
                     name: "news",
                     template: "News/{action=News}",
                     defaults: new { controller = "News" });
                 routes.MapRoute(
-                    name: "studios",
-                    template: "Studios",
-                    defaults: new { controller = "Studios", action = "List" });
-                routes.MapRoute(
-                    name: "studio",
-                    template: "Studios/{name}",
-                    defaults: new { controller = "Studios", action = "Name" });
-                routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{param?}");
             });
         }
     }
