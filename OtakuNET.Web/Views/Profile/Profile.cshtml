@@ -39,7 +39,9 @@
     </section>
 
 <section class="profile__section-history">
-    <header class="section__header section__header--min section__header--top">История</header>
+    <a asp-controller="Profile" asp-action="History">
+        <header class="section__header section__header--min section__header--top">История</header>
+    </a>
     <article class="profile__history__item">
         <a asp-controller="Anime" asp-action="Title" class="profile__history__image-link" title="Название тайтла">
             <img src="~/images/missing.jpg" alt="" class="profile__history__image" />
