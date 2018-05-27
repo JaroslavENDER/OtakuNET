@@ -5,7 +5,7 @@ namespace OtakuNET.Domain.Entities
 {
     public class AnimeSeason
     {
-        [Key] public string Id { get; set; }
+        [Key] public string Key { get; set; }
         [Required] public string Name { get; set; }
         [Required] public string FullName { get; set; }
 
