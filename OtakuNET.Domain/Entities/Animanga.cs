@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OtakuNET.Domain.Entities
 {
-    public class Animanga
+    public abstract class Animanga
     {
         [Key] public string Title { get; set; }
         public string ImageSrc { get; set; }
@@ -12,16 +12,14 @@ namespace OtakuNET.Domain.Entities
         [Required] public string StudioName { get; set; }
         public string StudioImageSrc { get; set; }
         public string Description { get; set; }
-        
-        public Season Season { get; set; }
 
         public List<DataListInfomation> Information { get; set; }
-        public List<DataListInfomation> Links { get; set; }
+        public List<AnimangaLink> Links { get; set; }
 
         public Animanga()
         {
             Information = new List<DataListInfomation>();
-            Links = new List<DataListInfomation>();
+            Links = new List<AnimangaLink>();
         }
     }
 }
