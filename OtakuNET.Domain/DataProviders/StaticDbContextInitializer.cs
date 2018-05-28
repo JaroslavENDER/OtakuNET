@@ -128,7 +128,7 @@ namespace OtakuNET.Domain.DataProviders
                 StudioName = "feet.",
                 ImageSrc = "",
                 Season = leto,
-                Tag = "Анонс"
+                Tag = "анонс"
             };
             var kempingOnFreshAir = new Anime
             {
@@ -136,7 +136,7 @@ namespace OtakuNET.Domain.DataProviders
                 StudioName = "C-Station",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/34798.jpg?1520779534",
                 Season = zima,
-                Tag = "Релиз"
+                Tag = "релиз"
             };
             dbContext.Anime.AddRange(new[]
             {
@@ -157,7 +157,7 @@ namespace OtakuNET.Domain.DataProviders
                 new Update
                 {
                     Anime = megalobox,
-                    Tag = "Анонс",
+                    Tag = "анонс",
                     Timestamp = DateTime.Now.AddMonths(-1),
                     Infomation = new List<DataListInfomation>
                     {
@@ -234,7 +234,7 @@ namespace OtakuNET.Domain.DataProviders
                 new Update
                 {
                     Anime = secondMaidJoo,
-                    Tag = "Анонс",
+                    Tag = "анонс",
                     Timestamp = DateTime.Now.AddDays(-1),
                     Infomation = new List<DataListInfomation>
                     {
@@ -249,7 +249,7 @@ namespace OtakuNET.Domain.DataProviders
                 new Update
                 {
                     Anime = hisoneAndMaco,
-                    Tag = "Анонс",
+                    Tag = "анонс",
                     Timestamp = DateTime.Now.AddHours(-2),
                     Infomation = new List<DataListInfomation>
                     {
@@ -295,7 +295,7 @@ namespace OtakuNET.Domain.DataProviders
                 new Update
                 {
                     Anime = island,
-                    Tag = "Анонс",
+                    Tag = "анонс",
                     Timestamp = DateTime.Now.AddSeconds(3),
                     Infomation = new List<DataListInfomation>
                     {
@@ -326,7 +326,7 @@ namespace OtakuNET.Domain.DataProviders
                 new Update
                 {
                     Anime = kempingOnFreshAir,
-                    Tag = "Релиз",
+                    Tag = "релиз",
                     Timestamp = DateTime.Now.AddYears(1).AddSeconds(12),
                     Infomation = new List<DataListInfomation>
                     {

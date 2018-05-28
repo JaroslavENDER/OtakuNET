@@ -10,6 +10,7 @@ namespace OtakuNET.Domain.DataProviders
         DbSet<Anime> Anime { get; set; }
         DbSet<Manga> Manga { get; set; }
         DbSet<AnimeSeason> Seasons { get; set; }
+        DbSet<Profile> Profiles { get; set; }
         DbSet<Update> Updates { get; set; }
         DbSet<News> News { get; set; }
 
