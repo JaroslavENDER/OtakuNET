@@ -13,8 +13,8 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
     {
         public static IndexViewModel Initialize(this IndexViewModel model,
             List<Anime> ongoings,
-            List<object> userAnimeLists,
-            List<object> userMangaList,
+            List<UserAnimeList> userAnimeLists,
+            List<UserMangaList> userMangaList,
             List<AnimeSeason> lastSeasons,
             List<News> lastNews,
             List<Update> lastUpdates,
@@ -33,7 +33,14 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 .ToList();
 
             model.UserAnimeLists = userAnimeLists?.Count > 0
-                ? model.UserAnimeLists = userAnimeLists.Select(o => new UserListInfoViewModel()).ToList()
+                ? userAnimeLists
+                    .Select(ual => new UserListInfoViewModel
+                    {
+                        Name = ual.Name,
+                        TitleCount = ual.Anime.Count,
+                        Description = 0
+                    })
+                    .ToList()
                 : new List<UserListInfoViewModel>
                 {
                     new UserListInfoViewModel{ TitleCount = 0, Name = "Запланировано", Description = 0 },
@@ -45,7 +52,14 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 };
 
             model.UserMangaLists = userMangaList?.Count > 0
-                ? userMangaList.Select(o => new UserListInfoViewModel()).ToList()
+                ? userMangaList
+                    .Select(uml => new UserListInfoViewModel
+                    {
+                        Name = uml.Name,
+                        TitleCount = uml.Manga.Count,
+                        Description = 0
+                    })
+                    .ToList()
                 : new List<UserListInfoViewModel>
                 {
                         new UserListInfoViewModel{ TitleCount = 0, Name = "Запланировано", Description = 0 },
