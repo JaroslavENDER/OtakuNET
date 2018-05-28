@@ -3,11 +3,11 @@ using OtakuNET.Web.Services;
 using System;
 using Xunit;
 
-namespace OtakuNET.Web.Tests.Services.TagTranslator
+namespace OtakuNET.Web.Tests.Services
 {
     public class TagTranslatorToStringTest
     {
-        private ITagTranslator translator = new Web.Services.TagTranslator();
+        private ITagTranslator translator = new TagTranslator();
 
         [Fact]
         public void NewsToString()
