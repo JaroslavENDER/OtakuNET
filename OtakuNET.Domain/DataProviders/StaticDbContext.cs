@@ -21,20 +21,11 @@ namespace OtakuNET.Domain.DataProviders
             : base(options)
         {
             if (isInitialized) return;
-            Initialize();
+            new StaticDbContextInitializer().Initialize(this);
             isInitialized = true;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => base.OnConfiguring(optionsBuilder);
-
-
-
-
-        private void Initialize()
-        {
-            Anime.Add(new Anime { Title = "First title" });
-            SaveChanges();
-        }
     }
 }
