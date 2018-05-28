@@ -135,6 +135,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 {
                     Title = u.Anime.Title,
                     Tag = tagTranslator.ToTag(u.Tag),
+                    //TagInfo = u.Tag,
                     Timestamp = timestampFormatter.Format(u.Timestamp),
                     ImageSrc = u.Anime.ImageSrc
                 })

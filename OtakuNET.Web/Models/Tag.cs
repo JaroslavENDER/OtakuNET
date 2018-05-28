@@ -2,10 +2,10 @@
 {
     public enum Tag
     {
-        Release,
-        Ongoing,
         Announce,
+        Ongoing,
         Episode,
+        Release,
         News
     }
 }
