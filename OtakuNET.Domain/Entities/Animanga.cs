@@ -7,9 +7,9 @@ namespace OtakuNET.Domain.Entities
     {
         [Key] public string Title { get; set; }
         public string ImageSrc { get; set; }
-        [Required] public string Tag { get; set; }
-        [Required] public double Raiting { get; set; }
-        [Required] public string StudioName { get; set; }
+        [Required, MaxLength(10)] public string Tag { get; set; }
+        [Required, Range(0, 10)] public double Raiting { get; set; }
+        [Required, MaxLength(40)] public string StudioName { get; set; }
         public string StudioImageSrc { get; set; }
         public string Description { get; set; }
 
