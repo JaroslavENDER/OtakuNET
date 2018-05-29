@@ -52,14 +52,16 @@ namespace OtakuNET.Domain.DataProviders
             });
             var megalobox = new Anime
             {
+                Key = "megalobox",
                 Title = "Мегалобокс",
                 StudioName = "TMS Entertaiment",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/36563.jpg?1524534309",
                 Season = vesna,
                 Tag = "онгоинг"
             };
-            var sevenDeathestFoolActions = new Anime
+            var sevenDeathestBagActions = new Anime
             {
+                Key = "seven-deathest-bad-actions",
                 Title = "Семь смертных грехов",
                 StudioName = "A-1 Pictures Inc.",
                 ImageSrc = "https://moe.shikimori.org/system/animes/preview/34577.jpg?1524426711",
@@ -68,6 +70,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var cryingCyclist = new Anime
             {
+                Key = "crying-cyclist",
                 Title = "Трусливый велосипедист",
                 StudioName = "TMS Entertaiment",
                 ImageSrc = "https://dere.shikimori.org/system/animes/preview/35789.jpg?1524471359",
@@ -76,6 +79,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var coldBloodKazuki = new Anime
             {
+                Key = "cold-blood-kazuki",
                 Title = "Хладнокровный Казуки",
                 StudioName = "Studio DEEN",
                 ImageSrc = "https://dere.shikimori.org/system/animes/preview/37029.jpg?1524543379",
@@ -84,6 +88,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var higestSchoolDxD = new Anime
             {
+                Key = "higest-school-dxd",
                 Title = "Старшая школа DxD",
                 StudioName = "Passione",
                 ImageSrc = "https://kawai.shikimori.org/system/animes/preview/34281.jpg?1524528930",
@@ -92,6 +97,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var secondMaidJoo = new Anime
             {
+                Key = "second-maid-joo",
                 Title = "Второй Мейджор",
                 StudioName = "NHK Enterprises",
                 ImageSrc = "https://nyaa.shikimori.org/system/animes/preview/36565.jpg?1524536113",
@@ -100,6 +106,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var hisoneAndMaco = new Anime
             {
+                Key = "hisone-and-maco",
                 Title = "Хисонэ и Масо",
                 StudioName = "Bones",
                 ImageSrc = "https://dere.shikimori.org/system/animes/preview/36884.jpg?1524527111",
@@ -108,6 +115,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var persona5 = new Anime
             {
+                Key = "persona5",
                 Title = "Персона 5",
                 StudioName = "A-1 Pictures Inc.",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/36023.jpg?1524543344",
@@ -116,6 +124,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var somasKitchen = new Anime
             {
+                Key = "somas-kitchen",
                 Title = "Повар-боец Сома: Третье блюдо - Часть II",
                 StudioName = "J.C. Staff",
                 ImageSrc = "",
@@ -124,6 +133,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var island = new Anime
             {
+                Key = "island",
                 Title = "Остров",
                 StudioName = "feet.",
                 ImageSrc = "",
@@ -132,6 +142,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var kempingOnFreshAir = new Anime
             {
+                Key = "kemping-on-fresh-air",
                 Title = "Лагерь на свежем воздухе",
                 StudioName = "C-Station",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/34798.jpg?1520779534",
@@ -141,7 +152,7 @@ namespace OtakuNET.Domain.DataProviders
             dbContext.Anime.AddRange(new[]
             {
                 megalobox,
-                sevenDeathestFoolActions,
+                sevenDeathestBagActions,
                 cryingCyclist,
                 coldBloodKazuki,
                 higestSchoolDxD,
@@ -171,7 +182,7 @@ namespace OtakuNET.Domain.DataProviders
                 },
                 new Update
                 {
-                    Anime = sevenDeathestFoolActions,
+                    Anime = sevenDeathestBagActions,
                     Tag = "1",
                     Timestamp = DateTime.Now.AddDays(-25),
                     Infomation = new List<DataListInfomation>
