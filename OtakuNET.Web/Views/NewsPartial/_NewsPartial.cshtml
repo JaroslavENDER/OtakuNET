@@ -1,0 +1,11 @@
+﻿@using OtakuNET.Web.Models.NewsViewModels
+@model NewsPartialViewModel
+
+@{ 
+    Model.News.Reverse();
+}
+
+@foreach (var news in Model.News)
+{
+    await Html.RenderPartialAsync("/Views/NewsPartial/_OneNewsPartial.cshtml", news);
+}

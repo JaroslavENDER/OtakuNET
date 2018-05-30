@@ -1,0 +1,27 @@
+﻿@using OtakuNET.Web.Models.NewsViewModels
+@model OneNewsViewModel
+
+@{ 
+    var tag = Model.Tag;
+    var tagClass = tag == Tag.News
+        ? "tag--news"
+        : string.Empty;
+    var tagText = tag == Tag.News
+        ? "новость"
+        : string.Empty;
+}
+
+<article class="news-node">
+    <header>
+        <span class="tag @tagClass">@tagText</span>
+        <span class="title-preview__name title-preview__name--big">@Model.Title</span>
+        <span class="title-preview__info">@Model.Timestamp</span>
+    </header>
+    @if (!string.IsNullOrEmpty(Model.ImageSrc))
+    {
+        <img src="@Model.ImageSrc" alt="" class="news-node__image" />
+    }
+    <p class="news-node__text">
+        @Model.Text
+    </p>
+</article>

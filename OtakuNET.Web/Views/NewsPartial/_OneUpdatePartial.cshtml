@@ -1,0 +1,54 @@
+﻿@using OtakuNET.Web.Models.NewsViewModels
+@model OneUpdateViewModel
+
+@{ 
+    Model.ImageSrc = string.IsNullOrEmpty(Model.ImageSrc)
+        ? "/images/missing.jpg"
+        : Model.ImageSrc;
+    var tag = Model.Tag;
+    var tagClass = tag == Tag.Announce
+        ? "tag--announce"
+        : tag == Tag.Ongoing
+            ? "tag--ongoing"
+            : tag == Tag.Episode
+                ? "tag--episode"
+                : tag == Tag.Release
+                    ? "teg-release"
+                    : string.Empty;
+    var tagText = tag == Tag.Announce
+        ? "анонс"
+        : tag == Tag.Ongoing
+            ? "онгоинг"
+            : tag == Tag.Episode
+                ? "n эпизод" //$"{Model.TagInfo} эпизод"
+                : tag == Tag.Release
+                    ? "релиз"
+                    : string.Empty;
+}
+
+<article class="update-node">
+    <header class="update-node__header">
+        <span class="tag @tagClass">@tagText</span>
+        <a asp-controller="Anime" asp-action="Title" title="" class="title-preview__name title-preview__name--big">@Model.Title</a>
+        <span class="title-preview__info">@Model.Timestamp</span>
+    </header>
+    <div class="update-node__container">
+        <div class="update-node__image">
+            <a asp-controller="Anime" asp-action="Title" title="">
+                <img src="@Model.ImageSrc" alt="" class="update-node__image__image" />
+            </a>
+        </div>
+        <div class="update-node__info">
+            <dl>
+                <dt>Тип</dt>
+                <dd>TV сериал 2018 год R+</dd>
+                <dt>Студия</dt>
+                <dd>Passione</dd>
+                <dt>Эпизоды</dt>
+                <dd>12</dd>
+                <dt>Жанры</dt>
+                <dd>Экшен Комедия Демоны Этти Романтика Школа</dd>
+            </dl>
+        </div>
+    </div>
+</article>
