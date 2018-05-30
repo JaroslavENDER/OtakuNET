@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
-using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.NewsViewModels;
 using OtakuNET.Web.Services;
 using System.Linq;
@@ -30,8 +29,8 @@ namespace OtakuNET.Web.ViewComponents
                 .Select(n => new OneNewsViewModel
                 {
                     Title = n.Title,
-                    Tag = Tag.News, //tagTranslator.ToTag(n.Tag),
-                    //TagInfo = n.Tag,
+                    Tag = tagTranslator.ToTag(n.Tag),
+                    TagInfo = n.Tag,
                     Timestamp = timestampFormatter.Format(n.Timestamp),
                     ImageSrc = n.ImageSrc,
                     Text = n.Text
