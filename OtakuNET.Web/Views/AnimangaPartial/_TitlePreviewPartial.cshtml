@@ -1,0 +1,20 @@
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@model TitlePreviewPartialViewModel
+
+
+@{ 
+    var title = Model.Title;
+    var id = Model.TitlePreviewBlockId;
+    var controller = Model.ControllerName;
+    title.ImageSrc = string.IsNullOrEmpty(title.ImageSrc)
+                    ? "/images/missing.jpg"
+                    : title.ImageSrc;
+}
+
+<div class="title-preview" id="@id">
+    <a asp-controller="@controller" asp-action="Title" class="title-preview__link" title="@title.Name">
+        <img src="@title.ImageSrc" alt="" class="title-preview__image" />
+        <p class="title-preview__info title-preview__info--absolute">@title.Info</p>
+        <h3 class="title-preview__name title-preview__name--absolute">@title.Name</h3>
+    </a>
+</div>
