@@ -1,4 +1,6 @@
 ﻿using OtakuNET.Domain.Entities;
+using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
+using OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions;
 using OtakuNET.Web.Models.AnimangaViewModels;
 using OtakuNET.Web.Models.HomeViewModels;
 using OtakuNET.Web.Models.ProfileViewModels;
@@ -18,23 +20,12 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
             model.Ongoings = ongoings
                 .OrderByDescending(a => a.Updates.Max(u => u.Timestamp))
                 .Take(8)
-                .Select(a => new TitlePreviewViewModel
-                {
-                    Key = a.Key,
-                    Name = a.Title,
-                    Info = a.StudioName,
-                    ImageSrc = a.ImageSrc
-                })
+                .Select(a => new TitlePreviewViewModel().Initialize(a))
                 .ToList();
 
             model.UserAnimeLists = userAnimeLists?.Count > 0
                 ? userAnimeLists
-                    .Select(ual => new UserListInfoViewModel
-                    {
-                        Name = ual.Name,
-                        TitleCount = ual.Anime.Count,
-                        Description = ual.Description
-                    })
+                    .Select(ual => new UserListInfoViewModel().Initialize(ual))
                     .ToList()
                 : new List<UserListInfoViewModel>
                 {
@@ -48,12 +39,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
 
             model.UserMangaLists = userMangaList?.Count > 0
                 ? userMangaList
-                    .Select(uml => new UserListInfoViewModel
-                    {
-                        Name = uml.Name,
-                        TitleCount = uml.Manga.Count,
-                        Description = uml.Description
-                    })
+                    .Select(uml => new UserListInfoViewModel().Initialize(uml))
                     .ToList()
                 : new List<UserListInfoViewModel>
                 {
