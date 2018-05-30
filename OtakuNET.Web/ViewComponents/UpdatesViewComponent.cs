@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
-using OtakuNET.Web.Models;
+using OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions;
 using OtakuNET.Web.Models.NewsViewModels;
 using OtakuNET.Web.Services;
 using System.Linq;
@@ -23,27 +23,8 @@ namespace OtakuNET.Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var model = new UpdatesComponentViewModel
-            {
-                Updates = await dbContext.Updates
-                .OrderByDescending(u => u.Timestamp)
-                .Select(u => new OneUpdateViewModel
-                {
-                    Title = u.Anime.Title,
-                    Tag = tagTranslator.ToTag(u.Tag),
-                    TagInfo = u.Tag,
-                    Timestamp = timestampFormatter.Format(u.Timestamp),
-                    ImageSrc = u.Anime.ImageSrc,
-                    Info = u.Infomation
-                    .GroupBy(info => info.Name)
-                    .Select(group => new DataListInformationViewModel
-                    {
-                        Key = group.Key,
-                        Values = group.Select(g => g.Value).ToList()
-                    }).ToList()
-                })
-                .ToListAsync()
-            };
+            var updates = await dbContext.Updates.OrderByDescending(u => u.Timestamp).ToListAsync();
+            var model = new UpdatesComponentViewModel().Initialize(updates, tagTranslator, timestampFormatter);
             return View(model);
         }
     }
