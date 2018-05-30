@@ -13,14 +13,14 @@
             : tag == Tag.Episode
                 ? "tag--episode"
                 : tag == Tag.Release
-                    ? "teg-release"
+                    ? "tag--release"
                     : string.Empty;
     var tagText = tag == Tag.Announce
         ? "анонс"
         : tag == Tag.Ongoing
             ? "онгоинг"
             : tag == Tag.Episode
-                ? "n эпизод" //$"{Model.TagInfo} эпизод"
+                ? $"{Model.TagInfo} эпизод"
                 : tag == Tag.Release
                     ? "релиз"
                     : string.Empty;
@@ -40,14 +40,16 @@
         </div>
         <div class="update-node__info">
             <dl>
-                <dt>Тип</dt>
-                <dd>TV сериал 2018 год R+</dd>
-                <dt>Студия</dt>
-                <dd>Passione</dd>
-                <dt>Эпизоды</dt>
-                <dd>12</dd>
-                <dt>Жанры</dt>
-                <dd>Экшен Комедия Демоны Этти Романтика Школа</dd>
+                @foreach (var info in Model.Info)
+                {
+                    <dt>@info.Key</dt>
+                    <dd>
+                        @foreach (var value in info.Values)
+                        {
+                            <span>@value  </span>
+                        }
+                    </dd>
+                }
             </dl>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 namespace OtakuNET.Web.Models.NewsViewModels
 {
-    public class UpdatesPartialViewModel
+    public class UpdatesComponentViewModel
     {
         public List<OneUpdateViewModel> Updates { get; set; }
     }
