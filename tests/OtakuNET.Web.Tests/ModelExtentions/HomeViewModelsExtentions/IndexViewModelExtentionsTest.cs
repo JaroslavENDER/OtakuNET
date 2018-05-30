@@ -1,9 +1,6 @@
-﻿using Moq;
-using OtakuNET.Domain.Entities;
+﻿using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions;
-using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.HomeViewModels;
-using OtakuNET.Web.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -118,12 +115,8 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     }
                 }
             };
-            var timestampFormatterMock = new Mock<ITimestampFormatter>();
-            timestampFormatterMock.Setup(m => m.Format(It.IsAny<DateTime>())).Returns<DateTime>(dt => dt.ToLongDateString());
-            var tagTranslatorMock = new Mock<ITagTranslator>();
-            tagTranslatorMock.Setup(m => m.ToTag(It.IsAny<string>())).Returns<string>(tag => Tag.Release);
 
-            var result = new IndexViewModel().Initialize(ongoings, null, null, new List<AnimeSeason>(), new List<News>(), new List<Update>(), timestampFormatterMock.Object, tagTranslatorMock.Object);
+            var result = new IndexViewModel().Initialize(ongoings, null, null, new List<AnimeSeason>());
 
             Assert.Equal(8, result.Ongoings.Count);
             Assert.Null(result.Ongoings.FirstOrDefault(a => a.Name == "Мегалобокс"));
@@ -132,12 +125,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
         [Fact]
         public void ReturnsDefaultUserListsFromNulls()
         {
-            var timestampFormatterMock = new Mock<ITimestampFormatter>();
-            timestampFormatterMock.Setup(m => m.Format(It.IsAny<DateTime>())).Returns<DateTime>(dt => dt.ToLongDateString());
-            var tagTranslatorMock = new Mock<ITagTranslator>();
-            tagTranslatorMock.Setup(m => m.ToTag(It.IsAny<string>())).Returns<string>(tag => Tag.Release);
-
-            var result = new IndexViewModel().Initialize(new List<Anime>(), null, null, new List<AnimeSeason>(), new List<News>(), new List<Update>(), timestampFormatterMock.Object, tagTranslatorMock.Object);
+            var result = new IndexViewModel().Initialize(new List<Anime>(), null, null, new List<AnimeSeason>());
 
             Assert.Equal(6, result.UserAnimeLists.Count);
             Assert.Equal(6, result.UserMangaLists.Count);

@@ -24,7 +24,7 @@ namespace OtakuNET.Web
             services.AddStaticDbContextInMemory("OtakuNET-InMemoryDatabase");
             
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddTransient<ITagTranslator, TagTranslator>();
+            services.AddTransient<ITagTranslator, TagTranslatorEng>();
             services.AddTransient<ITimestampFormatter, TimestampFormatter>();
 
             services.AddMvc();
