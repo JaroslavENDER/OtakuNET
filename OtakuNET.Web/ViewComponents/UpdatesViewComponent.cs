@@ -23,7 +23,7 @@ namespace OtakuNET.Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var updates = await dbContext.Updates.OrderByDescending(u => u.Timestamp).ToListAsync();
+            var updates = await dbContext.Updates.Include(u => u.Anime).OrderByDescending(u => u.Timestamp).ToListAsync();
             var model = new UpdatesComponentViewModel().Initialize(updates, tagTranslator, timestampFormatter);
             return View(model);
         }

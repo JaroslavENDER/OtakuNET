@@ -1,7 +1,8 @@
 ﻿.title-preview {
     width: 20%;
     display: inline-block;
-    float: left;
+    /*float: left;*/
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 770px) {

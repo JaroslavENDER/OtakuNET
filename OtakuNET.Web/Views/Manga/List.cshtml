@@ -1,6 +1,13 @@
-﻿
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@using OtakuNET.Web.Models.MangaViewModels
+@model MangaListViewModel
+
 @{
     ViewData["Title"] = "Манга";
+}
+
+@{ 
+    Model.Titles.Reverse();
 }
 
 <a href="">
@@ -10,48 +17,15 @@
 <div class="flex__flex-container">
 
     <div class="flex__main-container">
-        <div class="title-preview">
-            <a asp-controller="Manga" asp-action="Title" class="title-preview__link" title="Название">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">Издатель</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Название</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Manga" asp-action="Title" class="title-preview__link" title="Название">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">Издатель</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Название</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Manga" asp-action="Title" class="title-preview__link" title="Название">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">Издатель</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Название</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Manga" asp-action="Title" class="title-preview__link" title="Название">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">Издатель</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Название</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Manga" asp-action="Title" class="title-preview__link" title="Название">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">Издатель</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Название</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Manga" asp-action="Title" class="title-preview__link" title="Название">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">Издатель</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Название</h3>
-            </a>
-        </div>
+        @foreach (var title in Model.Titles)
+        {
+            var model = new TitlePreviewPartialViewModel
+            {
+                ControllerName = "Manga",
+                Title = title
+            };
+            await Html.RenderPartialAsync("/Views/AnimangaPartial/_TitlePreviewPartial.cshtml", model);
+        }
     </div>
 
     <div class="flex__right-panel">

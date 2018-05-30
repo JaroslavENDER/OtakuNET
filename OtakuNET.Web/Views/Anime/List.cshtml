@@ -1,7 +1,10 @@
-﻿
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@using OtakuNET.Web.Models.AnimeViewModels
+@model AnimeListViewModel
 @{
     ViewData["Title"] = "Аниме";
 }
+
 
 <a href="">
     <header class="section__header section__header--anime-list">Аниме</header>
@@ -10,146 +13,15 @@
 <div class="flex__flex-container">
 
     <div class="flex__main-container">
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
+        @foreach (var title in Model.Titles)
+        {
+            var model = new TitlePreviewPartialViewModel
+            {
+                ControllerName = "Anime",
+                Title = title
+            };
+            await Html.RenderPartialAsync("/Views/AnimangaPartial/_TitlePreviewPartial.cshtml", model);
+        }
     </div>
 
     <div class="flex__right-panel">
