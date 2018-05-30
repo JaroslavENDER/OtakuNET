@@ -172,12 +172,12 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddMonths(-1),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Жанры", Value = "Боевые искуства" },
-                        new DataListInfomation { Key = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Key = "Жанры", Value = "Драмма" },
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Жанры", Value = "Боевые искуства" },
+                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInfomation { Name = "Жанры", Value = "Драмма" },
                     }
                 },
                 new Update
@@ -187,12 +187,12 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddDays(-25),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "1 / ?" },
-                        new DataListInfomation { Key = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Key = "Жанры", Value = "Драмма" },
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "1 / ?" },
+                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInfomation { Name = "Жанры", Value = "Драмма" },
                     }
                 },
                 new Update
@@ -202,12 +202,12 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddDays(-8),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "G" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "2 / 12" },
-                        new DataListInfomation { Key = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" },
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "G" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "2 / 12" },
+                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
                     }
                 },
                 new Update
@@ -217,13 +217,13 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddDays(-7),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "G" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "2 / 12" },
-                        new DataListInfomation { Key = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Key = "Жанры", Value = "Экшен" },
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "G" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "2 / 12" },
+                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInfomation { Name = "Жанры", Value = "Экшен" },
                     }
                 },
                 new Update
@@ -233,13 +233,13 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddDays(-6),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "G" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "5 / 12" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Key = "Жанры", Value = "Экшен" },
-                        new DataListInfomation { Key = "Жанры", Value = "Этти" },
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "G" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "5 / 12" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInfomation { Name = "Жанры", Value = "Экшен" },
+                        new DataListInfomation { Name = "Жанры", Value = "Этти" },
                     }
                 },
                 new Update
@@ -249,12 +249,12 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddDays(-1),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Key = "Жанры", Value = "Этти" },
-                        new DataListInfomation { Key = "Жанры", Value = "Сенен Ай" },
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInfomation { Name = "Жанры", Value = "Этти" },
+                        new DataListInfomation { Name = "Жанры", Value = "Сенен Ай" },
                     }
                 },
                 new Update
@@ -264,10 +264,10 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddHours(-2),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "ONA" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" }
+                        new DataListInfomation { Name = "Тип", Value = "ONA" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" }
                     }
                 },
                 new Update
@@ -277,13 +277,13 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddMinutes(-30),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "10 / 12" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Key = "Жанры", Value = "Экшен" },
-                        new DataListInfomation { Key = "Жанры", Value = "Мистика" }
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "10 / 12" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInfomation { Name = "Жанры", Value = "Экшен" },
+                        new DataListInfomation { Name = "Жанры", Value = "Мистика" }
                     }
                 },
                 new Update
@@ -293,14 +293,14 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddSeconds(-50),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "12 / 24" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Key = "Жанры", Value = "Сенен" },
-                        new DataListInfomation { Key = "Жанры", Value = "Этти" },
-                        new DataListInfomation { Key = "Жанры", Value = "Школа" }
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "12 / 24" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInfomation { Name = "Жанры", Value = "Сенен" },
+                        new DataListInfomation { Name = "Жанры", Value = "Этти" },
+                        new DataListInfomation { Name = "Жанры", Value = "Школа" }
                     }
                 },
                 new Update
@@ -310,12 +310,12 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddSeconds(-30),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Жанры", Value = "Выживание" },
-                        new DataListInfomation { Key = "Жанры", Value = "Сенен" },
-                        new DataListInfomation { Key = "Жанры", Value = "Драма" }
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Жанры", Value = "Выживание" },
+                        new DataListInfomation { Name = "Жанры", Value = "Сенен" },
+                        new DataListInfomation { Name = "Жанры", Value = "Драма" }
                     }
                 },
                 new Update
@@ -325,13 +325,13 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddYears(-1).AddSeconds(-12),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2017 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "12 / 12" },
-                        new DataListInfomation { Key = "Жанры", Value = "Выживание" },
-                        new DataListInfomation { Key = "Жанры", Value = "В лесу" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" }
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2017 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "12 / 12" },
+                        new DataListInfomation { Name = "Жанры", Value = "Выживание" },
+                        new DataListInfomation { Name = "Жанры", Value = "В лесу" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" }
                     }
                 },
                 new Update
@@ -341,13 +341,13 @@ namespace OtakuNET.Domain.DataProviders
                     Timestamp = DateTime.Now.AddYears(-1),
                     Infomation = new List<DataListInfomation>
                     {
-                        new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Key = "Тип", Value = "2017 год" },
-                        new DataListInfomation { Key = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Key = "Эпизоды", Value = "12" },
-                        new DataListInfomation { Key = "Жанры", Value = "Выживание" },
-                        new DataListInfomation { Key = "Жанры", Value = "В лесу" },
-                        new DataListInfomation { Key = "Жанры", Value = "Повседневность" }
+                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInfomation { Name = "Тип", Value = "2017 год" },
+                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
+                        new DataListInfomation { Name = "Эпизоды", Value = "12" },
+                        new DataListInfomation { Name = "Жанры", Value = "Выживание" },
+                        new DataListInfomation { Name = "Жанры", Value = "В лесу" },
+                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" }
                     }
                 }
             });
@@ -357,6 +357,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Title = "Старкон в Петербурге",
                     Timestamp = DateTime.Now.AddDays(-1),
+                    Tag = "новость",
                     ImageSrc = "",
                     Text = "10 и 11 июня в Петербурге пройдёт ежегодный международный фестиваль фантастики, кино и науки — Старкон. Как и в прошлом году, “Старкон” пройдет в конгрессно-выставочном центре «Экспофорум». Всего в этом году ожидается больше 1300 косплееров из России и стран ближнего зарубежья. На главной сцене вы увидите зрелищные выступления косплееров и грандиозную шоу-программу."
                 },
@@ -364,6 +365,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Title = "Маньхуа «Magmel of the Sea Blue» получит экранизацию",
                     Timestamp = DateTime.Now.AddHours(-12),
+                    Tag = "новость",
                     ImageSrc = "https://nyaa.shikimori.org/system/user_images/preview/136187/589235.jpg",
                     Text = "Компания Shueisha объявила, что маньхуа Magmel of the Sea Blue будет экранизирована. Также, стала известна команда, которая будет работать над адаптацией: Режиссёр — Хаято Датэ (Наруто: Ураганные хроники, Парни из магазинчика); Сценарист — Тюдзи Микасано(Токийский гуль, Токийский гуль √A); Музыка — Ясухару Таканаси (Сказка о Хвосте феи, Усопшие); Студия производства — Pierrot."
                 },
@@ -371,6 +373,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Title = "Промо ролик телеканала \"FAN\" и другие подробности.",
                     Timestamp = DateTime.Now,
+                    Tag = "новость",
                     ImageSrc = "https://kawai.shikimori.org/system/user_images/preview/33635/590241.jpg",
                     Text = "Формат вещания: 16:9 / HD / Stereo.\nFAN — единственный в России телеканал, показывающий анимационное и игровое кино в жанре фэнтези и фантастики. Нарисованные миры, альтернативные реальности,наделенные сверхспособностями супергерои, яркие эмоции и новые впечатления — основа привлечения новой, самой большой потенциальной аудитории. В эфире телеканала — популярный и востребованный контент: культовые картины от основоположников жанра японских производителей"
                 }
