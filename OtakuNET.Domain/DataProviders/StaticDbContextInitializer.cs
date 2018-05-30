@@ -52,14 +52,16 @@ namespace OtakuNET.Domain.DataProviders
             });
             var megalobox = new Anime
             {
+                Key = "megalobox",
                 Title = "Мегалобокс",
                 StudioName = "TMS Entertaiment",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/36563.jpg?1524534309",
                 Season = vesna,
                 Tag = "онгоинг"
             };
-            var sevenDeathestFoolActions = new Anime
+            var sevenDeathestBagActions = new Anime
             {
+                Key = "seven-deathest-bad-actions",
                 Title = "Семь смертных грехов",
                 StudioName = "A-1 Pictures Inc.",
                 ImageSrc = "https://moe.shikimori.org/system/animes/preview/34577.jpg?1524426711",
@@ -68,6 +70,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var cryingCyclist = new Anime
             {
+                Key = "crying-cyclist",
                 Title = "Трусливый велосипедист",
                 StudioName = "TMS Entertaiment",
                 ImageSrc = "https://dere.shikimori.org/system/animes/preview/35789.jpg?1524471359",
@@ -76,6 +79,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var coldBloodKazuki = new Anime
             {
+                Key = "cold-blood-kazuki",
                 Title = "Хладнокровный Казуки",
                 StudioName = "Studio DEEN",
                 ImageSrc = "https://dere.shikimori.org/system/animes/preview/37029.jpg?1524543379",
@@ -84,6 +88,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var higestSchoolDxD = new Anime
             {
+                Key = "higest-school-dxd",
                 Title = "Старшая школа DxD",
                 StudioName = "Passione",
                 ImageSrc = "https://kawai.shikimori.org/system/animes/preview/34281.jpg?1524528930",
@@ -92,6 +97,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var secondMaidJoo = new Anime
             {
+                Key = "second-maid-joo",
                 Title = "Второй Мейджор",
                 StudioName = "NHK Enterprises",
                 ImageSrc = "https://nyaa.shikimori.org/system/animes/preview/36565.jpg?1524536113",
@@ -100,6 +106,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var hisoneAndMaco = new Anime
             {
+                Key = "hisone-and-maco",
                 Title = "Хисонэ и Масо",
                 StudioName = "Bones",
                 ImageSrc = "https://dere.shikimori.org/system/animes/preview/36884.jpg?1524527111",
@@ -108,6 +115,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var persona5 = new Anime
             {
+                Key = "persona5",
                 Title = "Персона 5",
                 StudioName = "A-1 Pictures Inc.",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/36023.jpg?1524543344",
@@ -116,6 +124,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var somasKitchen = new Anime
             {
+                Key = "somas-kitchen",
                 Title = "Повар-боец Сома: Третье блюдо - Часть II",
                 StudioName = "J.C. Staff",
                 ImageSrc = "",
@@ -124,6 +133,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var island = new Anime
             {
+                Key = "island",
                 Title = "Остров",
                 StudioName = "feet.",
                 ImageSrc = "",
@@ -132,6 +142,7 @@ namespace OtakuNET.Domain.DataProviders
             };
             var kempingOnFreshAir = new Anime
             {
+                Key = "kemping-on-fresh-air",
                 Title = "Лагерь на свежем воздухе",
                 StudioName = "C-Station",
                 ImageSrc = "https://desu.shikimori.org/system/animes/preview/34798.jpg?1520779534",
@@ -141,7 +152,7 @@ namespace OtakuNET.Domain.DataProviders
             dbContext.Anime.AddRange(new[]
             {
                 megalobox,
-                sevenDeathestFoolActions,
+                sevenDeathestBagActions,
                 cryingCyclist,
                 coldBloodKazuki,
                 higestSchoolDxD,
@@ -171,7 +182,7 @@ namespace OtakuNET.Domain.DataProviders
                 },
                 new Update
                 {
-                    Anime = sevenDeathestFoolActions,
+                    Anime = sevenDeathestBagActions,
                     Tag = "1",
                     Timestamp = DateTime.Now.AddDays(-25),
                     Infomation = new List<DataListInfomation>
@@ -279,7 +290,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Anime = somasKitchen,
                     Tag = "12",
-                    Timestamp = DateTime.Now,
+                    Timestamp = DateTime.Now.AddSeconds(-50),
                     Infomation = new List<DataListInfomation>
                     {
                         new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
@@ -296,7 +307,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Anime = island,
                     Tag = "анонс",
-                    Timestamp = DateTime.Now.AddSeconds(3),
+                    Timestamp = DateTime.Now.AddSeconds(-30),
                     Infomation = new List<DataListInfomation>
                     {
                         new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
@@ -311,7 +322,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Anime = kempingOnFreshAir,
                     Tag = "12",
-                    Timestamp = DateTime.Now.AddYears(1),
+                    Timestamp = DateTime.Now.AddYears(-1).AddSeconds(-12),
                     Infomation = new List<DataListInfomation>
                     {
                         new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
@@ -327,7 +338,7 @@ namespace OtakuNET.Domain.DataProviders
                 {
                     Anime = kempingOnFreshAir,
                     Tag = "релиз",
-                    Timestamp = DateTime.Now.AddYears(1).AddSeconds(12),
+                    Timestamp = DateTime.Now.AddYears(-1),
                     Infomation = new List<DataListInfomation>
                     {
                         new DataListInfomation { Key = "Тип", Value = "TV Сериал" },
@@ -344,24 +355,24 @@ namespace OtakuNET.Domain.DataProviders
             {
                 new News
                 {
-                    Title = "Промо ролик телеканала \"FAN\" и другие подробности.",
-                    Timestamp = DateTime.Now,
-                    ImageSrc = "https://kawai.shikimori.org/system/user_images/preview/33635/590241.jpg",
-                    Text = "Формат вещания: 16:9 / HD / Stereo.\nFAN — единственный в России телеканал, показывающий анимационное и игровое кино в жанре фэнтези и фантастики. Нарисованные миры, альтернативные реальности,наделенные сверхспособностями супергерои, яркие эмоции и новые впечатления — основа привлечения новой, самой большой потенциальной аудитории. В эфире телеканала — популярный и востребованный контент: культовые картины от основоположников жанра японских производителей"
+                    Title = "Старкон в Петербурге",
+                    Timestamp = DateTime.Now.AddDays(-1),
+                    ImageSrc = "",
+                    Text = "10 и 11 июня в Петербурге пройдёт ежегодный международный фестиваль фантастики, кино и науки — Старкон. Как и в прошлом году, “Старкон” пройдет в конгрессно-выставочном центре «Экспофорум». Всего в этом году ожидается больше 1300 косплееров из России и стран ближнего зарубежья. На главной сцене вы увидите зрелищные выступления косплееров и грандиозную шоу-программу."
                 },
                 new News
                 {
                     Title = "Маньхуа «Magmel of the Sea Blue» получит экранизацию",
-                    Timestamp = DateTime.Now.AddHours(12),
+                    Timestamp = DateTime.Now.AddHours(-12),
                     ImageSrc = "https://nyaa.shikimori.org/system/user_images/preview/136187/589235.jpg",
                     Text = "Компания Shueisha объявила, что маньхуа Magmel of the Sea Blue будет экранизирована. Также, стала известна команда, которая будет работать над адаптацией: Режиссёр — Хаято Датэ (Наруто: Ураганные хроники, Парни из магазинчика); Сценарист — Тюдзи Микасано(Токийский гуль, Токийский гуль √A); Музыка — Ясухару Таканаси (Сказка о Хвосте феи, Усопшие); Студия производства — Pierrot."
                 },
                 new News
                 {
-                    Title = "Старкон в Петербурге",
-                    Timestamp = DateTime.Now.AddDays(1),
-                    ImageSrc = "",
-                    Text = "10 и 11 июня в Петербурге пройдёт ежегодный международный фестиваль фантастики, кино и науки — Старкон. Как и в прошлом году, “Старкон” пройдет в конгрессно-выставочном центре «Экспофорум». Всего в этом году ожидается больше 1300 косплееров из России и стран ближнего зарубежья. На главной сцене вы увидите зрелищные выступления косплееров и грандиозную шоу-программу."
+                    Title = "Промо ролик телеканала \"FAN\" и другие подробности.",
+                    Timestamp = DateTime.Now,
+                    ImageSrc = "https://kawai.shikimori.org/system/user_images/preview/33635/590241.jpg",
+                    Text = "Формат вещания: 16:9 / HD / Stereo.\nFAN — единственный в России телеканал, показывающий анимационное и игровое кино в жанре фэнтези и фантастики. Нарисованные миры, альтернативные реальности,наделенные сверхспособностями супергерои, яркие эмоции и новые впечатления — основа привлечения новой, самой большой потенциальной аудитории. В эфире телеканала — популярный и востребованный контент: культовые картины от основоположников жанра японских производителей"
                 }
             });
 

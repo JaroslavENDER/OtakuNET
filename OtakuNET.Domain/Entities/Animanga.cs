@@ -5,7 +5,8 @@ namespace OtakuNET.Domain.Entities
 {
     public abstract class Animanga
     {
-        [Key] public string Title { get; set; }
+        [Key] public string Key { get; set; }
+        [Required] public string Title { get; set; }
         public string ImageSrc { get; set; }
         [Required, MaxLength(10)] public string Tag { get; set; }
         [Required, Range(0, 10)] public double Raiting { get; set; }
