@@ -26,6 +26,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 .Take(8)
                 .Select(a => new TitlePreviewViewModel
                 {
+                    Key = a.Key,
                     Name = a.Title,
                     Info = a.StudioName,
                     ImageSrc = a.ImageSrc
@@ -38,17 +39,17 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                     {
                         Name = ual.Name,
                         TitleCount = ual.Anime.Count,
-                        Description = 0
+                        Description = ual.Description
                     })
                     .ToList()
                 : new List<UserListInfoViewModel>
                 {
-                    new UserListInfoViewModel{ TitleCount = 0, Name = "Запланировано", Description = 0 },
-                    new UserListInfoViewModel{ TitleCount = 0, Name = "Смотрю", Description = 0 },
-                    new UserListInfoViewModel{ TitleCount = 0, Name = "Пересматриваю", Description = 0 },
-                    new UserListInfoViewModel{ TitleCount = 0, Name = "Просмотрено", Description = 0 },
-                    new UserListInfoViewModel{ TitleCount = 0, Name = "Отложено", Description = 0 },
-                    new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = 0 }
+                    new UserListInfoViewModel{ TitleCount = 0, Name = "Запланировано", Description = string.Empty },
+                    new UserListInfoViewModel{ TitleCount = 0, Name = "Смотрю", Description = string.Empty },
+                    new UserListInfoViewModel{ TitleCount = 0, Name = "Пересматриваю", Description = string.Empty },
+                    new UserListInfoViewModel{ TitleCount = 0, Name = "Просмотрено", Description = string.Empty },
+                    new UserListInfoViewModel{ TitleCount = 0, Name = "Отложено", Description = string.Empty },
+                    new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = string.Empty }
                 };
 
             model.UserMangaLists = userMangaList?.Count > 0
@@ -57,17 +58,17 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                     {
                         Name = uml.Name,
                         TitleCount = uml.Manga.Count,
-                        Description = 0
+                        Description = uml.Description
                     })
                     .ToList()
                 : new List<UserListInfoViewModel>
                 {
-                        new UserListInfoViewModel{ TitleCount = 0, Name = "Запланировано", Description = 0 },
-                        new UserListInfoViewModel{ TitleCount = 0, Name = "Читаю", Description = 0 },
-                        new UserListInfoViewModel{ TitleCount = 0, Name = "Перечитываю", Description = 0 },
-                        new UserListInfoViewModel{ TitleCount = 0, Name = "Прочитано", Description = 0 },
-                        new UserListInfoViewModel{ TitleCount = 0, Name = "Отложено", Description = 0 },
-                        new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = 0 }
+                        new UserListInfoViewModel{ TitleCount = 0, Name = "Запланировано", Description = string.Empty },
+                        new UserListInfoViewModel{ TitleCount = 0, Name = "Читаю", Description = string.Empty },
+                        new UserListInfoViewModel{ TitleCount = 0, Name = "Перечитываю", Description = string.Empty },
+                        new UserListInfoViewModel{ TitleCount = 0, Name = "Прочитано", Description = string.Empty },
+                        new UserListInfoViewModel{ TitleCount = 0, Name = "Отложено", Description = string.Empty },
+                        new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = string.Empty }
                 };
 
             model.AnimeRecomendationsFirstBlock = lastSeasons.Skip(lastSeasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Link = n.Key, LinkTitle = n.FullName }).ToList();
