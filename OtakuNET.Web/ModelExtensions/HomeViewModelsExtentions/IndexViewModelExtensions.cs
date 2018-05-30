@@ -1,9 +1,7 @@
 ﻿using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models.AnimangaViewModels;
 using OtakuNET.Web.Models.HomeViewModels;
-using OtakuNET.Web.Models.NewsViewModels;
 using OtakuNET.Web.Models.ProfileViewModels;
-using OtakuNET.Web.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,11 +13,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
             List<Anime> ongoings,
             List<UserAnimeList> userAnimeLists,
             List<UserMangaList> userMangaList,
-            List<AnimeSeason> lastSeasons,
-            List<News> lastNews,
-            List<Update> lastUpdates,
-            ITimestampFormatter timestampFormatter,
-            ITagTranslator tagTranslator)
+            List<AnimeSeason> seasons)
         {
             model.Ongoings = ongoings
                 .OrderByDescending(a => a.Updates.Max(u => u.Timestamp))
@@ -71,7 +65,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                         new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = string.Empty }
                 };
 
-            model.AnimeRecomendationsFirstBlock = lastSeasons.Skip(lastSeasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Link = n.Key, LinkTitle = n.FullName }).ToList();
+            model.AnimeRecomendationsFirstBlock = seasons.Skip(seasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Link = n.Key, LinkTitle = n.FullName }).ToList();
             model.AnimeRecomendationsSecondBlock = new List<RecomendationInfoViewModel>
             {
                 new RecomendationInfoViewModel
@@ -135,26 +129,6 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                     LinkTitle = "Персонализированные"
                 }
             };
-
-            model.News = lastNews
-                .Select(n => new OneNewsViewModel
-                {
-                    Title = n.Title,
-                    Timestamp = timestampFormatter.Format(n.Timestamp),
-                    ImageSrc = n.ImageSrc,
-                    Text = n.Text
-                })
-                .ToList();
-            model.Updates = lastUpdates.Take(8) //TODO: remove Take(8)
-                .Select(u => new OneUpdateViewModel
-                {
-                    Title = u.Anime.Title,
-                    Tag = tagTranslator.ToTag(u.Tag),
-                    //TagInfo = u.Tag,
-                    Timestamp = timestampFormatter.Format(u.Timestamp),
-                    ImageSrc = u.Anime.ImageSrc
-                })
-                .ToList();
 
             return model;
         }

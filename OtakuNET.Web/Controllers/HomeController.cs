@@ -14,22 +14,18 @@ namespace OtakuNET.Web.Controllers
     public class HomeController : Controller
     {
         private readonly IDbContext dbContext;
-        private readonly ITimestampFormatter timestampFormatter;
         private readonly ITagTranslator tagTranslator;
-        public HomeController(IDbContext dbContext, ITagTranslator tagTranslator, ITimestampFormatter timestampFormatter)
+        public HomeController(IDbContext dbContext, ITagTranslator tagTranslator)
         {
             this.dbContext = dbContext;
             this.tagTranslator = tagTranslator;
-            this.timestampFormatter = timestampFormatter;
         }
 
         public async Task<IActionResult> Index()
         {
-            var ongoings = await dbContext.Anime.Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing)).ToListAsync();
+            var ongoings = await dbContext.Anime.Include(a => a.Updates).Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing)).ToListAsync();
             var seasons = await dbContext.Seasons.ToListAsync();
-            var news = await dbContext.News.ToListAsync();
-            var updates = await dbContext.Updates.ToListAsync();
-            var model = new IndexViewModel().Initialize(ongoings, null, null, seasons, news, updates, timestampFormatter, tagTranslator);
+            var model = new IndexViewModel().Initialize(ongoings, null, null, seasons);
 
             return View(model);
         }

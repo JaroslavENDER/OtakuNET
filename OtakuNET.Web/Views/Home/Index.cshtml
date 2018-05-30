@@ -130,18 +130,14 @@
         <a asp-controller="News" asp-action="" title="">
             <header class="section__header section__header--news">Лента новостей</header>
         </a>
-        @{
-            await Html.RenderPartialAsync("/Views/NewsPartial/_NewsPartial.cshtml", new NewsPartialViewModel { News = Model.News });
-        }
+        @await Component.InvokeAsync("News")
     </section>
 
     <section class="section-updates">
         <a asp-controller="News" asp-action="Updates" title="">
             <header class="section__header section__header--updates">Обновления аниме</header>
         </a>
-        @{
-            await Html.RenderPartialAsync("/Views/NewsPartial/_UpdatesPartial.cshtml", new UpdatesPartialViewModel { Updates = Model.Updates });
-        }
+        @await Component.InvokeAsync("Updates")
     </section>
 
 </div>
