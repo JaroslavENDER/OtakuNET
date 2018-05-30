@@ -1,5 +1,13 @@
-﻿@{
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@using OtakuNET.Web.Models.HomeViewModels
+@using OtakuNET.Web.Models.NewsViewModels
+@model IndexViewModel
+@{
     ViewData["Title"] = "Главная";
+}
+
+@{ 
+    Model.AnimeRecomendationsFirstBlock.Reverse();
 }
 
 
@@ -8,62 +16,16 @@
         <header class="section__header section__header--ongoings">Сейчас на экранах</header>
     </a>
     <div class="section-ongoings__container">
-        <div class="title-preview" id="ongoings__title--1">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--2">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--3">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--4">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--5">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--6">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--7">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
-        <div class="title-preview" id="ongoings__title--8">
-            <a asp-controller="Anime" asp-action="Title" class="title-preview__link" title="Name">
-                <img src="~/images/missing.jpg" alt="" class="title-preview__image" />
-                <p class="title-preview__info">info</p>
-                <h3 class="title-preview__name title-preview__name--absolute">Name</h3>
-            </a>
-        </div>
+        @for (var i = 0; i < Model.Ongoings.Count; i++)
+        {
+            var titleModel = new TitlePreviewPartialViewModel
+            {
+                ControllerName = "Anime",
+                Title = Model.Ongoings[i],
+                TitlePreviewBlockId = $"ongoings__title--{i + 1}"
+            };
+            await Html.RenderPartialAsync("/Views/AnimangaPartial/_TitlePreviewPartial.cshtml", titleModel);
+        }
     </div>
 </section>
 
@@ -83,10 +45,12 @@
                         <header class="section__header section__header--seasons">Аниме</header>
                     </a>
                     <ul class="middle-section__first__column__list">
-                        <a asp-controller="Anime" asp-action="Season" title=""><li class="middle-section__first__column__list-item">Летний сезон</li></a>
-                        <a asp-controller="Anime" asp-action="Season" title=""><li class="middle-section__first__column__list-item">Весенний сезон</li></a>
-                        <a asp-controller="Anime" asp-action="Season" title=""><li class="middle-section__first__column__list-item">Зимний сезон</li></a>
-                        <a asp-controller="Anime" asp-action="Season" title=""><li class="middle-section__first__column__list-item">Осенний сезон</li></a>
+                        @foreach (var season in Model.AnimeRecomendationsFirstBlock)
+                        {
+                            <a asp-controller="Anime" asp-action="Season" title="@season.LinkTitle">
+                                <li class="middle-section__first__column__list-item">@season.Text</li>
+                            </a>
+                        }
                     </ul>
                 </div>
                 <div class="middle-section__first__column">
@@ -94,9 +58,12 @@
                         <header class="section__header section__header--recomendations">Рекомендации</header>
                     </a>
                     <ul class="middle-section__first__column__list">
-                        <a asp-controller="Anime" asp-action="List" title=""><li class="middle-section__first__column__list-item">Избранное</li></a>
-                        <a asp-controller="Anime" asp-action="List" title=""><li class="middle-section__first__column__list-item">От сообщества</li></a>
-                        <a asp-controller="Anime" asp-action="List" title=""><li class="middle-section__first__column__list-item">Персонализированные</li></a>
+                        @foreach (var recomendations in Model.AnimeRecomendationsSecondBlock)
+                        {
+                            <a asp-controller="Anime" asp-action="List" title="@recomendations.LinkTitle">
+                                <li class="middle-section__first__column__list-item">@recomendations.Text</li>
+                            </a>
+                        }
                     </ul>
                 </div>
             </div>
@@ -106,10 +73,12 @@
                         <header class="section__header section__header--seasons">Манга</header>
                     </a>
                     <ul class="middle-section__first__column__list">
-                        <a asp-controller="Manga" asp-action="List" title=""><li class="middle-section__first__column__list-item">Манга</li></a>
-                        <a asp-controller="Manga" asp-action="List" title=""><li class="middle-section__first__column__list-item">Ваншот</li></a>
-                        <a asp-controller="Manga" asp-action="List" title=""><li class="middle-section__first__column__list-item">Додзинси</li></a>
-                        <a asp-controller="Manga" asp-action="List" title=""><li class="middle-section__first__column__list-item">Маньхуа</li></a>
+                        @foreach (var mangaType in Model.MangaRecomendationsFirstBlock)
+                        {
+                            <a asp-controller="Manga" asp-action="List" title="@mangaType.LinkTitle">
+                                <li class="middle-section__first__column__list-item">@mangaType.Text</li>
+                            </a>
+                        }
                     </ul>
                 </div>
                 <div class="middle-section__first__column">
@@ -117,8 +86,12 @@
                         <header class="section__header section__header--recomendations">Рекомендации</header>
                     </a>
                     <ul class="middle-section__first__column__list">
-                        <a asp-controller="Manga" asp-action="List" title=""><li class="middle-section__first__column__list-item">Избранное</li></a>
-                        <a asp-controller="Manga" asp-action="List" title=""><li class="middle-section__first__column__list-item">Персонализированные</li></a>
+                        @foreach (var recomendation in Model.MangaRecomendationsSecondBlock)
+                        {
+                            <a asp-controller="Manga" asp-action="List" title="@recomendation.LinkTitle">
+                                <li class="middle-section__first__column__list-item">@recomendation.Text</li>
+                            </a>
+                        }
                     </ul>
                 </div>
             </div>
@@ -127,57 +100,23 @@
         <div class="middle-section__second">
             <div class="middle-section__second__container" id="middle-section__second__radio-button-block--anime" hidden>
                 <header class="middle-section__second__header">Мои списки аниме</header>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Запланировано</a>
-                    <span class="middle-section__second__list-counter">223</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Смотрю</a>
-                    <span class="middle-section__second__list-counter">35</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Пересматриваю</a>
-                    <span class="middle-section__second__list-counter">0</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Просмотрено</a>
-                    <span class="middle-section__second__list-counter">156</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Отложено</a>
-                    <span class="middle-section__second__list-counter">0</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Брошено</a>
-                    <span class="middle-section__second__list-counter">0</span>
-                </div>
+                @foreach (var userList in Model.UserAnimeLists)
+                {
+                    <div class="middle-section__second__list">
+                        <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                        <span class="middle-section__second__list-counter">@userList.TitleCount</span>
+                    </div>
+                }
             </div>
             <div class="middle-section__second__container" id="middle-section__second__radio-button-block--manga" hidden>
                 <header class="middle-section__second__header">Мои списки манги</header>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Запланировано</a>
-                    <span class="middle-section__second__list-counter">3</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Читаю</a>
-                    <span class="middle-section__second__list-counter">2</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Перечитываю</a>
-                    <span class="middle-section__second__list-counter">0</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Прочитано</a>
-                    <span class="middle-section__second__list-counter">5</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Отложено</a>
-                    <span class="middle-section__second__list-counter">0</span>
-                </div>
-                <div class="middle-section__second__list">
-                    <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name">Брошено</a>
-                    <span class="middle-section__second__list-counter">0</span>
-                </div>
+                @foreach (var userList in Model.UserMangaLists)
+                {
+                    <div class="middle-section__second__list">
+                        <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                        <span class="middle-section__second__list-counter">@userList.TitleCount</span>
+                    </div>
+                }
             </div>
         </div>
 
@@ -192,7 +131,7 @@
             <header class="section__header section__header--news">Лента новостей</header>
         </a>
         @{
-            Html.RenderPartial("_NewsPartial");
+            await Html.RenderPartialAsync("/Views/NewsPartial/_NewsPartial.cshtml", new NewsPartialViewModel { News = Model.News });
         }
     </section>
 
@@ -201,7 +140,7 @@
             <header class="section__header section__header--updates">Обновления аниме</header>
         </a>
         @{
-            Html.RenderPartial("_UpdatesPartial");
+            await Html.RenderPartialAsync("/Views/NewsPartial/_UpdatesPartial.cshtml", new UpdatesPartialViewModel { Updates = Model.Updates });
         }
     </section>
 

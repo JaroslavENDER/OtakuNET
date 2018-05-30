@@ -70,7 +70,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                         new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = 0 }
                 };
 
-            model.AnimeRecomendationsFirstBlock = lastSeasons.Select(n => new RecomendationInfoViewModel { Text = n.Name, Link = n.Key, LinkTitle = n.FullName }).ToList();
+            model.AnimeRecomendationsFirstBlock = lastSeasons.Skip(lastSeasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Link = n.Key, LinkTitle = n.FullName }).ToList();
             model.AnimeRecomendationsSecondBlock = new List<RecomendationInfoViewModel>
             {
                 new RecomendationInfoViewModel
@@ -144,7 +144,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                     Text = n.Text
                 })
                 .ToList();
-            model.Updates = lastUpdates
+            model.Updates = lastUpdates.Take(8) //TODO: remove Take(8)
                 .Select(u => new OneUpdateViewModel
                 {
                     Title = u.Anime.Title,
