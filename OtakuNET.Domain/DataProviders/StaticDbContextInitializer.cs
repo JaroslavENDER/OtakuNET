@@ -1047,10 +1047,16 @@ namespace OtakuNET.Domain.DataProviders
                 Key = "custom-list",
                 Name = "Кастомный список",
                 Description = "Список с двумя аниме, созданный пользователем",
-                Anime = new List<Anime>
+                Anime = new List<Anime_AnimeList>
                 {
-                    kempingOnFreshAir,
-                    somasKitchen
+                    new Anime_AnimeList
+                    {
+                        Anime = kempingOnFreshAir
+                    },
+                    new Anime_AnimeList
+                    {
+                        Anime = somasKitchen
+                    }
                 }
             };
             dbContext.Profiles.AddRange(new[]
@@ -1082,9 +1088,12 @@ namespace OtakuNET.Domain.DataProviders
                         {
                             Key = "a-completed",
                             Name = "Просмотрено",
-                            Anime = new List<Anime>
+                            Anime = new List<Anime_AnimeList>
                             {
-                                kempingOnFreshAir
+                                new Anime_AnimeList
+                                {
+                                    Anime = kempingOnFreshAir
+                                }
                             }
                         },
                         new UserAnimeList

@@ -8,13 +8,13 @@ namespace OtakuNET.Domain.Entities
         [Required] public AnimeSeason Season { get; set; }
         
         public List<Update> Updates { get; set; }
-        public List<UserAnimeList> UserLists { get; set; }
+        public List<Anime_AnimeList> UserLists { get; set; }
 
         public Anime()
             : base()
         {
             Updates = new List<Update>();
-            UserLists = new List<UserAnimeList>();
+            UserLists = new List<Anime_AnimeList>();
         }
     }
 }
