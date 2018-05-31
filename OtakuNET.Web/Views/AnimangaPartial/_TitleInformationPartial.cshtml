@@ -1,0 +1,38 @@
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@model TitleInformationViewModel
+
+@{
+    var tag = Model.Tag;
+    var tagClass = tag == Tag.Announce
+        ? "tag--announce"
+        : tag == Tag.Ongoing
+            ? "tag--ongoing"
+            : tag == Tag.Release
+                ? "tag--release"
+                : string.Empty;
+    var tagText = tag == Tag.Announce
+        ? "анонс"
+        : tag == Tag.Ongoing
+            ? "онгоинг"
+            : tag == Tag.Release
+                ? "релиз"
+                : string.Empty;
+}
+
+<dl>
+    @foreach (var info in Model.Information)
+    {
+        <dt>@info.Key</dt>
+        <dd>
+            @if (string.Equals(info.Key, "Статус", StringComparison.OrdinalIgnoreCase))
+            {
+                <span class="tag @tagClass">@tagText</span>
+            }
+            @foreach (var value in info.Values)
+            {
+                <span>@value</span>
+            }
+        </dd>
+
+    }
+</dl>

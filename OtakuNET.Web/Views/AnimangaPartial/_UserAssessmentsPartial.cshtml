@@ -1,0 +1,16 @@
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@model RaitingViewModel
+
+@{
+    var maxValue = Model.UserAssessments.Max(a => a.Value);
+}
+
+@foreach (var assessment in Model.UserAssessments)
+{
+    <div class="diagram">
+        <span>@assessment.Key</span>
+        <div class="diagram__line" title="@assessment.Value" style="width: @(assessment.Value / maxValue * 90)%">
+            <span>@assessment.Value</span>
+        </div>
+    </div>
+}

@@ -1,0 +1,16 @@
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@model TitleInUserListsViewModel
+
+@{
+    var maxValue = Model.InUserLists.Max(a => a.Value);
+}
+
+@foreach (var list in Model.InUserLists)
+{
+    <div class="diagram">
+        <span>@list.Key</span>
+        <div class="diagram__line" title="@(list.Value  / maxValue * 70)" style="width: @(list.Value  / maxValue * 65)%">
+            <span>@list.Value</span>
+        </div>
+    </div>
+}

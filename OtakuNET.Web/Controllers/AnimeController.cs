@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
+using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
+using OtakuNET.Web.Models.AnimangaViewModels;
 using OtakuNET.Web.Models.AnimeViewModels;
+using OtakuNET.Web.Services;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,12 +15,20 @@ namespace OtakuNET.Web.Controllers
     public class AnimeController : Controller
     {
         private readonly IDbContext dbContext;
-        public AnimeController(IDbContext dbContext)
-            => this.dbContext = dbContext;
-
-        public IActionResult Title(int id)
+        private readonly ITagTranslator tagTranslator;
+        public AnimeController(IDbContext dbContext, ITagTranslator tagTranslator)
         {
-            return View();
+            this.dbContext = dbContext;
+            this.tagTranslator = tagTranslator;
+        }
+
+        public async Task<IActionResult> Title(string key)
+        {
+            var title = await dbContext.Anime.Include(a => a.Links).Include(a => a.Information).FirstOrDefaultAsync(a => a.Key == key);
+            if (title == null) return NotFound();
+            var userLists = new List<UserAnimeList>();
+            var model = new TitleViewModel().Initialize(title, userLists, tagTranslator);
+            return View(model);
         }
 
         public async Task<IActionResult> List()

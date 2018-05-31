@@ -1,10 +1,20 @@
-﻿
+﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@model TitleViewModel
 @{
-    ViewData["Title"] = "Повар-боец Сома: Третье блюдо — Часть II";
+    ViewData["Title"] = Model.Title;
+}
+
+@{
+    Model.ImageSrc = string.IsNullOrEmpty(Model.ImageSrc)
+        ? "/images/missing.jpg"
+        : Model.ImageSrc;
+    Model.StudioImageSrc = string.IsNullOrEmpty(Model.StudioImageSrc)
+        ? "/images/missing-square.jpg"
+        : Model.StudioImageSrc;
 }
 
 <header class="title__header">
-    Повар-боец Сома: Третье блюдо — Часть II
+    @Model.Title
 </header>
 
 <div class="flex__flex-container">
@@ -12,18 +22,14 @@
     <div class="flex__main-container flex__flex-container">
 
         <section class="title__section-art">
-            <img src="~/images/missing.jpg" alt="" class="title__section-art__image" />
-            <div class="in-list">Добавить в список</div>
-            <div class="title__episode-counter">
-                <span class="title__episode-counter__text">Эпизоды</span>
-                <span class="title__episode-counter__counter">0</span>
-            </div>
+            <img src="@Model.ImageSrc" alt="" class="title__section-art__image" />
+            @await Html.PartialAsync("/Views/AnimangaPartial/_UserListsControlPartial.cshtml", Model.UserListControls)
             <div class="title__my-raiting">
-                <div class="star star--active-empt"></div>
-                <div class="star star--active-empt"></div>
-                <div class="star star--active-empt"></div>
-                <div class="star star--active-empt"></div>
-                <div class="star star--active-empt"></div>
+                @await Html.PartialAsync("/Views/AnimangaPartial/_RaitingPartial.cshtml", new RaitingPartialViewModel
+                {
+                    IsActive = true,
+                    Raiting = Model.Raiting
+                })
             </div>
         </section>
 
@@ -34,41 +40,23 @@
                 <div>
                     <section class="title__section-info">
                         <header class="section__header section__header--min">Информация</header>
-                        <dl>
-                            <dt>Тип</dt>
-                            <dd>TV Сериал</dd>
-                            <dt>Эпизоды</dt>
-                            <dd>6 / 12</dd>
-                            <dt>Длительность эпизода</dt>
-                            <dd>24 мин.</dd>
-                            <dt>Статус</dt>
-                            <dd>
-                                <span class="tag tag--ongoing">онгоинг</span>
-                                <span>с 8 апр. 2018 г.</span>
-                            </dd>
-                            <dt>Жанры</dt>
-                            <dd>Этти Школа Сенен</dd>
-                            <dt>Рейтинг</dt>
-                            <dd>PG-13</dd>
-                            <dt>Альтернативное название</dt>
-                            <dd>Shokugeki no Souma: San no Sara - Toutsuki Ressha-hen</dd>
-                        </dl>
+                        @await Html.PartialAsync("/Views/AnimangaPartial/_TitleInformationPartial.cshtml", Model.Information)
                     </section>
                     <section class="title__section-raiting">
                         <header class="section__header section__header--min">Рейтинг</header>
-                        <div class="star star--passive-fill" title="8.57 Отлично"></div>
-                        <div class="star star--passive-fill" title="8.57 Отлично"></div>
-                        <div class="star star--passive-fill" title="8.57 Отлично"></div>
-                        <div class="star star--passive-fill" title="8.57 Отлично"></div>
-                        <div class="star star--passive-part" title="8.57 Отлично"></div>
+                        @await Html.PartialAsync("/Views/AnimangaPartial/_RaitingPartial.cshtml", new RaitingPartialViewModel
+                        {
+                            IsActive = false,
+                            Raiting = Model.Raiting
+                        })
                     </section>
                 </div>
 
                 <div>
                     <section class="title__section-studio">
                         <header class="section__header section__header--min">Студия</header>
-                        <a asp-controller="Anime" asp-action="List" title="Studio name">
-                            <img src="~/images/missing-square.jpg" alt="" class="title__section-studio__image" />
+                        <a asp-controller="Anime" asp-action="List" title="@Model.StudioName">
+                            <img src="@Model.StudioImageSrc" alt="" class="title__section-studio__image" />
                         </a>
                     </section>
                 </div>
@@ -78,7 +66,7 @@
             <section class="title__section-description">
                 <header class="section__header section__header--min">Описание</header>
                 <p class="title__section-description__text">
-                    Отец Эрины Накири, Азами, как и хотел, встал на пост директора кулинарной академии. С его приходом всё изменилось: правила стали жёстче, плохих учеников сразу выгоняют, а с теми, кто против изменений, обращаются крайне плохо. Сама же Эрина сбежала из дома и прячется в общежитии, где живёт Сома. Теперь девушка решила встать против тирании отца, дабы спасти своих друзей от участи предстоящих экзаменов, проводимых по всему Хоккайдо.
+                    @Model.Description
                 </p>
             </section>
 
@@ -89,81 +77,18 @@
     <div class="flex__right-panel">
         <section class="title__diagram-section">
             <header class="section__header section__header--min">Оценки людей</header>
-            <div class="diagram">
-                <span>10</span>
-                <div class="diagram__line" style="width: 90%">
-                    <span>902</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>9</span>
-                <div class="diagram__line" style="width: 85%">
-                    <span>855</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>8</span>
-                <div class="diagram__line" style="width: 80%">
-                    <span>809</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>7</span>
-                <div class="diagram__line" style="width: 70%">
-                    <span>700</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>6</span>
-                <div class="diagram__line" style="width: 69%">
-                    <span>693</span>
-                </div>
-            </div>
+            @await Html.PartialAsync("/Views/AnimangaPartial/_UserAssessmentsPartial.cshtml", Model.Raiting)
         </section>
         <section class="title__diagram-section">
             <header class="section__header section__header--min">В списках у людей</header>
-            <div class="diagram">
-                <span>Запланировано</span>
-                <div class="diagram__line" style="width: 65%">
-                    <span>8112</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>Смотрю</span>
-                <div class="diagram__line" style="width: 61%">
-                    <span>7343</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>Пересматриваю</span>
-                <div class="diagram__line" style="width: 0%">
-                    <span> </span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>Просмотрено</span>
-                <div class="diagram__line" style="width: 0%">
-                    <span> </span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>Отложено</span>
-                <div class="diagram__line" style="width: 10%">
-                    <span>23</span>
-                </div>
-            </div>
-            <div class="diagram">
-                <span>Брошено</span>
-                <div class="diagram__line" style="width: 2%">
-                    <span> </span>
-                </div>
-            </div>
+            @await Html.PartialAsync("/Views/AnimangaPartial/_TitleInUserListsPartial.cshtml", Model.InUserLists)
         </section>
         <section class="title__outer-links">
             <header class="section__header section__header--min">На других сайтах</header>
-            <a href="">Официальный сайт</a><br />
-            <a href="">Википедия</a><br />
-            <a href="">AniLibria</a><br />
+            @foreach (var link in Model.Links)
+            {
+                <a href="@link.Href" title="@link.Text">@link.Text</a><br />
+            }
         </section>
     </div>
 
