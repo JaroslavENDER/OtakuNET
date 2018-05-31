@@ -4,9 +4,9 @@ namespace OtakuNET.Domain.Entities
 {
     public class UserMangaList : UserList
     {
-        public List<Manga> Manga { get; set; }
+        public List<Manga_MangaList> Manga { get; set; }
 
         public UserMangaList()
-            => Manga = new List<Manga>();
+            => Manga = new List<Manga_MangaList>();
     }
 }
