@@ -1042,6 +1042,127 @@ namespace OtakuNET.Domain.DataProviders
                 }
             });
 
+            var customUserList = new UserAnimeList
+            {
+                Key = "custom-list",
+                Name = "Кастомный список",
+                Description = "Список с двумя аниме, созданный пользователем",
+                Anime = new List<Anime>
+                {
+                    kempingOnFreshAir,
+                    somasKitchen
+                }
+            };
+            dbContext.Profiles.AddRange(new[]
+            {
+                new Profile
+                {
+                    Id = "testId",
+                    Login = "JaroslavENDER",
+                    Name = "Ender",
+                    AvatarSrc = "",
+                    AnimeListSet = new List<UserAnimeList>
+                    {
+                        new UserAnimeList
+                        {
+                            Key = "a-planed",
+                            Name = "Запланировано",
+                        },
+                        new UserAnimeList
+                        {
+                            Key = "a-watching",
+                            Name = "Смотрю",
+                        },
+                        new UserAnimeList
+                        {
+                            Key = "a-rewatching",
+                            Name = "Пересматриваю",
+                        },
+                        new UserAnimeList
+                        {
+                            Key = "a-completed",
+                            Name = "Просмотрено",
+                            Anime = new List<Anime>
+                            {
+                                kempingOnFreshAir
+                            }
+                        },
+                        new UserAnimeList
+                        {
+                            Key = "a-paused",
+                            Name = "Отложено",
+                        },
+                        new UserAnimeList
+                        {
+                            Key = "a-droped",
+                            Name = "Брошено",
+                        },
+                        customUserList
+                    },
+                    MangaListSet = new List<UserMangaList>
+                    {
+                        new UserMangaList
+                        {
+                            Key = "m-planed",
+                            Name = "Запланировано",
+                        },
+                        new UserMangaList
+                        {
+                            Key = "m-watching",
+                            Name = "Читаю",
+                        },
+                        new UserMangaList
+                        {
+                            Key = "m-rewatching",
+                            Name = "Перечитываю",
+                        },
+                        new UserMangaList
+                        {
+                            Key = "m-completed",
+                            Name = "Прочитано",
+                        },
+                        new UserMangaList
+                        {
+                            Key = "m-paused",
+                            Name = "Отложено",
+                        },
+                        new UserMangaList
+                        {
+                            Key = "m-droped",
+                            Name = "Брошено",
+                        }
+                    },
+                    History = new List<ProfileHistoryItem>
+                    {
+                        new ProfileHistoryItem
+                        {
+                            Timestamp = DateTime.Now.AddYears(-1),
+                            Text = "Зарегистрировался на сайте"
+                        },
+                        new ProfileHistoryItem
+                        {
+                            Timestamp = DateTime.Now.AddDays(-2),
+                            Text = "Добавлено в список",
+                            Anime = somasKitchen,
+                            UserList = customUserList
+                        },
+                        new ProfileHistoryItem
+                        {
+                            Timestamp = DateTime.Now.AddDays(-2),
+                            Text = "Добавлено в список",
+                            Anime = kempingOnFreshAir,
+                            UserList = customUserList
+                        },
+                        new ProfileHistoryItem
+                        {
+                            Timestamp = DateTime.Now.AddSeconds(-30),
+                            Text = "Просмотрено",
+                            Anime = kempingOnFreshAir
+                        }
+                    }
+                }
+            });
+
             dbContext.SaveChanges();
         }
     }
