@@ -5,6 +5,10 @@
     Model.ImageSrc = string.IsNullOrEmpty(Model.ImageSrc)
         ? "/images/missing.jpg"
         : Model.ImageSrc;
+    var routeData = new Dictionary<string, string>
+    {
+        ["key"] = Model.TitleKey
+    };
     var tag = Model.Tag;
     var tagClass = tag == Tag.Announce
         ? "tag--announce"
@@ -29,12 +33,12 @@
 <article class="update-node">
     <header class="update-node__header">
         <span class="tag @tagClass">@tagText</span>
-        <a asp-controller="Anime" asp-action="Title" title="" class="title-preview__name title-preview__name--big">@Model.Title</a>
+        <a asp-controller="Anime" asp-action="Title" asp-all-route-data="routeData" title="" class="title-preview__name title-preview__name--big">@Model.Title</a>
         <span class="title-preview__info">@Model.Timestamp</span>
     </header>
     <div class="update-node__container">
         <div class="update-node__image">
-            <a asp-controller="Anime" asp-action="Title" title="">
+            <a asp-controller="Anime" asp-action="Title" asp-all-route-data="routeData" title="">
                 <img src="@Model.ImageSrc" alt="" class="update-node__image__image" />
             </a>
         </div>

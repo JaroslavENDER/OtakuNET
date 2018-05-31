@@ -13,6 +13,7 @@ namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
             return new OneUpdateViewModel
             {
                 Title = update.Anime.Title,
+                TitleKey = update.Anime.Key,
                 Tag = tagTranslator.ToTag(update.Tag),
                 TagInfo = update.Tag,
                 Timestamp = timestampFormatter.Format(update.Timestamp),
