@@ -22,3 +22,8 @@
         width: 50%;
     }
 }
+
+.list__header {
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+}

@@ -34,13 +34,23 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> List()
         {
             var titles = await dbContext.Anime.Include(a => a.Updates).OrderByDescending(a => a.Updates.Max(u => u.Timestamp)).ToListAsync();
-            var model = new AnimeListViewModel().Initialize(titles);
+            var model = new AnimeListViewModel().Initialize(titles, "Аниме, отсортированные по дате последнего обновления");
             return View(model);
         }
 
-        public IActionResult Season(string season)
+        public async Task<IActionResult> Season(string key)
         {
-            return View();
+            var season = await dbContext.Seasons.Include(s => s.Animes).ThenInclude(a => a.Updates).FirstOrDefaultAsync(s => s.Key == key);
+            if (season == null) return NotFound();
+            var model = new AnimeListViewModel().Initialize(season.Animes.OrderByDescending(a => a.Updates.Max(u => u.Timestamp)), season.FullName);
+            return View("List", model);
+        }
+
+        public async Task<IActionResult> Studio(string key)
+        {
+            var titles = await dbContext.Anime.Include(a => a.Updates).Where(a => a.StudioName == key).OrderByDescending(a => a.Updates.Max(u => u.Timestamp)).ToListAsync();
+            var model = new AnimeListViewModel().Initialize(titles, $"Аниме студии {key}");
+            return View("List", model);
         }
     }
 }
