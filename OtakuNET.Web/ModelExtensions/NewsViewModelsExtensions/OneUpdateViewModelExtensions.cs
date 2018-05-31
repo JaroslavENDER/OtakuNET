@@ -2,7 +2,7 @@
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.NewsViewModels;
 using OtakuNET.Web.Services;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
 {
@@ -17,13 +17,7 @@ namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
                 TagInfo = update.Tag,
                 Timestamp = timestampFormatter.Format(update.Timestamp),
                 ImageSrc = update.Anime.ImageSrc,
-                Info = update.Infomation
-                    .GroupBy(info => info.Name)
-                    .Select(group => new DataListInformationViewModel
-                    {
-                        Key = group.Key,
-                        Values = group.Select(g => g.Value).ToList()
-                    }).ToList()
+                Info = new List<DataListInformationViewModel>().Initialize(update.Infomation)
             };
         }
     }
