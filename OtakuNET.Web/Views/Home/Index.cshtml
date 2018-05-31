@@ -47,7 +47,7 @@
                     <ul class="middle-section__first__column__list">
                         @foreach (var season in Model.AnimeRecomendationsFirstBlock)
                         {
-                            <a asp-controller="Anime" asp-action="Season" title="@season.LinkTitle">
+                            <a href="@season.Href" title="@season.LinkTitle">
                                 <li class="middle-section__first__column__list-item">@season.Text</li>
                             </a>
                         }
@@ -60,7 +60,7 @@
                     <ul class="middle-section__first__column__list">
                         @foreach (var recomendations in Model.AnimeRecomendationsSecondBlock)
                         {
-                            <a asp-controller="Anime" asp-action="List" title="@recomendations.LinkTitle">
+                            <a href="@recomendations.Href" title="@recomendations.LinkTitle">
                                 <li class="middle-section__first__column__list-item">@recomendations.Text</li>
                             </a>
                         }
@@ -75,7 +75,7 @@
                     <ul class="middle-section__first__column__list">
                         @foreach (var mangaType in Model.MangaRecomendationsFirstBlock)
                         {
-                            <a asp-controller="Manga" asp-action="List" title="@mangaType.LinkTitle">
+                            <a href="@mangaType.Href" title="@mangaType.LinkTitle">
                                 <li class="middle-section__first__column__list-item">@mangaType.Text</li>
                             </a>
                         }
@@ -88,7 +88,7 @@
                     <ul class="middle-section__first__column__list">
                         @foreach (var recomendation in Model.MangaRecomendationsSecondBlock)
                         {
-                            <a asp-controller="Manga" asp-action="List" title="@recomendation.LinkTitle">
+                            <a href="@recomendation.Href" title="@recomendation.LinkTitle">
                                 <li class="middle-section__first__column__list-item">@recomendation.Text</li>
                             </a>
                         }

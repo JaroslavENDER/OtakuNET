@@ -51,25 +51,25 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                         new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = string.Empty }
                 };
 
-            model.AnimeRecomendationsFirstBlock = seasons.Skip(seasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Link = n.Key, LinkTitle = n.FullName }).ToList();
+            model.AnimeRecomendationsFirstBlock = seasons.Skip(seasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Href = $"/Anime/Season/{n.Key}", LinkTitle = n.FullName }).ToList();
             model.AnimeRecomendationsSecondBlock = new List<RecomendationInfoViewModel>
             {
                 new RecomendationInfoViewModel
                 {
                     Text = "Избранное",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Избранное"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "От сообщества",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "От сообщества"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Персонализированные",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Персонализированные"
                 }
             };
@@ -78,25 +78,25 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 new RecomendationInfoViewModel
                 {
                     Text = "Манга",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Манга"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Ваншот",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Ваншот"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Додзинси",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Додзинси"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Маньхуа",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Маньхуа"
                 }
             };
@@ -105,13 +105,13 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 new RecomendationInfoViewModel
                 {
                     Text = "Избранное",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Избранное"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Персонализированные",
-                    Link = "",
+                    Href = "",
                     LinkTitle = "Персонализированные"
                 }
             };
