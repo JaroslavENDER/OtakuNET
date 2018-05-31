@@ -54,7 +54,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "megalobox",
                 Title = "Мегалобокс",
-                ImageSrc = "https://desu.shikimori.org/system/animes/preview/36563.jpg?1524534309",
+                ImageSrc = "https://desu.shikimori.org/system/animes/original/36563.jpg?1524534309",
                 Raiting = 8.41,
                 StudioName = "TMS Entertaiment",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/73.?1413190852",
@@ -127,7 +127,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "seven-deathest-bad-actions",
                 Title = "Семь смертных грехов",
-                ImageSrc = "https://moe.shikimori.org/system/animes/preview/34577.jpg?1524426711",
+                ImageSrc = "https://moe.shikimori.org/system/animes/original/34577.jpg?1524426711",
                 Raiting = 7.94,
                 StudioName = "A-1 Pictures Inc.",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/56.?1434707196",
@@ -200,7 +200,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "crying-cyclist",
                 Title = "Трусливый велосипедист",
-                ImageSrc = "https://dere.shikimori.org/system/animes/preview/35789.jpg?1524471359",
+                ImageSrc = "https://dere.shikimori.org/system/animes/original/35789.jpg?1524471359",
                 Raiting = 7.86,
                 StudioName = "TMS Entertaiment",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/73.?1413190852",
@@ -273,7 +273,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "cold-blood-kazuki",
                 Title = "Хладнокровный Казуки",
-                ImageSrc = "https://dere.shikimori.org/system/animes/preview/37029.jpg?1524543379",
+                ImageSrc = "https://dere.shikimori.org/system/animes/original/37029.jpg?1524543379",
                 Raiting = 7.8,
                 StudioName = "Studio DEEN",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/37.?1434707541",
@@ -346,7 +346,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "higest-school-dxd",
                 Title = "Старшая школа DxD",
-                ImageSrc = "https://kawai.shikimori.org/system/animes/preview/34281.jpg?1524528930",
+                ImageSrc = "https://kawai.shikimori.org/system/animes/original/34281.jpg?1524528930",
                 Raiting = 7.52,
                 StudioName = "Passione",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/911.jpg?1402343502",
@@ -419,7 +419,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "second-maid-joo",
                 Title = "Второй Мейджор",
-                ImageSrc = "https://nyaa.shikimori.org/system/animes/preview/36565.jpg?1524536113",
+                ImageSrc = "https://nyaa.shikimori.org/system/animes/original/36565.jpg?1524536113",
                 Raiting = 7.59,
                 StudioName = "NHK Enterprises",
                 StudioImageSrc = "",
@@ -492,7 +492,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "hisone-and-maco",
                 Title = "Хисонэ и Масо",
-                ImageSrc = "https://dere.shikimori.org/system/animes/preview/36884.jpg?1524527111",
+                ImageSrc = "https://dere.shikimori.org/system/animes/original/36884.jpg?1524527111",
                 Raiting = 7.5,
                 StudioName = "Bones",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/4.png?1311292711",
@@ -565,7 +565,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "persona5",
                 Title = "Персона 5",
-                ImageSrc = "https://desu.shikimori.org/system/animes/preview/36023.jpg?1524543344",
+                ImageSrc = "https://desu.shikimori.org/system/animes/original/36023.jpg?1524543344",
                 Raiting = 7.17,
                 StudioName = "A-1 Pictures Inc.",
                 StudioImageSrc = "",
@@ -753,7 +753,7 @@ namespace OtakuNET.Domain.DataProviders
             {
                 Key = "kemping-on-fresh-air",
                 Title = "Лагерь на свежем воздухе",
-                ImageSrc = "https://desu.shikimori.org/system/animes/preview/34798.jpg?1520779534",
+                ImageSrc = "https://desu.shikimori.org/system/animes/original/34798.jpg?1520779534",
                 Raiting = 8.35,
                 StudioName = "C-Station",
                 StudioImageSrc = "",
