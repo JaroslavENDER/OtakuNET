@@ -103,7 +103,7 @@
                 @foreach (var userList in Model.UserAnimeLists)
                 {
                     <div class="middle-section__second__list">
-                        <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                        <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
                         <span class="middle-section__second__list-counter">@userList.TitleCount</span>
                     </div>
                 }
@@ -113,7 +113,7 @@
                 @foreach (var userList in Model.UserMangaLists)
                 {
                     <div class="middle-section__second__list">
-                        <a asp-controller="Profile" asp-action="UserName" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                        <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
                         <span class="middle-section__second__list-counter">@userList.TitleCount</span>
                     </div>
                 }
