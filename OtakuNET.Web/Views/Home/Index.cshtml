@@ -1,6 +1,5 @@
 ﻿@using OtakuNET.Web.Models.AnimangaViewModels
 @using OtakuNET.Web.Models.HomeViewModels
-@using OtakuNET.Web.Models.NewsViewModels
 @model IndexViewModel
 @{
     ViewData["Title"] = "Главная";
@@ -12,7 +11,7 @@
 
 
 <section class="section-ongoings">
-    <a asp-controller="Anime" asp-action="List">
+    <a asp-controller="Anime" asp-action="Ongoings">
         <header class="section__header section__header--ongoings">Сейчас на экранах</header>
     </a>
     <div class="section-ongoings__container">
@@ -130,14 +129,14 @@
         <a asp-controller="News" asp-action="" title="">
             <header class="section__header section__header--news">Лента новостей</header>
         </a>
-        @await Component.InvokeAsync("News")
+        @await Component.InvokeAsync("News", 3)
     </section>
 
     <section class="section-updates">
         <a asp-controller="News" asp-action="Updates" title="">
             <header class="section__header section__header--updates">Обновления аниме</header>
         </a>
-        @await Component.InvokeAsync("Updates")
+        @await Component.InvokeAsync("Updates", 3)
     </section>
 
 </div>

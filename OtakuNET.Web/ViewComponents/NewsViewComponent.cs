@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
 using OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions;
 using OtakuNET.Web.Models.NewsViewModels;
-using OtakuNET.Web.Services;
 using OtakuNET.Web.Services.TagTranslator;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,9 +22,12 @@ namespace OtakuNET.Web.ViewComponents
             this.tagTranslator = tagTranslator;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int count = 20)
         {
-            var news = await dbContext.News.OrderByDescending(n => n.Timestamp).ToListAsync();
+            var news = await dbContext.News
+                .OrderByDescending(n => n.Timestamp)
+                .Take(count)
+                .ToListAsync();
             var model = new NewsComponentViewModel().Initialize(news, tagTranslator, timestampFormatter);
             return View(model);
         }

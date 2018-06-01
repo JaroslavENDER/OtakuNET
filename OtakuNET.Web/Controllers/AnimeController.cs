@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
+using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.AnimangaViewModels;
 using OtakuNET.Web.Models.AnimeViewModels;
-using OtakuNET.Web.Services;
 using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +51,16 @@ namespace OtakuNET.Web.Controllers
         {
             var titles = await dbContext.Anime.Where(a => a.StudioName == key).OrderByDescending(a => a.Raiting).ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, $"Аниме студии {key}");
+            return View("List", model);
+        }
+
+        public async Task<IActionResult> Ongoings()
+        {
+            var titles = await dbContext.Anime
+                .Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing))
+                .OrderByDescending(a => a.Raiting)
+                .ToListAsync();
+            var model = new AnimeListViewModel().Initialize(titles, "Аниме онгоинги");
             return View("List", model);
         }
     }
