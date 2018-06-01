@@ -2,6 +2,7 @@
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models.NewsViewModels;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.TagTranslator;
 
 namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
 {

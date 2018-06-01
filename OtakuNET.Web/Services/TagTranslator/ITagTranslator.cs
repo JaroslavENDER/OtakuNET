@@ -1,6 +1,6 @@
 ﻿using OtakuNET.Web.Models;
 
-namespace OtakuNET.Web.Services
+namespace OtakuNET.Web.Services.TagTranslator
 {
     public interface ITagTranslator
     {

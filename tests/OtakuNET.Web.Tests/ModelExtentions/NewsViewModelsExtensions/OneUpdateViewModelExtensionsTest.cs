@@ -5,6 +5,7 @@ using OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.NewsViewModels;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.TagTranslator;
 using System;
 using System.Collections.Generic;
 using Xunit;

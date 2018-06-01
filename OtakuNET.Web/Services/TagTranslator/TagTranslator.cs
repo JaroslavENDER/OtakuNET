@@ -1,7 +1,7 @@
 ﻿using OtakuNET.Web.Models;
 using System;
 
-namespace OtakuNET.Web.Services
+namespace OtakuNET.Web.Services.TagTranslator
 {
     public class TagTranslator : ITagTranslator
     {
@@ -18,7 +18,7 @@ namespace OtakuNET.Web.Services
             if (tag == Tag.Release)
                 return "релиз";
 
-            throw new ArgumentException("Недопустимый параметр tag");
+            throw new ArgumentException($"Недопустимый параметр {tag}");
         }
         public Tag ToTag(string tag)
         {
@@ -33,7 +33,7 @@ namespace OtakuNET.Web.Services
             if (tag == "релиз")
                 return Tag.Release;
 
-            throw new ArgumentException("Недопустимый параметр tag");
+            throw new ArgumentException($"Недопустимый параметр {tag}");
         }
     }
 }

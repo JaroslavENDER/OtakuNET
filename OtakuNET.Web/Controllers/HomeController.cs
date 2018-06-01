@@ -5,6 +5,7 @@ using OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.HomeViewModels;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.TagTranslator;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;

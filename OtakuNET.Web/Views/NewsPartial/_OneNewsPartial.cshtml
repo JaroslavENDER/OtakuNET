@@ -1,14 +1,11 @@
 ﻿@using OtakuNET.Web.Models.NewsViewModels
+@using OtakuNET.Web.Services.TagTranslator.Frontend
 @model OneNewsViewModel
 
 @{ 
-    var tag = Model.Tag;
-    var tagClass = tag == Tag.News
-        ? "tag--news"
-        : string.Empty;
-    var tagText = tag == Tag.News
-        ? "новость"
-        : string.Empty;
+    var tagTranslator = new FrontendTagTranslator();
+    var tagClass = tagTranslator.ToClassName(Model.Tag);
+    var tagText = tagTranslator.ToString(Model.Tag);
 }
 
 <article class="news-node">

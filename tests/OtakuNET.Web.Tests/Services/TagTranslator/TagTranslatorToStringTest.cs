@@ -1,5 +1,5 @@
 ﻿using OtakuNET.Web.Models;
-using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.TagTranslator;
 using System;
 using Xunit;
 

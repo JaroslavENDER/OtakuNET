@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OtakuNET.Web.Extensions;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.TagTranslator;
 
 namespace OtakuNET.Web
 {

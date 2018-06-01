@@ -1,22 +1,11 @@
 ﻿@using OtakuNET.Web.Models.AnimangaViewModels
+@using OtakuNET.Web.Services.TagTranslator.Frontend
 @model TitleInformationViewModel
 
 @{
-    var tag = Model.Tag;
-    var tagClass = tag == Tag.Announce
-        ? "tag--announce"
-        : tag == Tag.Ongoing
-            ? "tag--ongoing"
-            : tag == Tag.Release
-                ? "tag--release"
-                : string.Empty;
-    var tagText = tag == Tag.Announce
-        ? "анонс"
-        : tag == Tag.Ongoing
-            ? "онгоинг"
-            : tag == Tag.Release
-                ? "релиз"
-                : string.Empty;
+    var tagTranslator = new FrontendTagTranslator();
+    var tagClass = tagTranslator.ToClassName(Model.Tag);
+    var tagText = tagTranslator.ToString(Model.Tag);
 }
 
 <dl>

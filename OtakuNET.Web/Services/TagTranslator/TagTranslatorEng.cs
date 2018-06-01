@@ -1,7 +1,7 @@
 ﻿using OtakuNET.Web.Models;
 using System;
 
-namespace OtakuNET.Web.Services
+namespace OtakuNET.Web.Services.TagTranslator
 {
     public class TagTranslatorEng : ITagTranslator
     {

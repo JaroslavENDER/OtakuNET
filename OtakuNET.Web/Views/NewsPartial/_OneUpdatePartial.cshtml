@@ -1,7 +1,8 @@
 ﻿@using OtakuNET.Web.Models.NewsViewModels
+@using OtakuNET.Web.Services.TagTranslator.Frontend
 @model OneUpdateViewModel
 
-@{ 
+@{
     Model.ImageSrc = string.IsNullOrEmpty(Model.ImageSrc)
         ? "/images/missing.jpg"
         : Model.ImageSrc;
@@ -9,25 +10,11 @@
     {
         ["key"] = Model.TitleKey
     };
-    var tag = Model.Tag;
-    var tagClass = tag == Tag.Announce
-        ? "tag--announce"
-        : tag == Tag.Ongoing
-            ? "tag--ongoing"
-            : tag == Tag.Episode
-                ? "tag--episode"
-                : tag == Tag.Release
-                    ? "tag--release"
-                    : string.Empty;
-    var tagText = tag == Tag.Announce
-        ? "анонс"
-        : tag == Tag.Ongoing
-            ? "онгоинг"
-            : tag == Tag.Episode
-                ? $"{Model.TagInfo} эпизод"
-                : tag == Tag.Release
-                    ? "релиз"
-                    : string.Empty;
+    var tagTranslator = new FrontendTagTranslator();
+    var tagClass = tagTranslator.ToClassName(Model.Tag);
+    var tagText = Model.Tag == Tag.Episode
+        ? tagTranslator.ToEpisodeString(Model.TagInfo)
+        : tagTranslator.ToString(Model.Tag);
 }
 
 <article class="update-node">

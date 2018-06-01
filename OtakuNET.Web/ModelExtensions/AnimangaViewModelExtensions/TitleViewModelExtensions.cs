@@ -2,6 +2,7 @@
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.AnimangaViewModels;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
 using System.Linq;
 
