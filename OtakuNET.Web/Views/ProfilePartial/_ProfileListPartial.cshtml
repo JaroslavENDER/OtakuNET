@@ -1,0 +1,22 @@
+﻿@using OtakuNET.Web.Models.ProfileViewModels
+@model ProfileListPartialViewModel
+
+@{
+    Model.Titles = Model.Titles.OrderBy(t => t.Name).ToList();
+    var i = 0;
+    Dictionary<string, string> GetRouteDataKey(string key)
+        => new Dictionary<string, string> { ["key"] = key };
+}
+
+<section>
+    <header class="section__header section__header--min">@Model.Name</header>
+    @foreach (var title in Model.Titles)
+    {
+        <div class="profile-list__item">
+            <a asp-controller="@Model.ControllerName" asp-action="Title" , asp-all-route-data="GetRouteDataKey(title.Key)">
+                #@(++i)
+                <span class="title-preview__name--big">@title.Name</span>
+            </a>
+        </div>
+    }
+</section>

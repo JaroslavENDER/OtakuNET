@@ -67,6 +67,18 @@
 
 
 
+.profile-list__item {
+    margin: 2rem;
+}
+
+    .profile-list__item:last-child {
+        border: none;
+    }
+
+/*---./profile__list---*/
+
+
+
 .profile__section-avatar__image {
     width: 100%;
 }
@@ -103,5 +115,5 @@
 }
 
 .profile__list-counter__link--passive {
-    color: #666;
+    color: #999;
 }
