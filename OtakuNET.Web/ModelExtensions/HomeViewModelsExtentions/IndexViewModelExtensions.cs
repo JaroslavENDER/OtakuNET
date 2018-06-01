@@ -78,25 +78,25 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                 new RecomendationInfoViewModel
                 {
                     Text = "Манга",
-                    Href = "",
+                    Href = "/Manga/Type/Манга",
                     LinkTitle = "Манга"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Ваншот",
-                    Href = "",
+                    Href = "/Manga/Type/Ваншот",
                     LinkTitle = "Ваншот"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Додзинси",
-                    Href = "",
+                    Href = "/Manga/Type/Додзинси",
                     LinkTitle = "Додзинси"
                 },
                 new RecomendationInfoViewModel
                 {
                     Text = "Маньхуа",
-                    Href = "",
+                    Href = "/Manga/Type/Маньхуа",
                     LinkTitle = "Маньхуа"
                 }
             };
