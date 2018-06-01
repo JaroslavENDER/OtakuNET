@@ -11,18 +11,12 @@ namespace OtakuNET.Web
 {
     public class Startup
     {
+        private IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+            => Configuration = configuration;
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationDbContextWithIdentity(Configuration.GetConnectionString("ApplicationConnection"));
-
             services.AddStaticDbContextInMemory("OtakuNET-InMemoryDatabase");
             
             services.AddTransient<IEmailSender, EmailSender>();
@@ -31,8 +25,7 @@ namespace OtakuNET.Web
 
             services.AddMvc();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
