@@ -1,6 +1,23 @@
-﻿
+﻿@using OtakuNET.Web.Models.ProfileViewModels
+@model ProfileHistoryViewModel
 @{
-    ViewData["Title"] = "История - JaroslavENDER";
-    await Html.RenderPartialAsync("_AvailableSoonPartial");
+    Model.UserName = string.IsNullOrEmpty(Model.UserName)
+        ? Model.UserLogin
+        : Model.UserName;
+    ViewData["Title"] = $"История - {Model.UserName}";
 }
 
+@{
+    var profileRouteData = new Dictionary<string, string> { ["login"] = Model.UserLogin };
+}
+
+<a asp-controller="Profile" asp-action="" asp-all-route-data="profileRouteData">
+    <header class="section__header section__header--anime-list">@Model.UserName - история</header>
+</a>
+
+<section>
+    @foreach (var historyItem in Model.HistoryItems)
+    {
+        @await Html.PartialAsync("/Views/ProfilePartial/_ProfileHistoryItemPartial.cshtml", historyItem);
+    }
+</section>

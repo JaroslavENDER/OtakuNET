@@ -1,13 +1,16 @@
 ﻿@using OtakuNET.Web.Models.ProfileViewModels
 @model ProfileViewModel
 @{
+    Model.Name = string.IsNullOrEmpty(Model.Name)
+        ? Model.Login
+        : Model.Name;
     ViewData["Title"] = Model.Name;
 }
 
 @{
     Model.AvatarSrc = string.IsNullOrEmpty(Model.AvatarSrc)
-        ? "/images/missing-square.jpg"
-        : Model.AvatarSrc;
+? "/images/missing-square.jpg"
+: Model.AvatarSrc;
     Model.Name = string.IsNullOrEmpty(Model.Name)
         ? Model.Login
         : Model.Name;

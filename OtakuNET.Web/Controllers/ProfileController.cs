@@ -42,6 +42,7 @@ namespace OtakuNET.Web.Controllers
                 .Include(p => p.AnimeListSet).ThenInclude(l => l.Anime).ThenInclude(a => a.Anime)
                 .Include(p => p.MangaListSet).ThenInclude(l => l.Manga).ThenInclude(m => m.Manga)
                 .FirstOrDefaultAsync(p => string.Equals(p.Login, login, StringComparison.OrdinalIgnoreCase));
+            if (profile == null) return NotFound();
             IEnumerable<UserList> lists;
             if (key == "Anime")
                 lists = profile.AnimeListSet;
@@ -54,9 +55,16 @@ namespace OtakuNET.Web.Controllers
             return View(model);
         }
 
-        public IActionResult History(string login, string key)
+        public async Task<IActionResult> History(string login, string key)
         {
-            return View();
+            var profile = await dbContext.Profiles
+                .Include(p => p.History).ThenInclude(h => h.Anime)
+                .Include(p => p.History).ThenInclude(h => h.Manga)
+                .Include(p => p.History).ThenInclude(h => h.UserList)
+                .FirstOrDefaultAsync(p => string.Equals(p.Login, login, StringComparison.OrdinalIgnoreCase));
+            if (profile == null) return NotFound();
+            var model = new ProfileHistoryViewModel().Initialize(profile, timestampFormatter);
+            return View(model);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿@using OtakuNET.Web.Models.ProfileViewModels
 @model ProfileListViewModel
 @{
-    ViewData["Title"] = Model.UserName;
+    ViewData["Title"] = string.IsNullOrEmpty(Model.UserName)
+        ? Model.UserLogin
+        : Model.UserName;
 }
 
 @{ 
