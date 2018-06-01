@@ -7,7 +7,5 @@
     <header class="section__header section__header--news">Лента новостей</header>
 </a>
 <section class="news__container">
-    @{
-        Html.RenderPartial("_NewsPartial");
-    }
+    @await Component.InvokeAsync("News");
 </section>

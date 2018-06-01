@@ -8,7 +8,5 @@
 </a>
 
 <section>
-    @{
-        Html.RenderPartial("_UpdatesPartial");
-    }
+    @await Component.InvokeAsync("Updates");
 </section>
