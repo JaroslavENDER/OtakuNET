@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>aspnet-OtakuNET.Web-DD6F91E3-389C-41A9-81AD-9AE3F611D54C</UserSecretsId>
+    <Authors>Ender</Authors>
+    <Company>Ender Inc.</Company>
+    <Copyright>Copyright © Ender Inc. 2018</Copyright>
+    <AssemblyVersion>0.6.0.0</AssemblyVersion>
+    <FileVersion>0.6.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
