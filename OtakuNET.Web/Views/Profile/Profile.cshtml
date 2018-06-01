@@ -1,39 +1,63 @@
-﻿
+﻿@using OtakuNET.Web.Models.ProfileViewModels
+@model ProfileViewModel
 @{
-    ViewData["Title"] = "JaroslavENDER";
+    ViewData["Title"] = Model.Name;
+}
+
+@{
+    Model.AvatarSrc = string.IsNullOrEmpty(Model.AvatarSrc)
+        ? "/images/missing-square.jpg"
+        : Model.AvatarSrc;
+    Model.Name = string.IsNullOrEmpty(Model.Name)
+        ? Model.Login
+        : Model.Name;
+    var allAnimeListsRouteData = new Dictionary<string, string> { ["key"] = "Anime" };
+    var allMangaListsRouteData = new Dictionary<string, string> { ["key"] = "Manga" };
+    Model.History = Model.History.OrderByDescending(h => h.Timestamp).Take(3).ToList();
+
+    Dictionary<string, string> GetRouteDataKey(string key)
+        => new Dictionary<string, string> { ["key"] = key };
 }
 
 <div class="flex__flex-container profile__first-block">
 
     <section class="profile__section-avatar">
-        <img src="~/images/missing-square.jpg" alt="" class="profile__section-avatar__image" />
+        <img src="@Model.AvatarSrc" alt="" class="profile__section-avatar__image" />
     </section>
 
     <section class="profile__section-central">
         <header class="profile__header">
-            <h2 class="profile__name">JaroslavENDER</h2>
-            <span class="profile__name-info">Ender / на сайте с февраля 2017 г.</span>
+            <h2 class="profile__name">@Model.Name</h2>
+            <span class="profile__name-info">@Model.Login / зарегистрирован @Model.RegirtrationDate</span>
         </header>
         <div class="profile__list-counters">
             <div class="profile__list-counter">
-                <a asp-controller="Profile" asp-action="List">
-                    <h3 class="title-preview__name history__title__name">Список аниме</h3>
+                <a asp-controller="Profile" asp-action="List" , asp-all-route-data="allAnimeListsRouteData">
+                    <h3 class="title-preview__name history__title__name">Списки аниме</h3>
                 </a>
-                <a class="profile__list-counter__link" asp-controller="Profile" asp-action="List">Запланировано (223)</a>
-                /
-                <a class="profile__list-counter__link" asp-controller="Profile" asp-action="List">Смотрю (35)</a>
-                /
-                <a class="profile__list-counter__link" asp-controller="Profile" asp-action="List">Просмотрено (156)</a>
+                @foreach (var list in Model.UserAnimeLists)
+                {
+                    var cssClass = list.TitleCount == 0
+                        ? "profile__list-counter__link profile__list-counter__link--passive"
+                        : "profile__list-counter__link";
+                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteDataKey(list.Key)" class="@cssClass">
+                        @list.Name (@list.TitleCount)
+                    </a>
+                }
             </div>
             <div class="profile__list-counter">
-                <a asp-controller="Profile" asp-action="List">
-                    <h3 class="title-preview__name history__title__name">Список манги</h3>
+                <a asp-controller="Profile" asp-action="List" asp-all-route-data="allMangaListsRouteData">
+                    <h3 class="title-preview__name history__title__name">Списки манги</h3>
                 </a>
-                <a class="profile__list-counter__link" asp-controller="Profile" asp-action="List">Запланировано (1)</a>
-                /
-                <a class="profile__list-counter__link" asp-controller="Profile" asp-action="List">Читаю (3)</a>
-                /
-                <a class="profile__list-counter__link" asp-controller="Profile" asp-action="List">Прочитано (6)</a>
+                @foreach (var list in Model.UserMangaLists)
+                {
+                    var cssClass = list.TitleCount == 0
+                        ? "profile__list-counter__link profile__list-counter__link--passive"
+                        : "profile__list-counter__link";
+                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteDataKey(list.Key)" class="@cssClass">
+                        @list.Name (@list.TitleCount)
+                    </a>
+                }
             </div>
         </div>
     </section>
@@ -42,41 +66,9 @@
         <a asp-controller="Profile" asp-action="History">
             <header class="section__header section__header--min section__header--top">История</header>
         </a>
-        <article class="profile__history__item">
-            <a asp-controller="Anime" asp-action="Title" class="profile__history__image-link" title="Название тайтла">
-                <img src="~/images/missing.jpg" alt="" class="profile__history__image" />
-            </a>
-            <div class="profile__history__container">
-                <a asp-controller="Anime" asp-action="Title" title="Название тайтла">
-                    <h3 class="title-preview__name history__title__name">Название тайтла</h3>
-                </a>
-                <span class="title-preview__info history__title__info">Добавлено в список</span>
-                <span class="title-preview__info history__title__info">1 день назад</span>
-            </div>
-        </article>
-        <article class="profile__history__item">
-            <a asp-controller="Anime" asp-action="Title" class="profile__history__image-link" title="Название тайтла">
-                <img src="~/images/missing.jpg" alt="" class="profile__history__image" />
-            </a>
-            <div class="profile__history__container">
-                <a asp-controller="Anime" asp-action="Title" title="Название тайтла">
-                    <h3 class="title-preview__name history__title__name">Название тайтла</h3>
-                </a>
-                <span class="title-preview__info history__title__info">Добавлено в список</span>
-                <span class="title-preview__info history__title__info">1 день назад</span>
-            </div>
-        </article>
-        <article class="profile__history__item">
-            <a asp-controller="Anime" asp-action="Title" class="profile__history__image-link" title="Название тайтла">
-                <img src="~/images/missing.jpg" alt="" class="profile__history__image" />
-            </a>
-            <div class="profile__history__container">
-                <a asp-controller="Anime" asp-action="Title" title="Название тайтла">
-                    <h3 class="title-preview__name history__title__name">Длинное японское Название тайтла</h3>
-                </a>
-                <span class="title-preview__info history__title__info">Добавлено в список</span>
-                <span class="title-preview__info history__title__info">1 день назад</span>
-            </div>
-        </article>
+        @foreach (var historyItem in Model.History)
+        {
+            @await Html.PartialAsync("/Views/ProfilePartial/_ProfileHistoryItemPartial.cshtml", historyItem);
+        }
     </section>
 </div>

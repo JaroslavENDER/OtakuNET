@@ -24,7 +24,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());
 
-            Assert.Null(result.Title);
+            Assert.Null(result.TitleInfo);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());
 
-            Assert.NotNull(result.Title);
+            Assert.NotNull(result.TitleInfo);
         }
 
         [Fact]
@@ -50,7 +50,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());
 
-            Assert.NotNull(result.Title);
+            Assert.NotNull(result.TitleInfo);
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());
 
-            Assert.NotNull(result.Title);
+            Assert.NotNull(result.TitleInfo);
             Assert.NotNull(result.UserList);
         }
     }

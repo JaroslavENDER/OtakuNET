@@ -96,6 +96,12 @@
 }
 
 .profile__list-counter__link {
+    display: block;
+    margin: 1rem;
     color: #000;
     font-size: 1.2rem;
+}
+
+.profile__list-counter__link--passive {
+    color: #666;
 }

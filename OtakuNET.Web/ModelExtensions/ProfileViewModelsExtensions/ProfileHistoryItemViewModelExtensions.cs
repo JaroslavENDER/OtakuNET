@@ -12,11 +12,19 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
         {
             model.Text = historyItem.Text;
             model.Timestamp = timestampFormatter.Format(historyItem.Timestamp);
-            
+
             if (historyItem.Anime != null)
-                model.Title = new TitlePreviewViewModel().Initialize(historyItem.Anime);
+                model.TitleInfo = new TitlePreviewPartialViewModel
+                {
+                    ControllerName = "Anime",
+                    Title = new TitlePreviewViewModel().Initialize(historyItem.Anime)
+                };
             if (historyItem.Manga != null)
-                model.Title = new TitlePreviewViewModel().Initialize(historyItem.Manga);
+                model.TitleInfo = new TitlePreviewPartialViewModel
+                {
+                    ControllerName = "Manga",
+                    Title = new TitlePreviewViewModel().Initialize(historyItem.Manga)
+                };
             if (historyItem.UserList != null)
                 model.UserList = new UserListInfoViewModel().Initialize(historyItem.UserList);
 
