@@ -7,6 +7,7 @@ using OtakuNET.Web.Models.AnimangaViewModels;
 using OtakuNET.Web.Models.MangaViewModels;
 using OtakuNET.Web.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OtakuNET.Web.Controllers
@@ -33,8 +34,15 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> List()
         {
             var titles = await dbContext.Manga.ToListAsync();
-            var model = new MangaListViewModel().Initialize(titles);
+            var model = new MangaListViewModel().Initialize(titles, "Манга, отсортированная по дате последнего изменения");
             return View(model);
+        }
+
+        public async Task<IActionResult> Type(string key)
+        {
+            var titles = await dbContext.Manga.Where(m => m.Type == key).ToListAsync();
+            var model = new MangaListViewModel().Initialize(titles, $"Манга по запросу: {key}");
+            return View("List", model);
         }
     }
 }
