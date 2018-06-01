@@ -15,7 +15,11 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
             model.RegirtrationDate = profile.History.Min(h => h.Timestamp).ToLongDateString();
             model.UserAnimeLists = profile.AnimeListSet.Select(l => new UserListInfoViewModel().Initialize(l)).ToList();
             model.UserMangaLists = profile.MangaListSet.Select(l => new UserListInfoViewModel().Initialize(l)).ToList();
-            model.History = profile.History.Select(h => new ProfileHistoryItemViewModel().Initialize(h, timestampFormatter)).ToList();
+            model.History = profile.History
+                .OrderByDescending(h => h.Timestamp)
+                .Take(3)
+                .Select(h => new ProfileHistoryItemViewModel().Initialize(h, timestampFormatter))
+                .ToList();
 
             return model;
         }

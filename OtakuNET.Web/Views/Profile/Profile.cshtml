@@ -16,7 +16,6 @@
         : Model.Name;
     var allAnimeListsRouteData = new Dictionary<string, string> { ["key"] = "Anime" };
     var allMangaListsRouteData = new Dictionary<string, string> { ["key"] = "Manga" };
-    Model.History = Model.History.OrderByDescending(h => h.Timestamp).Take(3).ToList();
 
     Dictionary<string, string> GetRouteDataKey(string key)
         => new Dictionary<string, string> { ["key"] = key };
