@@ -58,7 +58,7 @@ namespace OtakuNET.Web
                     defaults: new { controller = "Profile" });
                 routes.MapRoute(
                     name: "news",
-                    template: "News/{action=News}",
+                    template: "News/{action=News}/{key?}",
                     defaults: new { controller = "News" });
                 routes.MapRoute(
                     name: "default",
