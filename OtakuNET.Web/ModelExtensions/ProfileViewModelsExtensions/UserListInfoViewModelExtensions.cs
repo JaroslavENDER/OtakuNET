@@ -21,7 +21,7 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
             return model;
         }
 
-        private static UserListInfoViewModel Initialize(this UserListInfoViewModel model, UserList userList)
+        public static UserListInfoViewModel Initialize(this UserListInfoViewModel model, UserList userList)
         {
             model.Key = userList.Key;
             model.Name = userList.Name;
