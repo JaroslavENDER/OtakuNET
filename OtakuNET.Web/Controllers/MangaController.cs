@@ -33,14 +33,14 @@ namespace OtakuNET.Web.Controllers
 
         public async Task<IActionResult> List()
         {
-            var titles = await dbContext.Manga.ToListAsync();
-            var model = new MangaListViewModel().Initialize(titles, "Манга, отсортированная по дате последнего изменения");
+            var titles = await dbContext.Manga.OrderByDescending(m => m.Raiting).ToListAsync();
+            var model = new MangaListViewModel().Initialize(titles, "Манга, отсортированная по рейтингу");
             return View(model);
         }
 
         public async Task<IActionResult> Type(string key)
         {
-            var titles = await dbContext.Manga.Where(m => m.Type == key).ToListAsync();
+            var titles = await dbContext.Manga.Where(m => m.Type == key).OrderByDescending(m => m.Raiting).ToListAsync();
             var model = new MangaListViewModel().Initialize(titles, $"Манга по запросу: {key}");
             return View("List", model);
         }

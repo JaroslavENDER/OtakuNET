@@ -33,22 +33,22 @@ namespace OtakuNET.Web.Controllers
 
         public async Task<IActionResult> List()
         {
-            var titles = await dbContext.Anime.Include(a => a.Updates).OrderByDescending(a => a.Updates.Max(u => u.Timestamp)).ToListAsync();
-            var model = new AnimeListViewModel().Initialize(titles, "Аниме, отсортированные по дате последнего обновления");
+            var titles = await dbContext.Anime.OrderByDescending(a => a.Raiting).ToListAsync();
+            var model = new AnimeListViewModel().Initialize(titles, "Аниме, отсортированные по рейтингу");
             return View(model);
         }
 
         public async Task<IActionResult> Season(string key)
         {
-            var season = await dbContext.Seasons.Include(s => s.Animes).ThenInclude(a => a.Updates).FirstOrDefaultAsync(s => s.Key == key);
+            var season = await dbContext.Seasons.Include(s => s.Animes).FirstOrDefaultAsync(s => s.Key == key);
             if (season == null) return NotFound();
-            var model = new AnimeListViewModel().Initialize(season.Animes.OrderByDescending(a => a.Updates.Max(u => u.Timestamp)), season.FullName);
+            var model = new AnimeListViewModel().Initialize(season.Animes.OrderByDescending(a => a.Raiting), season.FullName);
             return View("List", model);
         }
 
         public async Task<IActionResult> Studio(string key)
         {
-            var titles = await dbContext.Anime.Include(a => a.Updates).Where(a => a.StudioName == key).OrderByDescending(a => a.Updates.Max(u => u.Timestamp)).ToListAsync();
+            var titles = await dbContext.Anime.Where(a => a.StudioName == key).OrderByDescending(a => a.Raiting).ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, $"Аниме студии {key}");
             return View("List", model);
         }
