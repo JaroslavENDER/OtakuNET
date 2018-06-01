@@ -1,4 +1,4 @@
-﻿using OtakuNET.Web.Services;
+﻿using Ender.TimestampFormatterCore;
 using System;
 using Xunit;
 
@@ -27,17 +27,17 @@ namespace OtakuNET.Web.Tests.Services
         [Fact]
         public void InDay()
         {
-            var date = DateTime.Now.AddHours(-10);
+            var date = DateTime.Now.AddHours(-21);
 
-            Assert.Equal("10 часов назад", formatter.Format(date));
+            Assert.Equal("21 час назад", formatter.Format(date));
         }
 
         [Fact]
         public void In6Days()
         {
-            var date = DateTime.Now.AddDays(-5);
+            var date = DateTime.Now.AddDays(-3);
 
-            Assert.Equal("5 дней назад", formatter.Format(date));
+            Assert.Equal("3 дня назад", formatter.Format(date));
         }
 
         [Fact]

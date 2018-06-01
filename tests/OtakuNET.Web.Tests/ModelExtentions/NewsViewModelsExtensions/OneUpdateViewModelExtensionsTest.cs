@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using Ender.TimestampFormatterCore;
+using Moq;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions;
 using OtakuNET.Web.Models;

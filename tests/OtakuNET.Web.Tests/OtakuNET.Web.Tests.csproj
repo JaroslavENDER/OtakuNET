@@ -27,4 +27,10 @@
     <ProjectReference Include="..\..\OtakuNET.Web\OtakuNET.Web.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="TimestampFormatterCore">
+      <HintPath>..\..\Dependencies\TimestampFormatterCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
