@@ -9,7 +9,6 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
     {
         public static ProfileHistoryViewModel Initialize(this ProfileHistoryViewModel model, Profile profile, ITimestampFormatter timestampFormatter)
         {
-            model.UserName = profile.Name;
             model.UserLogin = profile.Login;
             model.HistoryItems = profile.History
                 .OrderByDescending(h => h.Timestamp)

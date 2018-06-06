@@ -1,10 +1,7 @@
 ﻿@using OtakuNET.Web.Models.ProfileViewModels
 @model ProfileViewModel
 @{
-    Model.Name = string.IsNullOrEmpty(Model.Name)
-        ? Model.Login
-        : Model.Name;
-    ViewData["Title"] = Model.Name;
+    ViewData["Title"] = Model.Login;
 }
 
 @{
@@ -29,8 +26,8 @@
 
     <section class="profile__section-central">
         <header class="profile__header">
-            <h2 class="profile__name">@Model.Name</h2>
-            <span class="profile__name-info">@Model.Login / зарегистрирован @Model.RegirtrationDate</span>
+            <h2 class="profile__name">@Model.Login</h2>
+            <span class="profile__name-info">@Model.Name / зарегистрирован @Model.RegirtrationDate</span>
         </header>
         <div class="profile__list-counters">
             <div class="profile__list-counter">

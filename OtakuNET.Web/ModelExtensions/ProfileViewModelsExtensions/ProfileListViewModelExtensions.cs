@@ -10,7 +10,6 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
         public static ProfileListViewModel Initialize(this ProfileListViewModel model, Profile profile, IEnumerable<UserList> userLists)
         {
             model.UserLogin = profile.Login;
-            model.UserName = profile.Name;
             model.Lists = userLists
                 .Select(l =>
                 {

@@ -1,9 +1,7 @@
 ﻿@using OtakuNET.Web.Models.ProfileViewModels
 @model ProfileListViewModel
 @{
-    ViewData["Title"] = string.IsNullOrEmpty(Model.UserName)
-        ? Model.UserLogin
-        : Model.UserName;
+    ViewData["Title"] = Model.UserLogin;
 }
 
 @{ 
@@ -11,7 +9,7 @@
 }
 
 <a asp-controller="Profile" asp-action="" asp-all-route-data="profileRouteData">
-    <header class="section__header section__header--anime-list">@Model.UserName - списки</header>
+    <header class="section__header section__header--anime-list">@Model.UserLogin - списки</header>
 </a>
 
 @foreach (var list in Model.Lists)
