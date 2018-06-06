@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OtakuNET.Web.Extensions;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.ProfileCreater;
 using OtakuNET.Web.Services.TagTranslator;
 
 namespace OtakuNET.Web
@@ -23,6 +24,7 @@ namespace OtakuNET.Web
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<ITagTranslator, TagTranslatorEng>();
             services.AddTransient<ITimestampFormatter, TimestampFormatter>();
+            services.AddTransient<IProfileCreater, ProfileCreater>();
 
             services.AddMvc();
         }
