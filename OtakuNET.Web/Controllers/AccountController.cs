@@ -3,12 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OtakuNET.Domain.DataProviders;
-using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.AccountViewModels;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.ProfileCreater;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace OtakuNET.Web.Controllers
@@ -21,17 +20,20 @@ namespace OtakuNET.Web.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IDbContext _dbContext;
         private readonly IEmailSender _emailSender;
+        private readonly IProfileCreater _profileCreater;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IDbContext dbContext,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IProfileCreater profileCreater)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _dbContext = dbContext;
             _emailSender = emailSender;
+            _profileCreater = profileCreater;
         }
 
         [TempData]
@@ -131,7 +133,8 @@ namespace OtakuNET.Web.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                await RegisterProfile(user);
+                _dbContext.Profiles.Add(_profileCreater.Create(user.Id, model.Login));
+                await _dbContext.SaveChangesAsync();
 
                 await SendConfirmation(user, model.Email, Request.Scheme);
 
@@ -257,26 +260,6 @@ namespace OtakuNET.Web.Controllers
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             var callbackUrl = Url.EmailConfirmationLink(user.Id, code, requestScheme);
             await _emailSender.SendEmailConfirmationAsync(email, callbackUrl);
-        }
-
-        private async Task<Profile> RegisterProfile(ApplicationUser user)
-        {
-            var profile = new Profile
-            {
-                Id = user.Id,
-                Login = user.UserName,
-                History = new List<ProfileHistoryItem>
-                    {
-                        new ProfileHistoryItem
-                        {
-                            Timestamp = DateTime.Now,
-                            Text = "Зарегистрировался на сайте"
-                        }
-                    }
-            };
-            _dbContext.Profiles.Add(profile);
-            await _dbContext.SaveChangesAsync();
-            return profile;
         }
 
         #endregion
