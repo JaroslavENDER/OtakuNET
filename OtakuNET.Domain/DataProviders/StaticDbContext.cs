@@ -21,9 +21,11 @@ namespace OtakuNET.Domain.DataProviders
         public StaticDbContext(DbContextOptions options)
             : base(options)
         {
-            if (isInitialized) return;
-            new StaticDbContextInitializer().Initialize(this);
-            isInitialized = true;
+            if (!isInitialized)
+            {
+                new StaticDbContextInitializer().Initialize(this);
+                isInitialized = true;
+            }
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

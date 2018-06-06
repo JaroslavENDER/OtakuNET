@@ -1,4 +1,5 @@
-﻿using OtakuNET.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using OtakuNET.Domain.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -1172,7 +1173,18 @@ namespace OtakuNET.Domain.DataProviders
                 }
             });
 
-            dbContext.SaveChanges();
+            try
+            {
+                dbContext.SaveChanges();
+            }
+            catch
+            {
+                foreach (var entry in (dbContext as DbContext).ChangeTracker.Entries())
+                {
+                    if (entry.State == EntityState.Added)
+                        entry.State = EntityState.Detached;
+                }
+            }
         }
     }
 }
