@@ -1,9 +1,12 @@
 ﻿using Ender.TimestampFormatterCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions;
+using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.ProfileViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,11 +18,21 @@ namespace OtakuNET.Web.Controllers
     public class ProfileController : Controller
     {
         private readonly IDbContext dbContext;
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly ITimestampFormatter timestampFormatter;
-        public ProfileController(IDbContext dbContext, ITimestampFormatter timestampFormatter)
+        public ProfileController(IDbContext dbContext, UserManager<ApplicationUser> userManager, ITimestampFormatter timestampFormatter)
         {
             this.dbContext = dbContext;
+            this.userManager = userManager;
             this.timestampFormatter = timestampFormatter;
+        }
+
+        [Authorize]
+        [HttpGet("Profile")]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await userManager.GetUserAsync(User);
+            return await Profile(user.UserName);
         }
 
         public async Task<IActionResult> Profile(string login)

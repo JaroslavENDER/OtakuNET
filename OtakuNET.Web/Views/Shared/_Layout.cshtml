@@ -1,6 +1,4 @@
-﻿@inject UserManager<ApplicationUser> userManager
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -39,20 +37,7 @@
                     <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
                     <li><a asp-controller="Anime" asp-action="List">Аниме</a></li>
                     <li><a asp-controller="Manga" asp-action="List">Манга</a></li>
-                    <li>
-                        @{
-                            var user = await userManager.GetUserAsync(User);
-                            if (user != null)
-                            {
-                                var routeDataLogin = new Dictionary<string, string> { ["login"] = user.UserName };
-                                <a asp-action="" asp-controller="Profile" asp-all-route-data="routeDataLogin">Профиль</a>
-                            }
-                            else
-                            {
-                                <a asp-action="Login" asp-controller="Account">Профиль</a>
-                            }
-                        }
-                    </li>
+                    <li><a asp-controller="Profile" asp-action="">Профиль</a></li>
                     <li><a asp-controller="Home" asp-action="About">О проекте</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
