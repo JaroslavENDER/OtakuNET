@@ -11,11 +11,9 @@
     Model.Name = string.IsNullOrEmpty(Model.Name)
         ? Model.Login
         : Model.Name;
-    var allAnimeListsRouteData = new Dictionary<string, string> { ["key"] = "Anime" };
-    var allMangaListsRouteData = new Dictionary<string, string> { ["key"] = "Manga" };
 
-    Dictionary<string, string> GetRouteDataKey(string key)
-        => new Dictionary<string, string> { ["key"] = key };
+    Dictionary<string, string> GetRouteData(string login, string key)
+        => new Dictionary<string, string> { ["login"] = login, ["key"] = key };
 }
 
 <div class="flex__flex-container profile__first-block">
@@ -31,7 +29,7 @@
         </header>
         <div class="profile__list-counters">
             <div class="profile__list-counter">
-                <a asp-controller="Profile" asp-action="List" , asp-all-route-data="allAnimeListsRouteData">
+                <a asp-controller="Profile" asp-action="List" , asp-all-route-data='GetRouteData(Model.Login, "Anime")'>
                     <h3 class="title-preview__name history__title__name">Списки аниме</h3>
                 </a>
                 @foreach (var list in Model.UserAnimeLists)
@@ -39,13 +37,13 @@
                     var cssClass = list.TitleCount == 0
                         ? "profile__list-counter__link profile__list-counter__link--passive"
                         : "profile__list-counter__link";
-                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteDataKey(list.Key)" class="@cssClass">
+                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteData(Model.Login, list.Key)" class="@cssClass">
                         @list.Name (@list.TitleCount)
                     </a>
                 }
             </div>
             <div class="profile__list-counter">
-                <a asp-controller="Profile" asp-action="List" asp-all-route-data="allMangaListsRouteData">
+                <a asp-controller="Profile" asp-action="List" asp-all-route-data='GetRouteData(Model.Login, "Manga")'>
                     <h3 class="title-preview__name history__title__name">Списки манги</h3>
                 </a>
                 @foreach (var list in Model.UserMangaLists)
@@ -53,7 +51,7 @@
                     var cssClass = list.TitleCount == 0
                         ? "profile__list-counter__link profile__list-counter__link--passive"
                         : "profile__list-counter__link";
-                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteDataKey(list.Key)" class="@cssClass">
+                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteData(Model.Login, list.Key)" class="@cssClass">
                         @list.Name (@list.TitleCount)
                     </a>
                 }
