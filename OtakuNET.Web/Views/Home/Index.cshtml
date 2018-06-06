@@ -7,6 +7,9 @@
 
 @{ 
     Model.AnimeRecomendationsFirstBlock.Reverse();
+
+    Dictionary<string, string> GetRouteData(string login, string key)
+        => new Dictionary<string, string> { ["login"] = login, ["key"] = key };
 }
 
 
@@ -101,20 +104,34 @@
                 <header class="middle-section__second__header">Мои списки аниме</header>
                 @foreach (var userList in Model.UserAnimeLists)
                 {
-                    <div class="middle-section__second__list">
+                <div class="middle-section__second__list">
+                    @if (string.IsNullOrEmpty(userList.Key))
+                    {
                         <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
-                        <span class="middle-section__second__list-counter">@userList.TitleCount</span>
-                    </div>
+                    }
+                    else
+                    {
+                        <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteData(Model.Login, userList.Key)" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                    }
+                    <span class="middle-section__second__list-counter">@userList.TitleCount</span>
+                </div>
                 }
             </div>
             <div class="middle-section__second__container" id="middle-section__second__radio-button-block--manga" hidden>
                 <header class="middle-section__second__header">Мои списки манги</header>
                 @foreach (var userList in Model.UserMangaLists)
                 {
-                    <div class="middle-section__second__list">
+                <div class="middle-section__second__list">
+                    @if (string.IsNullOrEmpty(userList.Key))
+                    {
                         <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
-                        <span class="middle-section__second__list-counter">@userList.TitleCount</span>
-                    </div>
+                    }
+                    else
+                    {
+                        <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteData(Model.Login, userList.Key)" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                    }
+                    <span class="middle-section__second__list-counter">@userList.TitleCount</span>
+                </div>
                 }
             </div>
         </div>

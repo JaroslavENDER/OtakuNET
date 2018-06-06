@@ -12,11 +12,14 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
     public static class IndexViewModelExtensions
     {
         public static IndexViewModel Initialize(this IndexViewModel model,
+            string login,
             List<Anime> ongoings,
             List<UserAnimeList> userAnimeLists,
             List<UserMangaList> userMangaList,
             List<AnimeSeason> seasons)
         {
+            model.Login = login;
+
             model.Ongoings = ongoings
                 .OrderByDescending(a => a.Updates.Max(u => u.Timestamp))
                 .Take(8)

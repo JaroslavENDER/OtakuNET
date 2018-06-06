@@ -116,7 +116,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                 }
             };
 
-            var result = new IndexViewModel().Initialize(ongoings, null, null, new List<AnimeSeason>());
+            var result = new IndexViewModel().Initialize(string.Empty, ongoings, null, null, new List<AnimeSeason>());
 
             Assert.Equal(8, result.Ongoings.Count);
             Assert.Null(result.Ongoings.FirstOrDefault(a => a.Name == "Мегалобокс"));
@@ -125,7 +125,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
         [Fact]
         public void ReturnsDefaultUserListsFromNulls()
         {
-            var result = new IndexViewModel().Initialize(new List<Anime>(), null, null, new List<AnimeSeason>());
+            var result = new IndexViewModel().Initialize(string.Empty, new List<Anime>(), null, null, new List<AnimeSeason>());
 
             Assert.Equal(6, result.UserAnimeLists.Count);
             Assert.Equal(6, result.UserMangaLists.Count);

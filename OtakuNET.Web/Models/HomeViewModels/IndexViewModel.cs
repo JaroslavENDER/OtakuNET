@@ -6,6 +6,7 @@ namespace OtakuNET.Web.Models.HomeViewModels
 {
     public class IndexViewModel
     {
+        public string Login { get; set; }
         public List<TitlePreviewViewModel> Ongoings { get; set; }
         public List<UserListInfoViewModel> UserAnimeLists { get; set; }
         public List<UserListInfoViewModel> UserMangaLists { get; set; }
