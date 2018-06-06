@@ -7,13 +7,21 @@ using OtakuNET.Web.Models;
 
 namespace OtakuNET.Web.Extensions
 {
-    public static class AddStaticDbContextExtension
+    public static class AddDbContextExtensions
     {
         public static void AddStaticDbContextInMemory(this IServiceCollection services, string databaseName)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                    options.UseInMemoryDatabase(databaseName));
 
+            services.AddDbContext<StaticDbContext>(options
+                => options.UseInMemoryDatabase(databaseName));
+
+            services.AddScoped<IDbContext, StaticDbContext>();
+        }
+
+        public static void AddIdentity(this IServiceCollection services)
+        {
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequireNonAlphanumeric = false;
@@ -23,10 +31,6 @@ namespace OtakuNET.Web.Extensions
             })
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
-
-            services.AddDbContext<StaticDbContext>(options
-                => options.UseInMemoryDatabase(databaseName));
-            services.AddScoped<IDbContext, StaticDbContext>();
         }
     }
 }
