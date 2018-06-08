@@ -1067,7 +1067,7 @@ namespace OtakuNET.Domain.DataProviders
                     Id = "testId",
                     Login = "JaroslavENDER",
                     Name = "Ender",
-                    AvatarSrc = "",
+                    Avatar = new Image{ Id = 11 },
                     AnimeListSet = new List<UserAnimeList>
                     {
                         new UserAnimeList

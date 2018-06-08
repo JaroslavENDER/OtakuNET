@@ -8,7 +8,8 @@ namespace OtakuNET.Domain.Entities
         [Key] public string Id { get; set; }
         [Required] public string Login { get; set; }
         public string Name { get; set; }
-        public string AvatarSrc { get; set; }
+
+        public Image Avatar { get; set; }
         
         public List<UserAnimeList> AnimeListSet { get; set; }
         public List<UserMangaList> MangaListSet { get; set; }
