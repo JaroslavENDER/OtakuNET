@@ -38,6 +38,7 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> Profile(string login)
         {
             var profile = await dbContext.Profiles
+                .Include(p => p.Avatar)
                 .Include(p => p.AnimeListSet).ThenInclude(l => l.Anime)
                 .Include(p => p.MangaListSet).ThenInclude(l => l.Manga)
                 .Include(p => p.History).ThenInclude(h => h.Anime)

@@ -49,6 +49,10 @@ namespace OtakuNET.Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "image",
+                    template: "Image/{id}",
+                    defaults: new { controller = "Image", action = "Get" });
+                routes.MapRoute(
                     name: "profile",
                     template: "Profile/{login}/{action=Profile}/{key?}",
                     defaults: new { controller = "Profile" });
