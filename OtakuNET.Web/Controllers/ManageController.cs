@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
+using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.ManageViewModels;
 using OtakuNET.Web.Services;
 using System;
+using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 
@@ -87,6 +91,45 @@ namespace OtakuNET.Web.Controllers
 
             StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ChangeAvatar()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _dbContext.Profiles.Include(p => p.Avatar).FirstOrDefaultAsync(p => p.Id == user.Id);
+            if (user == null)
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+
+            var model = new ChangeAvatarViewModel
+            {
+                AvatarId = profile.Avatar?.Id.ToString(),
+                StatusMessage = StatusMessage
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangeAvatar(IFormFile file)
+        {
+            if (!new[] { "image/jpg", "image/png" }.Contains(file?.ContentType))
+            {
+                StatusMessage = "File should have .jpg or .png extension";
+                return RedirectToAction(nameof(ChangeAvatar));
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            var profile = await _dbContext.Profiles.FindAsync(user.Id);
+            if (user == null)
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+
+            profile.Avatar = new Image { MimeType = file.ContentType, Data = new byte[file.Length] };
+            var result = await file.OpenReadStream().ReadAsync(profile.Avatar.Data, 0, (int)file.Length);
+            await _dbContext.SaveChangesAsync();
+
+            StatusMessage = "Your profile has been updated";
+            return RedirectToAction(nameof(ChangeAvatar));
         }
 
         [HttpPost]

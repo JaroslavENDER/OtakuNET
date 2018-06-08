@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System;
 
 namespace OtakuNET.Web.Views.Manage
 {
@@ -13,6 +10,8 @@ namespace OtakuNET.Web.Views.Manage
 
         public static string Index => "Index";
 
+        public static string ChangeAvatar => "ChangeAvatar";
+
         public static string ChangePassword => "ChangePassword";
 
         public static string ExternalLogins => "ExternalLogins";
@@ -21,11 +20,9 @@ namespace OtakuNET.Web.Views.Manage
 
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
 
+        public static string ChangeAvatarNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChangeAvatar);
+
         public static string ChangePasswordNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChangePassword);
-
-        public static string ExternalLoginsNavClass(ViewContext viewContext) => PageNavClass(viewContext, ExternalLogins);
-
-        public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
     
         public static string PageNavClass(ViewContext viewContext, string page)
         {

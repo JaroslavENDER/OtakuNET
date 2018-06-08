@@ -5,9 +5,9 @@
 }
 
 @{
-    Model.AvatarSrc = string.IsNullOrEmpty(Model.AvatarSrc)
-? "/images/missing-square.jpg"
-: Model.AvatarSrc;
+    var avatarSrc = string.IsNullOrEmpty(Model.AvatarId)
+        ? "/images/missing-square.jpg"
+        : Url.Action("Get", "Image", new { Id = Model.AvatarId });
     Model.Name = string.IsNullOrEmpty(Model.Name)
         ? Model.Login
         : Model.Name;
@@ -19,7 +19,7 @@
 <div class="flex__flex-container profile__first-block">
 
     <section class="profile__section-avatar">
-        <img src="@Model.AvatarSrc" alt="" class="profile__section-avatar__image" />
+        <img src="@avatarSrc" alt="" class="profile__section-avatar__image" />
     </section>
 
     <section class="profile__section-central">

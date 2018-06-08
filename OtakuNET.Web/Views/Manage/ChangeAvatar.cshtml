@@ -1,0 +1,28 @@
+﻿@using OtakuNET.Web.Views.Manage
+@using OtakuNET.Web.Models.ManageViewModels
+@model ChangeAvatarViewModel
+@{
+    ViewData["Title"] = "Change avatar";
+    ViewData.AddActivePage(ManageNavPages.ChangeAvatar);
+}
+
+@{ 
+    var avatarSrc = string.IsNullOrEmpty(Model.AvatarId)
+? "/images/missing-square.jpg"
+: Url.Action("Get", "Image", new { Id = Model.AvatarId });
+}
+
+<h4>@ViewData["Title"]</h4>
+@Html.Partial("_StatusMessage", Model.StatusMessage)
+<div class="row">
+    <div class="col-md-6">
+        <img src="@avatarSrc" width="200" style="margin:2rem" alt="" />
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Load your avatar</label>
+                <input type="file" name="file" id="file" class="btn" />
+            </div>
+            <button type="submit" class="btn btn-default">Save</button>
+        </form>
+    </div>
+</div>
