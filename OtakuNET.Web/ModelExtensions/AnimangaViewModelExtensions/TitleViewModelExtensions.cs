@@ -1,7 +1,6 @@
 ﻿using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.AnimangaViewModels;
-using OtakuNET.Web.Services;
 using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +27,7 @@ namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
 
         private static TitleViewModel Initialize(this TitleViewModel model, Animanga title, ITagTranslator tagTranslator)
         {
+            model.Key = title.Key;
             model.Title = title.Title;
             model.ImageSrc = title.ImageSrc;
             model.StudioName = title.StudioName;

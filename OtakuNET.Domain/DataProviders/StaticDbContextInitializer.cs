@@ -1060,15 +1060,14 @@ namespace OtakuNET.Domain.DataProviders
                     }
                 }
             };
-            dbContext.Profiles.AddRange(new[]
+
+            var profile = new Profile
             {
-                new Profile
-                {
-                    Id = "testId",
-                    Login = "JaroslavENDER",
-                    Name = "Ender",
-                    Avatar = null,
-                    AnimeListSet = new List<UserAnimeList>
+                Id = "testId",
+                Login = "JaroslavENDER",
+                Name = "Ender",
+                Avatar = null,
+                AnimeListSet = new List<UserAnimeList>
                     {
                         new UserAnimeList
                         {
@@ -1109,7 +1108,7 @@ namespace OtakuNET.Domain.DataProviders
                         },
                         customUserList
                     },
-                    MangaListSet = new List<UserMangaList>
+                MangaListSet = new List<UserMangaList>
                     {
                         new UserMangaList
                         {
@@ -1142,7 +1141,7 @@ namespace OtakuNET.Domain.DataProviders
                             Name = "Брошено",
                         }
                     },
-                    History = new List<ProfileHistoryItem>
+                History = new List<ProfileHistoryItem>
                     {
                         new ProfileHistoryItem
                         {
@@ -1170,6 +1169,22 @@ namespace OtakuNET.Domain.DataProviders
                             Anime = kempingOnFreshAir
                         }
                     }
+            };
+            dbContext.Profiles.Add(profile);
+
+            profile.Comments.AddRange(new[]
+            {
+                new Comment
+                {
+                    Anime = somasKitchen,
+                    Timestamp = DateTime.Now,
+                    Text = "First comment to anime Soma`s kitchen"
+                },
+                new Comment
+                {
+                    Anime = somasKitchen,
+                    Timestamp = DateTime.Now.AddSeconds(1),
+                    Text = "Second comment to anime Soma`s kitchen"
                 }
             });
 
