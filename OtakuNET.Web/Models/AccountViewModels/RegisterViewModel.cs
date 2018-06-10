@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace OtakuNET.Web.Models.AccountViewModels
 {
@@ -6,6 +7,7 @@ namespace OtakuNET.Web.Models.AccountViewModels
     {
         [Required]
         [Display(Name = "Login")]
+        [Remote("LoginValidate", "Account")]
         public string Login { get; set; }
 
         [Required]

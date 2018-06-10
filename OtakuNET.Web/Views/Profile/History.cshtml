@@ -4,11 +4,7 @@
     ViewData["Title"] = $"История - {Model.UserLogin}";
 }
 
-@{
-    var profileRouteData = new Dictionary<string, string> { ["login"] = Model.UserLogin };
-}
-
-<a asp-controller="Profile" asp-action="" asp-all-route-data="profileRouteData">
+<a asp-controller="Profile" asp-action="" asp-route-login="@Model.UserLogin">
     <header class="section__header section__header--anime-list">@Model.UserLogin - история</header>
 </a>
 
