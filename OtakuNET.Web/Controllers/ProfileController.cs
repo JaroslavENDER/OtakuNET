@@ -28,8 +28,7 @@ namespace OtakuNET.Web.Controllers
         }
 
         [Authorize]
-        [HttpGet("Profile")]
-        public async Task<IActionResult> Profile()
+        public async Task<IActionResult> MyProfile()
         {
             var user = await userManager.GetUserAsync(User);
             return await Profile(user.UserName);

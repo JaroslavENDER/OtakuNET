@@ -11,3 +11,7 @@
 <section>
     @await Html.PartialAsync("/Views/NewsPartial/_OneNewsPartial.cshtml", Model.News);
 </section>
+
+<section class="title__section-comments">
+    @await Component.InvokeAsync("Comments", new { controllerName = "News", key = Model.News.Key.ToString() })
+</section>

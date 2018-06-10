@@ -10,7 +10,8 @@
       "wwwroot/css/news.css",
       "wwwroot/css/title.css",
       "wwwroot/css/list.css",
-      "wwwroot/css/profile.css"
+      "wwwroot/css/profile.css",
+      "wwwroot/css/comment.css"
     ]
   },
   {

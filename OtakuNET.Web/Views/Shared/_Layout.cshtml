@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="~/css/title.css" />
         <link rel="stylesheet" href="~/css/list.css" />
         <link rel="stylesheet" href="~/css/profile.css" />
+        <link rel="stylesheet" href="~/css/comment.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -37,7 +38,7 @@
                     <li><a asp-controller="Home" asp-action="Index">Главная</a></li>
                     <li><a asp-controller="Anime" asp-action="List">Аниме</a></li>
                     <li><a asp-controller="Manga" asp-action="List">Манга</a></li>
-                    <li><a href="/Profile">Профиль</a></li>
+                    <li><a asp-controller="Profile" asp-action="MyProfile">Профиль</a></li>
                     <li><a asp-controller="Home" asp-action="About">О проекте</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
@@ -54,6 +55,7 @@
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-unobtrusive-ajax/jquery-unobtrusive-ajax.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
@@ -64,6 +66,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
         </script>
+        <script src="~/lib/jquery-unobtrusive-ajax/jquery-unobtrusive-ajax.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"

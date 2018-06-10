@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OtakuNET.Web.Extensions;
 using OtakuNET.Web.Services;
+using OtakuNET.Web.Services.CommentCreater;
 using OtakuNET.Web.Services.ProfileCreater;
 using OtakuNET.Web.Services.TagTranslator;
 
@@ -25,6 +26,7 @@ namespace OtakuNET.Web
             services.AddTransient<ITagTranslator, TagTranslatorEng>();
             services.AddTransient<ITimestampFormatter, TimestampFormatter>();
             services.AddTransient<IProfileCreater, ProfileCreater>();
+            services.AddTransient<ICommentCreater, CommentCreater>();
 
             services.AddMvc();
         }
@@ -52,6 +54,10 @@ namespace OtakuNET.Web
                     name: "image",
                     template: "Image/{id}",
                     defaults: new { controller = "Image", action = "Get" });
+                routes.MapRoute(
+                    name: "my-profile",
+                    template: "Profile",
+                    defaults: new { controller = "Profile", action = "MyProfile" });
                 routes.MapRoute(
                     name: "profile",
                     template: "Profile/{login}/{action=Profile}/{key?}",
