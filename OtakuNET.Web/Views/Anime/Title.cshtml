@@ -11,10 +11,6 @@
     Model.StudioImageSrc = string.IsNullOrEmpty(Model.StudioImageSrc)
         ? "/images/missing-square.jpg"
         : Model.StudioImageSrc;
-    var studioRouteData = new Dictionary<string, string>
-    {
-        ["key"] = Model.StudioName
-    };
 }
 
 <header class="title__header">
@@ -59,7 +55,7 @@
                 <div>
                     <section class="title__section-studio">
                         <header class="section__header section__header--min">Студия</header>
-                        <a asp-controller="Anime" asp-action="Studio" asp-all-route-data="studioRouteData" title="@Model.StudioName">
+                        <a asp-controller="Anime" asp-action="Studio" asp-route-key="@Model.StudioName" title="@Model.StudioName">
                             <img src="@Model.StudioImageSrc" alt="" class="title__section-studio__image" />
                         </a>
                     </section>

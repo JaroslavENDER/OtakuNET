@@ -6,13 +6,12 @@
     var tagTranslator = new FrontendTagTranslator();
     var tagClass = tagTranslator.ToClassName(Model.Tag);
     var tagText = tagTranslator.ToString(Model.Tag);
-    var routeDataKey = new Dictionary<string, string> { ["key"] = Model.Key.ToString() };
 }
 
 <article class="news-node">
     <header>
         <span class="tag @tagClass">@tagText</span>
-        <a asp-controller="News" asp-action="One" asp-all-route-data="routeDataKey">
+        <a asp-controller="News" asp-action="One" asp-route-key="@Model.Key">
             <span class="title-preview__name title-preview__name--big">@Model.Title</span>
         </a>
         <span class="title-preview__info">@Model.Timestamp</span>

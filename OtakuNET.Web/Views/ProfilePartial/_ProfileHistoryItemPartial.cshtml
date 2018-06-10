@@ -2,8 +2,6 @@
 @model ProfileHistoryItemViewModel
 
 @{ 
-    var titleRouteData = new Dictionary<string, string>();
-    var userListRouteData = new Dictionary<string, string>();
     var title = Model.TitleInfo?.Title;
     var userList = Model.UserList;
     if (title != null)
@@ -11,25 +9,20 @@
         title.ImageSrc = string.IsNullOrEmpty(title.ImageSrc)
             ? "/images/missing.jpg"
             : title.ImageSrc;
-        titleRouteData.Add("key", title.Key);
-    }
-    if (userList != null)
-    {
-        userListRouteData.Add("key", userList.Key);
     }
 }
 
 <article class="profile__history__item">
     @if (title != null)
     {
-        <a asp-controller="@Model.TitleInfo.ControllerName" asp-action="Title" asp-all-route-data="titleRouteData" class="profile__history__image-link" title="@title.Name">
+        <a asp-controller="@Model.TitleInfo.ControllerName" asp-action="Title" asp-route-key="@title.Key" class="profile__history__image-link" title="@title.Name">
             <img src="@title.ImageSrc" alt="" class="profile__history__image" />
         </a>
     }
         <div class="profile__history__container">
             @if (title != null)
             {
-                <a asp-controller="@Model.TitleInfo.ControllerName" asp-action="Title" asp-all-route-data="titleRouteData" title="@title.Name">
+                <a asp-controller="@Model.TitleInfo.ControllerName" asp-action="Title" asp-route-key="@title.Key" title="@title.Name">
                     <h3 class="title-preview__name history__title__name">@title.Name</h3>
                 </a>
             }
@@ -37,7 +30,7 @@
                 @Model.Text
                 @if (userList != null)
                 {
-                    <a asp-controller="Profile" asp-action="List" asp-all-route-data="userListRouteData">@userList.Name</a>
+                    <a asp-controller="Profile" asp-action="List" asp-route-key="@userList.Key">@userList.Name</a>
                 }
             </span>
             <span class="title-preview__info history__title__info">@Model.Timestamp</span>
