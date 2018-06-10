@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.AccountViewModels;
@@ -144,6 +145,15 @@ namespace OtakuNET.Web.Controllers
 
             AddErrors(result);
             return View(model);
+        }
+
+        [AllowAnonymous]
+        public async Task<JsonResult> LoginValidate(string login)
+        {
+            var profile = await _dbContext.Profiles.FirstOrDefaultAsync(p => p.Login.Equals(login, StringComparison.OrdinalIgnoreCase));
+            if (profile == null)
+                return Json(true);
+            return Json($"User name '{login}' is already taken.");
         }
 
         [HttpGet]
