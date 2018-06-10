@@ -8,8 +8,8 @@
 
 @{ 
     var avatarSrc = string.IsNullOrEmpty(Model.AvatarId)
-? "/images/missing-square.jpg"
-: Url.Action("Get", "Image", new { Id = Model.AvatarId });
+        ? "/images/missing-square.jpg"
+        : Url.Action("Get", "Image", new { Id = Model.AvatarId });
 }
 
 <h4>@ViewData["Title"]</h4>

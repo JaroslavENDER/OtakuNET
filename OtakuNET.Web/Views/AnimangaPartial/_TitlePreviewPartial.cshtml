@@ -9,14 +9,10 @@
     title.ImageSrc = string.IsNullOrEmpty(title.ImageSrc)
                     ? "/images/missing.jpg"
                     : title.ImageSrc;
-    var key = new Dictionary<string, string>
-    {
-        ["key"] = title.Key
-    };
 }
 
 <div class="title-preview" id="@id">
-    <a asp-controller="@controller" asp-action="Title" asp-all-route-data="key" class="title-preview__link" title="@title.Name">
+    <a asp-controller="@controller" asp-action="Title" asp-route-key="@title.Key" class="title-preview__link" title="@title.Name">
         <img src="@title.ImageSrc" alt="" class="title-preview__image" />
         <p class="title-preview__info title-preview__info--absolute">@title.Info</p>
         <h3 class="title-preview__name title-preview__name--absolute">@title.Name</h3>

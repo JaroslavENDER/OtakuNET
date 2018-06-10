@@ -74,7 +74,7 @@ namespace OtakuNET.Web.Controllers
             if (user == null)
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             
-            if (model.Name != profile.Name)
+            if (!string.IsNullOrEmpty(model.Name) && model.Name != profile.Name)
             {
                 profile.Name = model.Name;
                 await _dbContext.SaveChangesAsync();

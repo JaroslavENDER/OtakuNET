@@ -7,9 +7,6 @@
 
 @{ 
     Model.AnimeRecomendationsFirstBlock.Reverse();
-
-    Dictionary<string, string> GetRouteData(string login, string key)
-        => new Dictionary<string, string> { ["login"] = login, ["key"] = key };
 }
 
 
@@ -111,7 +108,8 @@
                     }
                     else
                     {
-                        <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteData(Model.Login, userList.Key)" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                        <a asp-controller="Profile" asp-action="List" asp-route-login="@Model.Login" asp-route-key ="userList.Key"
+                           class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
                     }
                     <span class="middle-section__second__list-counter">@userList.TitleCount</span>
                 </div>
@@ -128,7 +126,8 @@
                     }
                     else
                     {
-                        <a asp-controller="Profile" asp-action="List" asp-all-route-data="GetRouteData(Model.Login, userList.Key)" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                        <a asp-controller="Profile" asp-action="List" asp-route-login="@Model.Login" asp-route-key="@userList.Key"
+                           class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
                     }
                     <span class="middle-section__second__list-counter">@userList.TitleCount</span>
                 </div>
