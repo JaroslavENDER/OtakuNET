@@ -214,6 +214,10 @@ dd {
     bottom: -1rem;
 }
 
+.title-preview__info--inline {
+    display: inline;
+}
+
 /*---./title-preview---*/
 
 
