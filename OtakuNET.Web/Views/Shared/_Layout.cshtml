@@ -41,7 +41,7 @@
                     <li><a asp-controller="Profile" asp-action="MyProfile">Профиль</a></li>
                     <li><a asp-controller="Home" asp-action="About">О проекте</a></li>
                 </ul>
-                @await Html.PartialAsync("_LoginPartial")
+                @await Component.InvokeAsync("Login")
             </div>
         </div>
     </header>
