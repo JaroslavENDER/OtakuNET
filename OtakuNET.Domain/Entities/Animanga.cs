@@ -16,11 +16,13 @@ namespace OtakuNET.Domain.Entities
 
         public List<DataListInfomation> Information { get; set; }
         public List<AnimangaLink> Links { get; set; }
+        public List<Comment> Comments { get; set; }
 
         public Animanga()
         {
             Information = new List<DataListInfomation>();
             Links = new List<AnimangaLink>();
+            Comments = new List<Comment>();
         }
     }
 }

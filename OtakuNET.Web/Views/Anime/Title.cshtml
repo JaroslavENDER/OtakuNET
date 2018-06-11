@@ -70,6 +70,10 @@
                 </p>
             </section>
 
+            <section class="title__section-comments">
+                @await Component.InvokeAsync("Comments", new { controllerName = "Anime", key = Model.Key })
+            </section>
+
         </div>
 
     </div>

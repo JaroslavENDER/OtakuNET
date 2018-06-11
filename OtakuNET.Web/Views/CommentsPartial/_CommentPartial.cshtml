@@ -1,0 +1,23 @@
+﻿@using OtakuNET.Web.Models.CommentsViewModels
+@model CommentViewModel
+
+@{ 
+    var avatarSrc = string.IsNullOrEmpty(Model.ProfileAvatarId)
+        ? "/images/missing-square.jpg"
+        : Url.Action("Get", "Image", new { id = Model.ProfileAvatarId });
+}
+
+<article class="comment">
+    <div class="comment__avatar">
+        <a asp-action="Profile" asp-controller="Profile" asp-route-login="@Model.ProfileLogin">
+            <img src="@avatarSrc" alt="" class="comment__avatar__image" />
+        </a>
+    </div>
+    <header>
+        <a asp-action="Profile" asp-controller="Profile" asp-route-login="@Model.ProfileLogin" class="title-preview__name">
+            @Model.ProfileLogin
+        </a>
+        <span class="title-preview__info title-preview__info--inline">@Model.Timestamp</span>
+    </header>
+    <p class="comment__text">@Model.Text</p>
+</article>

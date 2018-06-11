@@ -14,12 +14,14 @@ namespace OtakuNET.Domain.Entities
         public List<UserAnimeList> AnimeListSet { get; set; }
         public List<UserMangaList> MangaListSet { get; set; }
         public List<ProfileHistoryItem> History { get; set; }
+        public List<Comment> Comments { get; set; }
 
         public Profile()
         {
             AnimeListSet = new List<UserAnimeList>();
             MangaListSet = new List<UserMangaList>();
             History = new List<ProfileHistoryItem>();
+            Comments = new List<Comment>();
         }
     }
 }

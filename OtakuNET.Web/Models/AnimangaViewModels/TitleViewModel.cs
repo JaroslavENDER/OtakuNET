@@ -4,6 +4,7 @@ namespace OtakuNET.Web.Models.AnimangaViewModels
 {
     public class TitleViewModel
     {
+        public string Key { get; set; }
         public string Title { get; set; }
         public string ImageSrc { get; set; }
         public UserListsControlViewModel UserListControls { get; set; }

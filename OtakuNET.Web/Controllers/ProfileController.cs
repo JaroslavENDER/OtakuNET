@@ -28,8 +28,7 @@ namespace OtakuNET.Web.Controllers
         }
 
         [Authorize]
-        [HttpGet("Profile")]
-        public async Task<IActionResult> Profile()
+        public async Task<IActionResult> MyProfile()
         {
             var user = await userManager.GetUserAsync(User);
             return await Profile(user.UserName);
@@ -47,7 +46,7 @@ namespace OtakuNET.Web.Controllers
                 .FirstOrDefaultAsync(p => string.Equals(p.Login, login, StringComparison.OrdinalIgnoreCase));
             if (profile == null) return NotFound();
             var model = new ProfileViewModel().Initialize(profile, timestampFormatter);
-            return View(model);
+            return View(nameof(Profile), model);
         }
 
         public async Task<IActionResult> List(string login, string key)
