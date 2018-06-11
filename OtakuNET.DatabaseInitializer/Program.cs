@@ -3,6 +3,7 @@ using OtakuNET.Domain.DataProviders;
 using OtakuNET.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OtakuNET.DatabaseInitializer
 {
@@ -15,6 +16,7 @@ namespace OtakuNET.DatabaseInitializer
             try
             {
                 InitializeDatabase(dbContext);
+                AddComments(dbContext);
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Done.");
             }
@@ -1080,15 +1082,14 @@ namespace OtakuNET.DatabaseInitializer
                     }
                 }
             };
-            dbContext.Profiles.AddRange(new[]
+
+            var profile = new Profile
             {
-                new Profile
-                {
-                    Id = "testId",
-                    Login = "JaroslavENDER",
-                    Name = "Ender",
-                    Avatar = null,
-                    AnimeListSet = new List<UserAnimeList>
+                Id = "testId",
+                Login = "JaroslavENDER",
+                Name = "Ender",
+                Avatar = null,
+                AnimeListSet = new List<UserAnimeList>
                     {
                         new UserAnimeList
                         {
@@ -1129,7 +1130,7 @@ namespace OtakuNET.DatabaseInitializer
                         },
                         customUserList
                     },
-                    MangaListSet = new List<UserMangaList>
+                MangaListSet = new List<UserMangaList>
                     {
                         new UserMangaList
                         {
@@ -1162,7 +1163,7 @@ namespace OtakuNET.DatabaseInitializer
                             Name = "Брошено",
                         }
                     },
-                    History = new List<ProfileHistoryItem>
+                History = new List<ProfileHistoryItem>
                     {
                         new ProfileHistoryItem
                         {
@@ -1190,9 +1191,33 @@ namespace OtakuNET.DatabaseInitializer
                             Anime = kempingOnFreshAir
                         }
                     }
+            };
+            dbContext.Profiles.Add(profile);
+
+
+            dbContext.SaveChanges();
+        }
+
+        private static void AddComments(IDbContext dbContext)
+        {
+            var profile = dbContext.Profiles.FirstOrDefault(p => p.Login == "JaroslavENDER");
+            var somasKitchen = dbContext.Anime.Find("somas-kitchen");
+
+            profile.Comments.AddRange(new[]
+            {
+                new Comment
+                {
+                    Anime = somasKitchen,
+                    Timestamp = DateTime.Now,
+                    Text = "First comment to anime Soma`s kitchen"
+                },
+                new Comment
+                {
+                    Anime = somasKitchen,
+                    Timestamp = DateTime.Now.AddSeconds(20),
+                    Text = "Second comment to anime Soma`s kitchen"
                 }
             });
-
 
             dbContext.SaveChanges();
         }

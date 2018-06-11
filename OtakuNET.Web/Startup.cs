@@ -21,7 +21,7 @@ namespace OtakuNET.Web
         {
             //Use this
             services.AddStaticDbContextInMemory("OtakuNET-InMemoryDatabase");
-            //or this
+            //or this + OtakuNET.DatabaseInitializer
             //services.AddEfDbContext(Configuration.GetConnectionString("EfConnection"));
 
             services.AddIdentity();
