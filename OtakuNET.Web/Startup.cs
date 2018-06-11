@@ -18,7 +18,11 @@ namespace OtakuNET.Web
         
         public void ConfigureServices(IServiceCollection services)
         {
+            //Use this
             services.AddStaticDbContextInMemory("OtakuNET-InMemoryDatabase");
+            //or this
+            //services.AddEfDbContext(Configuration.GetConnectionString("EfConnection"));
+
             services.AddIdentity();
             
             services.AddTransient<IEmailSender, EmailSender>();
