@@ -20,6 +20,17 @@ namespace OtakuNET.Web.Extensions
             services.AddScoped<IDbContext, StaticDbContext>();
         }
 
+        public static void AddEfDbContext(this IServiceCollection services, string connectionString)
+        {
+            services.AddDbContext<ApplicationDbContext>(options
+                => options.UseSqlServer(connectionString));
+
+            services.AddDbContext<EfDbContext>(options
+                => options.UseSqlServer(connectionString));
+
+            services.AddScoped<IDbContext, EfDbContext>();
+        }
+
         public static void AddIdentity(this IServiceCollection services)
         {
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>

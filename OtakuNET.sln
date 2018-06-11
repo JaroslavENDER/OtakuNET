@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtakuNET.Domain", "OtakuNET
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0B596A6D-8F47-44F4-8A33-29842B783725}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtakuNET.Domain.Tests", "tests\OtakuNET.Domain.Tests\OtakuNET.Domain.Tests.csproj", "{D27B8F37-A0DA-4790-981C-E48F0AE53A72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtakuNET.Domain.Tests", "tests\OtakuNET.Domain.Tests\OtakuNET.Domain.Tests.csproj", "{D27B8F37-A0DA-4790-981C-E48F0AE53A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtakuNET.Web.Tests", "tests\OtakuNET.Web.Tests\OtakuNET.Web.Tests.csproj", "{6B156B20-4C0A-4F6A-8ABD-7C30963CFD1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OtakuNET.Web.Tests", "tests\OtakuNET.Web.Tests\OtakuNET.Web.Tests.csproj", "{6B156B20-4C0A-4F6A-8ABD-7C30963CFD1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtakuNET.DatabaseInitializer", "OtakuNET.DatabaseInitializer\OtakuNET.DatabaseInitializer.csproj", "{81527FE9-AED0-46B7-9B58-36331B5D66F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{6B156B20-4C0A-4F6A-8ABD-7C30963CFD1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B156B20-4C0A-4F6A-8ABD-7C30963CFD1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B156B20-4C0A-4F6A-8ABD-7C30963CFD1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81527FE9-AED0-46B7-9B58-36331B5D66F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81527FE9-AED0-46B7-9B58-36331B5D66F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81527FE9-AED0-46B7-9B58-36331B5D66F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81527FE9-AED0-46B7-9B58-36331B5D66F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
