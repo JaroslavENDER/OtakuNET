@@ -5,7 +5,7 @@
     ViewData["Title"] = "Главная";
 }
 
-@{ 
+@{
     Model.AnimeRecomendationsFirstBlock.Reverse();
 }
 
@@ -29,114 +29,9 @@
 </section>
 
 <section class="middle-section">
-
-    <input type="radio" name="middle-section" id="middle-section__radio-button--anime" checked />
-    <label for="middle-section__radio-button--anime">Аниме</label>
-    <input type="radio" name="middle-section" id="middle-section__radio-button--manga" />
-    <label for="middle-section__radio-button--manga">Манга</label>
-
-    <div class="middle-section__container">
-
-        <div class="middle-section__first">
-            <div class="middle-section__first__container" id="middle-section__first__radio-button-block--anime" hidden>
-                <div class="middle-section__first__column">
-                    <a asp-controller="Anime" asp-action="List" title="">
-                        <header class="section__header section__header--seasons">Аниме</header>
-                    </a>
-                    <ul class="middle-section__first__column__list">
-                        @foreach (var season in Model.AnimeRecomendationsFirstBlock)
-                        {
-                            <a href="@season.Href" title="@season.LinkTitle">
-                                <li class="middle-section__first__column__list-item">@season.Text</li>
-                            </a>
-                        }
-                    </ul>
-                </div>
-                <div class="middle-section__first__column">
-                    <a asp-controller="Anime" asp-action="List">
-                        <header class="section__header section__header--recomendations">Рекомендации</header>
-                    </a>
-                    <ul class="middle-section__first__column__list">
-                        @foreach (var recomendations in Model.AnimeRecomendationsSecondBlock)
-                        {
-                            <a href="@recomendations.Href" title="@recomendations.LinkTitle">
-                                <li class="middle-section__first__column__list-item">@recomendations.Text</li>
-                            </a>
-                        }
-                    </ul>
-                </div>
-            </div>
-            <div class="middle-section__first__container" id="middle-section__first__radio-button-block--manga" hidden>
-                <div class="middle-section__first__column">
-                    <a asp-controller="Manga" asp-action="List">
-                        <header class="section__header section__header--seasons">Манга</header>
-                    </a>
-                    <ul class="middle-section__first__column__list">
-                        @foreach (var mangaType in Model.MangaRecomendationsFirstBlock)
-                        {
-                            <a href="@mangaType.Href" title="@mangaType.LinkTitle">
-                                <li class="middle-section__first__column__list-item">@mangaType.Text</li>
-                            </a>
-                        }
-                    </ul>
-                </div>
-                <div class="middle-section__first__column">
-                    <a asp-controller="Manga" asp-action="List">
-                        <header class="section__header section__header--recomendations">Рекомендации</header>
-                    </a>
-                    <ul class="middle-section__first__column__list">
-                        @foreach (var recomendation in Model.MangaRecomendationsSecondBlock)
-                        {
-                            <a href="@recomendation.Href" title="@recomendation.LinkTitle">
-                                <li class="middle-section__first__column__list-item">@recomendation.Text</li>
-                            </a>
-                        }
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="middle-section__second">
-            <div class="middle-section__second__container" id="middle-section__second__radio-button-block--anime" hidden>
-                <header class="middle-section__second__header">Мои списки аниме</header>
-                @foreach (var userList in Model.UserAnimeLists)
-                {
-                <div class="middle-section__second__list">
-                    @if (string.IsNullOrEmpty(userList.Key))
-                    {
-                        <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
-                    }
-                    else
-                    {
-                        <a asp-controller="Profile" asp-action="List" asp-route-login="@Model.Login" asp-route-key ="@userList.Key"
-                           class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
-                    }
-                    <span class="middle-section__second__list-counter">@userList.TitleCount</span>
-                </div>
-                }
-            </div>
-            <div class="middle-section__second__container" id="middle-section__second__radio-button-block--manga" hidden>
-                <header class="middle-section__second__header">Мои списки манги</header>
-                @foreach (var userList in Model.UserMangaLists)
-                {
-                <div class="middle-section__second__list">
-                    @if (string.IsNullOrEmpty(userList.Key))
-                    {
-                        <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
-                    }
-                    else
-                    {
-                        <a asp-controller="Profile" asp-action="List" asp-route-login="@Model.Login" asp-route-key="@userList.Key"
-                           class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
-                    }
-                    <span class="middle-section__second__list-counter">@userList.TitleCount</span>
-                </div>
-                }
-            </div>
-        </div>
-
-    </div>
-
+    <a href="#!/anime">Аниме</a>
+    <a href="#!/manga">Манга</a>
+    <div class="middle-section__container" id="middle-section__container"></div>
 </section>
 
 <div class="news-container">
@@ -156,3 +51,117 @@
     </section>
 
 </div>
+
+
+
+
+<script type="text/template" id="anime-template">
+    <div class="middle-section__first">
+        <div class="middle-section__first__container">
+            <div class="middle-section__first__column">
+                <a asp-controller="Anime" asp-action="List" title="">
+                    <header class="section__header section__header--seasons">Аниме</header>
+                </a>
+                <ul class="middle-section__first__column__list">
+                    @foreach (var season in Model.AnimeRecomendationsFirstBlock)
+                    {
+                        <a href="@season.Href" title="@season.LinkTitle">
+                            <li class="middle-section__first__column__list-item">@season.Text</li>
+                        </a>
+                    }
+                </ul>
+            </div>
+            <div class="middle-section__first__column">
+                <a asp-controller="Anime" asp-action="List">
+                    <header class="section__header section__header--recomendations">Рекомендации</header>
+                </a>
+                <ul class="middle-section__first__column__list">
+                    @foreach (var recomendations in Model.AnimeRecomendationsSecondBlock)
+                    {
+                        <a href="@recomendations.Href" title="@recomendations.LinkTitle">
+                            <li class="middle-section__first__column__list-item">@recomendations.Text</li>
+                        </a>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="middle-section__second">
+        <div class="middle-section__second__container">
+            <header class="middle-section__second__header">Мои списки аниме</header>
+            @foreach (var userList in Model.UserAnimeLists)
+            {
+                <div class="middle-section__second__list">
+                    @if (string.IsNullOrEmpty(userList.Key))
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Profile" asp-action="List" asp-route-login="@Model.Login" asp-route-key="@userList.Key"
+                           class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                    }
+                    <span class="middle-section__second__list-counter">@userList.TitleCount</span>
+                </div>
+            }
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="manga-template">
+    <div class="middle-section__first">
+        <div class="middle-section__first__container">
+            <div class="middle-section__first__column">
+                <a asp-controller="Manga" asp-action="List">
+                    <header class="section__header section__header--seasons">Манга</header>
+                </a>
+                <ul class="middle-section__first__column__list">
+                    @foreach (var mangaType in Model.MangaRecomendationsFirstBlock)
+                    {
+                        <a href="@mangaType.Href" title="@mangaType.LinkTitle">
+                            <li class="middle-section__first__column__list-item">@mangaType.Text</li>
+                        </a>
+                    }
+                </ul>
+            </div>
+            <div class="middle-section__first__column">
+                <a asp-controller="Manga" asp-action="List">
+                    <header class="section__header section__header--recomendations">Рекомендации</header>
+                </a>
+                <ul class="middle-section__first__column__list">
+                    @foreach (var recomendation in Model.MangaRecomendationsSecondBlock)
+                    {
+                        <a href="@recomendation.Href" title="@recomendation.LinkTitle">
+                            <li class="middle-section__first__column__list-item">@recomendation.Text</li>
+                        </a>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="middle-section__second">
+        <div class="middle-section__second__container">
+            <header class="middle-section__second__header">Мои списки манги</header>
+            @foreach (var userList in Model.UserMangaLists)
+            {
+                <div class="middle-section__second__list">
+                    @if (string.IsNullOrEmpty(userList.Key))
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Profile" asp-action="List" asp-route-login="@Model.Login" asp-route-key="@userList.Key"
+                           class="middle-section__second__list-name" title="@userList.Description">@userList.Name</a>
+                    }
+                    <span class="middle-section__second__list-counter">@userList.TitleCount</span>
+                </div>
+            }
+        </div>
+    </div>
+</script>
+
+@section Scripts  {
+    @await Html.PartialAsync("_BackboneScriptsPartial")
+    <script src="~/js/Home/middle-section-switcher.js"></script>
+}
