@@ -57,35 +57,8 @@
     }
 }
 
-.middle-section input[type="radio"] {
-    display: none;
-}
-
-.middle-section label {
-    margin-right: 2rem;
-}
-
-    .middle-section label:hover {
-        color: #f00;
-        text-decoration: underline;
-    }
-
-#middle-section__radio-button--anime:checked + label,
-#middle-section__radio-button--manga:checked + label {
-    color: #f00;
-}
-
-#middle-section__radio-button--anime:checked ~ .middle-section__container .middle-section__first #middle-section__first__radio-button-block--anime,
-#middle-section__radio-button--manga:checked ~ .middle-section__container .middle-section__first #middle-section__first__radio-button-block--manga {
-    display: flex;
-}
-
-#middle-section__radio-button--anime:checked ~ .middle-section__container .middle-section__second #middle-section__second__radio-button-block--anime,
-#middle-section__radio-button--manga:checked ~ .middle-section__container .middle-section__second #middle-section__second__radio-button-block--manga {
-    display: block;
-}
-
 .middle-section__first__container {
+    display: flex;
     justify-content: space-between;
 }
 
