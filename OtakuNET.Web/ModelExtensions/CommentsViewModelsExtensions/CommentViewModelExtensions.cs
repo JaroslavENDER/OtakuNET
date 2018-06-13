@@ -8,8 +8,8 @@ namespace OtakuNET.Web.ModelExtensions.CommentsViewModelsExtensions
     {
         public static CommentViewModel Initialize(this CommentViewModel model, Comment comment, ITimestampFormatter timestampFormatter)
         {
-            model.ProfileAvatarId = comment.Profile.Avatar?.Id.ToString();
-            model.ProfileLogin = comment.Profile.Login;
+            model.AvatarSrc = comment.Profile.Avatar?.Id.ToString() ?? "/images/missing-square.jpg";
+            model.Login = comment.Profile.Login;
             model.Text = comment.Text;
             model.Timestamp = timestampFormatter.Format(comment.Timestamp);
 

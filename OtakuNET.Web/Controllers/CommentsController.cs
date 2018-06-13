@@ -1,4 +1,9 @@
-﻿using Ender.TimestampFormatterCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Ender.TimestampFormatterCore;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,12 +13,11 @@ using OtakuNET.Web.ModelExtensions.CommentsViewModelsExtensions;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.CommentsViewModels;
 using OtakuNET.Web.Services.CommentCreater;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OtakuNET.Web.Controllers
 {
+    [Produces("application/json")]
+    [Route("api/comments")]
     public class CommentsController : Controller
     {
         private readonly IDbContext dbContext;
@@ -28,7 +32,8 @@ namespace OtakuNET.Web.Controllers
             this.timestampFormatter = timestampFormatter;
         }
 
-        public async Task<PartialViewResult> Send(CommentSendViewModel model)
+        [HttpGet("send/{contentType}/{contentKey}/{text}")]
+        public async Task<CommentViewModel> Send(CommentSendViewModel model)
         {
             var user = await userManager.GetUserAsync(User);
             if (user == null)
@@ -47,9 +52,7 @@ namespace OtakuNET.Web.Controllers
 
             profile.Comments.Add(comment);
             await dbContext.SaveChangesAsync();
-            var returnedModel = new CommentViewModel().Initialize(comment, timestampFormatter);
-
-            return PartialView("/Views/CommentsPartial/_CommentPartial.cshtml", returnedModel);
+            return new CommentViewModel().Initialize(comment, timestampFormatter);
         }
 
         private async Task<Comment> CreateAnimangaComment<T>(Func<IDbContext, IQueryable<T>> func, Profile profile, CommentSendViewModel commentInfo) where T : Animanga
@@ -57,11 +60,37 @@ namespace OtakuNET.Web.Controllers
             var animanga = await func(dbContext).FirstOrDefaultAsync(a => a.Key == commentInfo.ContentKey);
             return commentCreater.Create(profile, commentInfo, animanga);
         }
-        
+
         private async Task<Comment> CreateNewsComment(Profile profile, CommentSendViewModel commentInfo)
         {
             var news = await dbContext.News.FindAsync(int.Parse(commentInfo.ContentKey));
             return commentCreater.Create(profile, commentInfo, news);
+        }
+
+        [HttpGet("get/{contentType}/{contentKey}")]
+        public async Task<IEnumerable<CommentViewModel>> Get(string contentType, string contentKey)
+        {
+            var comments = contentType == "Anime"
+                ? await GetAnimangaComments(db => db.Anime, contentKey)
+                : contentType == "Manga"
+                    ? await GetAnimangaComments(db => db.Manga, contentKey)
+                    : contentType == "News"
+                        ? await GetNewsComments(contentKey)
+                        : throw new ArgumentException($"Invalid value '{contentType}'");
+
+            return comments.Select(c => new CommentViewModel().Initialize(c, timestampFormatter)).ToList();
+        }
+
+        private async Task<IEnumerable<Comment>> GetAnimangaComments<T>(Func<IDbContext, IQueryable<T>> func, string key) where T : Animanga
+        {
+            var animanga = await func(dbContext).Include(a => a.Comments).ThenInclude(c => c.Profile).ThenInclude(p => p.Avatar).FirstOrDefaultAsync(a => a.Key == key);
+            return animanga.Comments;
+        }
+
+        private async Task<IEnumerable<Comment>> GetNewsComments(string key)
+        {
+            var news = await dbContext.News.Include(a => a.Comments).ThenInclude(c => c.Profile).ThenInclude(p => p.Avatar).FirstOrDefaultAsync(a => a.Id.ToString() == key);
+            return news.Comments;
         }
     }
 }

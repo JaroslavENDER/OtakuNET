@@ -13,5 +13,9 @@
 </section>
 
 <section class="title__section-comments">
-    @await Component.InvokeAsync("Comments", new { controllerName = "News", key = Model.News.Key.ToString() })
+    @await Component.InvokeAsync("Comments", new { contentType = "News", contentKey = Model.News.Key.ToString() })
 </section>
+
+@section Scripts {
+    @await  Html.PartialAsync("_CommentsScriptsPartial")
+}
