@@ -71,7 +71,7 @@
             </section>
 
             <section class="title__section-comments">
-                @await Component.InvokeAsync("Comments", new { controllerName = "Anime", key = Model.Key })
+                @await Component.InvokeAsync("Comments", new { contentType = "Anime", contentKey = Model.Key })
             </section>
 
         </div>
@@ -97,3 +97,7 @@
     </div>
 
 </div>
+
+@section Scripts {
+    @await Html.PartialAsync("_CommentsScriptsPartial");
+}

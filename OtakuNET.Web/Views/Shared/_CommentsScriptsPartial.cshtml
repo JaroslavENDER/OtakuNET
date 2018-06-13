@@ -1,0 +1,12 @@
+﻿@await  Html.PartialAsync("_BackboneScriptsPartial")
+<script src="~/js/Comments/comments-builder.js"></script>
+<script>
+        var controller = new AppController();
+        function addComment() {
+            var text = $('#text').val();
+            var contentType = $('#contentType').val();
+            var contentKey = $('#contentKey').val();
+            controller.addComment(text, contentType, contentKey);
+            $('#text').val('');
+        }
+</script>

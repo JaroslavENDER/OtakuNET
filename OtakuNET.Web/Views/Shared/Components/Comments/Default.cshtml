@@ -3,38 +3,36 @@
 
 <header class="section__header section__header--min">Комментарии</header>
 
-<div id="comments__container">
-    @if (Model.Comments.Any())
-    {
-        @foreach (var comment in Model.Comments)
-        {
-            @await Html.PartialAsync("/Views/CommentsPartial/_CommentPartial.cshtml", comment)
-        }
-    }
-    else
-    {
-        if (!Model.IsUserSignIn)
-        {
-            <p>Комментариев пока нет, <a asp-action="Login" asp-controller="Account" asp-route-returnurl="@Context.Request.Path">Войдите</a>, чтобы быть первым</p>
-        }
-    }
-</div>
+<div id="comments__container"></div>
 
+
+<input type="hidden" name="contentType" id="contentType" value="@Model.ContentType" />
+<input type="hidden" name="contentKey" id="contentKey" value="@Model.ContentKey" />
 @if (Model.IsUserSignIn)
 {
     <div class="comment__input-area">
         <h4 class="section__header section__header--min">Ваш комментарий</h4>
-        <form asp-action="Send" asp-controller="Comments" data-ajax="true" data-ajax-method="POST" data-ajax-update="#comments__container" , data-ajax-mode="after" data-ajax-begin="clearTextbox()">
-            <input type="hidden" name="contentType" value="@Model.ContentType" />
-            <input type="hidden" name="contentKey" value="@Model.ContentKey" />
-            <textarea name="text" class="comment__textbox" placeholder="Текст комментария"></textarea>
-            <button type="submit" class="comment__button">написать</button>
-        </form>
+        <textarea name="text" id="text" class="comment__textbox" placeholder="Текст комментария"></textarea>
+        <button class="comment__button" onclick="addComment()">написать</button>
     </div>
 }
 
-<script>
-    function clearTextbox() {
-        $(".comment__textbox").val("");
-    }
+
+
+<script type="text/template" id="comment-template">
+    <article class="comment">
+        <div class="comment__avatar">
+            <a href="/Profile/<%= login %>">
+                <img src="<%= avatarSrc %>" alt="" class="comment__avatar__image" />
+            </a>
+        </div>
+        <header>
+            <a href="/Profile/<%= login %>" class="title-preview__name">
+                <%= login %>
+            </a>
+            <span class="title-preview__info title-preview__info--inline"><%= timestamp %></span>
+        </header>
+        <p class="comment__text"><%= text %></p>
+    </article>
 </script>
+
