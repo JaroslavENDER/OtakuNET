@@ -10,7 +10,7 @@ namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
 {
     public static class UpdatesComponentViewModelExtensions
     {
-        public static UpdatesComponentViewModel Initialize(this UpdatesComponentViewModel model, List<Update> updates, ITagTranslator tagTranslator, ITimestampFormatter timestampFormatter)
+        public static UpdatesComponentViewModel Initialize(this UpdatesComponentViewModel model, List<TitleUpdate> updates, ITagTranslator tagTranslator, ITimestampFormatter timestampFormatter)
         {
             return new UpdatesComponentViewModel
             {

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
 using OtakuNET.Domain.Entities;
+using OtakuNET.Domain.Enums;
 using OtakuNET.Web.ModelExtensions.CommentsViewModelsExtensions;
 using OtakuNET.Web.Models;
 using OtakuNET.Web.Models.CommentsViewModels;
@@ -40,10 +41,10 @@ namespace OtakuNET.Web.Controllers
                 throw new ApplicationException($"Unable to load user with ID '{userManager.GetUserId(User)}'.");
 
             var profile = await dbContext.Profiles.FindAsync(user.Id);
-            var comment = model.ContentType == "Anime"
-                ? await CreateAnimangaComment(db => db.Anime, profile, model)
-                : model.ContentType == "Manga"
-                    ? await CreateAnimangaComment(db => db.Manga, profile, model)
+            var comment = model.ContentType == "Titles"
+                ? await CreateAnimangaComment(db => db.Titles.Where(t => t.Type == TitleType.Anime), profile, model)
+                : model.ContentType == "Titles"
+                    ? await CreateAnimangaComment(db => db.Titles.Where(t => t.Type == TitleType.Manga), profile, model)
                     : model.ContentType == "News"
                         ? await CreateNewsComment(profile, model)
                         : null;
@@ -55,7 +56,7 @@ namespace OtakuNET.Web.Controllers
             return new CommentViewModel().Initialize(comment, timestampFormatter);
         }
 
-        private async Task<Comment> CreateAnimangaComment<T>(Func<IDbContext, IQueryable<T>> func, Profile profile, CommentSendViewModel commentInfo) where T : Animanga
+        private async Task<Comment> CreateAnimangaComment<T>(Func<IDbContext, IQueryable<T>> func, Profile profile, CommentSendViewModel commentInfo) where T : Title
         {
             var animanga = await func(dbContext).FirstOrDefaultAsync(a => a.Key == commentInfo.ContentKey);
             return commentCreater.Create(profile, commentInfo, animanga);
@@ -70,10 +71,10 @@ namespace OtakuNET.Web.Controllers
         [HttpGet("get/{contentType}/{contentKey}")]
         public async Task<IEnumerable<CommentViewModel>> Get(string contentType, string contentKey)
         {
-            var comments = contentType == "Anime"
-                ? await GetAnimangaComments(db => db.Anime, contentKey)
-                : contentType == "Manga"
-                    ? await GetAnimangaComments(db => db.Manga, contentKey)
+            var comments = contentType == "Titles"
+                ? await GetAnimangaComments(db => db.Titles, contentKey)
+                : contentType == "Titles"
+                    ? await GetAnimangaComments(db => db.Titles, contentKey)
                     : contentType == "News"
                         ? await GetNewsComments(contentKey)
                         : throw new ArgumentException($"Invalid value '{contentType}'");
@@ -81,7 +82,7 @@ namespace OtakuNET.Web.Controllers
             return comments.Select(c => new CommentViewModel().Initialize(c, timestampFormatter)).ToList();
         }
 
-        private async Task<IEnumerable<Comment>> GetAnimangaComments<T>(Func<IDbContext, IQueryable<T>> func, string key) where T : Animanga
+        private async Task<IEnumerable<Comment>> GetAnimangaComments<T>(Func<IDbContext, IQueryable<T>> func, string key) where T : Title
         {
             var animanga = await func(dbContext).Include(a => a.Comments).ThenInclude(c => c.Profile).ThenInclude(p => p.Avatar).FirstOrDefaultAsync(a => a.Key == key);
             return animanga.Comments;

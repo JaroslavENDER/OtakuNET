@@ -24,8 +24,8 @@ namespace OtakuNET.Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int count = 20)
         {
-            var updates = await dbContext.Updates
-                .Include(u => u.Anime)
+            var updates = await dbContext.TitleUpdates
+                .Include(u => u.Title)
                 .OrderByDescending(u => u.CreatedAt)
                 .Take(count)
                 .ToListAsync();

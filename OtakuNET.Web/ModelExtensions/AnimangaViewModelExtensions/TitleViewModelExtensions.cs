@@ -9,7 +9,7 @@ namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
 {
     public static class TitleViewModelExtensions
     {
-        public static TitleViewModel Initialize(this TitleViewModel model, Animanga title, IEnumerable<UserAnimeList> userLists, ITagTranslator tagTranslator)
+        public static TitleViewModel Initialize(this TitleViewModel model, Title title, IEnumerable<UserList> userLists, ITagTranslator tagTranslator)
         {
             model.Initialize(title, tagTranslator);
             model.UserListControls = new UserListsControlViewModel().Initialize(userLists, title);
@@ -17,18 +17,10 @@ namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
             return model;
         }
 
-        public static TitleViewModel Initialize(this TitleViewModel model, Animanga title, IEnumerable<UserMangaList> userLists, ITagTranslator tagTranslator)
-        {
-            model.Initialize(title, tagTranslator);
-            model.UserListControls = new UserListsControlViewModel().Initialize(userLists, title);
-
-            return model;
-        }
-
-        private static TitleViewModel Initialize(this TitleViewModel model, Animanga title, ITagTranslator tagTranslator)
+        private static TitleViewModel Initialize(this TitleViewModel model, Title title, ITagTranslator tagTranslator)
         {
             model.Key = title.Key;
-            model.Title = title.Title;
+            model.Title = title.Name;
             model.ImageSrc = title.ImageSrc;
             model.StudioName = title.StudioName;
             model.StudioImageSrc = title.StudioImageSrc;

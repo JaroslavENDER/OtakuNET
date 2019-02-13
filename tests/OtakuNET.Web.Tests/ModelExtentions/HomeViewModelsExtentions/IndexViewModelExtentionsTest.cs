@@ -13,102 +13,102 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
         [Fact]
         public void Returns8OngoingsWithLatestUpdateCreatedAt()
         {
-            var ongoings = new List<Anime>
+            var ongoings = new List<Title>
             {
-                new Anime
+                new Title
                 {
-                    Title = "Мегалобокс",
-                    Updates = new List<Update>
+                    Name = "Мегалобокс",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddMonths(-1),
                         }
                     }
                 },
-                new Anime
+                new Title
                 {
-                    Title = "Семь смертных грехов",
-                    Updates = new List<Update>
+                    Name = "Семь смертных грехов",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddDays(-25),
                         }
                     }
                 },
-                new Anime
+                new Title
             {
-                Title = "Трусливый велосипедист",
-                Updates = new List<Update>
+                Name = "Трусливый велосипедист",
+                Updates = new List<TitleUpdate>
                 {
-                    new Update
+                    new TitleUpdate
                     {
                         CreatedAt = DateTime.Now.AddDays(-8),
                     }
                 }
             },
-                new Anime
+                new Title
                 {
-                    Title = "Хладнокровный Казуки",
-                    Updates = new List<Update>
+                    Name = "Хладнокровный Казуки",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddDays(-7),
                         }
                     }
                 },
-                new Anime
+                new Title
                 {
-                    Title = "Старшая школа DxD",
-                    Updates = new List<Update>
+                    Name = "Старшая школа DxD",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddDays(-6),
                         }
                     }
                 },
-                new Anime
+                new Title
                 {
-                    Title = "Второй Мейджор",
-                    Updates = new List<Update>
+                    Name = "Второй Мейджор",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddDays(-1),
                         }
                     }
                 },
-                new Anime
+                new Title
                 {
-                    Title = "Хисонэ и Масо",
-                    Updates = new List<Update>
+                    Name = "Хисонэ и Масо",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddHours(-2),
                         }
                     }
                 },
-                new Anime
+                new Title
                 {
-                    Title = "Персона 5",
-                    Updates = new List<Update>
+                    Name = "Персона 5",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now.AddMinutes(-30),
                         }
                     }
                 },
-                new Anime
+                new Title
                 {
-                    Title = "Повар-боец Сома: Третье блюдо - Часть II",
-                    Updates = new List<Update>
+                    Name = "Повар-боец Сома: Третье блюдо - Часть II",
+                    Updates = new List<TitleUpdate>
                     {
-                        new Update
+                        new TitleUpdate
                         {
                             CreatedAt = DateTime.Now,
                         }
@@ -125,7 +125,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
         [Fact]
         public void ReturnsDefaultUserListsFromNulls()
         {
-            var result = new IndexViewModel().Initialize(string.Empty, new List<Anime>(), null, null, new List<AnimeSeason>());
+            var result = new IndexViewModel().Initialize(string.Empty, new List<Title>(), null, null, new List<AnimeSeason>());
 
             Assert.Equal(6, result.UserAnimeLists.Count);
             Assert.Equal(6, result.UserMangaLists.Count);

@@ -5,7 +5,7 @@ namespace OtakuNET.Web.Services.CommentCreater
 {
     public interface ICommentCreater
     {
-        Comment Create(Profile profile, CommentSendViewModel comment, Animanga animanga);
+        Comment Create(Profile profile, CommentSendViewModel comment, Title title);
         Comment Create(Profile profile, CommentSendViewModel comment, News news);
     }
 }

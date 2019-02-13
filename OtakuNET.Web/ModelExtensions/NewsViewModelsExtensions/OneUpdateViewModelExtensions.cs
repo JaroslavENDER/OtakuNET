@@ -9,15 +9,15 @@ namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
 {
     public static class OneUpdateViewModelExtensions
     {
-        public static OneUpdateViewModel Initialize(this OneUpdateViewModel model, Update update, ITagTranslator tagTranslator, ITimestampFormatter timestampFormatter)
+        public static OneUpdateViewModel Initialize(this OneUpdateViewModel model, TitleUpdate titleUpdate, ITagTranslator tagTranslator, ITimestampFormatter timestampFormatter)
         {
-            model.Title = update.Anime.Title;
-            model.TitleKey = update.Anime.Key;
-            model.Tag = tagTranslator.ToTag(update.Tag);
-            model.TagInfo = update.Tag;
-            model.Timestamp = timestampFormatter.Format(update.CreatedAt.GetValueOrDefault());
-            model.ImageSrc = update.Anime.ImageSrc;
-            model.Info = new List<DataListInformationViewModel>().Initialize(update.Information);
+            model.Title = titleUpdate.Title.Name;
+            model.TitleKey = titleUpdate.Title.Key;
+            model.Tag = tagTranslator.ToTag(titleUpdate.Tag);
+            model.TagInfo = titleUpdate.Tag;
+            model.Timestamp = timestampFormatter.Format(titleUpdate.CreatedAt.GetValueOrDefault());
+            model.ImageSrc = titleUpdate.Title.ImageSrc;
+            model.Info = new List<DataListInformationViewModel>().Initialize(titleUpdate.Information);
 
             return model;
         }

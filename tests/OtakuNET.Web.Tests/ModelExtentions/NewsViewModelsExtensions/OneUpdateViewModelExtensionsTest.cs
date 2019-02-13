@@ -21,22 +21,22 @@ namespace OtakuNET.Web.Tests.ModelExtentions.NewsViewModelsExtensions
             tagTranslatorMock.Setup(m => m.ToTag(It.IsAny<string>())).Returns<string>(s => Tag.Ongoing);
             var timestampFormatterMock = new Mock<ITimestampFormatter>();
             timestampFormatterMock.Setup(m => m.Format(It.IsAny<DateTime>())).Returns<DateTime>(dt => string.Empty);
-            var update = new Update
+            var update = new TitleUpdate
             {
-                Anime = new Anime(),
-                Information = new List<DataListInformation>
+                Title = new Title(),
+                Information = new List<TitleInformation>
                 {
-                    new DataListInformation
+                    new TitleInformation
                     {
                         Name = "Тип",
                         Value = "OVA"
                     },
-                    new DataListInformation
+                    new TitleInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInformation
+                    new TitleInformation
                     {
                         Name = "Эпизодов",
                         Value = "12"

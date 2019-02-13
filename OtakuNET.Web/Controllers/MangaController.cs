@@ -10,6 +10,7 @@ using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using OtakuNET.Domain.Enums;
 
 namespace OtakuNET.Web.Controllers
 {
@@ -25,23 +26,23 @@ namespace OtakuNET.Web.Controllers
 
         public async Task<IActionResult> Title(string key)
         {   
-            var title = await dbContext.Manga.Include(m => m.Links).Include(m => m.Information).FirstOrDefaultAsync(m => m.Key == key);
+            var title = await dbContext.Titles.Include(m => m.Links).Include(m => m.Information).FirstOrDefaultAsync(m => m.Key == key);
             if (title == null) return NotFound();
-            var userLists = new List<UserAnimeList>();
+            var userLists = new List<UserList>();
             var model = new TitleViewModel().Initialize(title, userLists, tagTranslator);
             return View(model);
         }
 
         public async Task<IActionResult> List()
         {
-            var titles = await dbContext.Manga.OrderByDescending(m => m.Rating).ToListAsync();
+            var titles = await dbContext.Titles.OrderByDescending(m => m.Rating).ToListAsync();
             var model = new MangaListViewModel().Initialize(titles, "Манга, отсортированная по рейтингу");
             return View(model);
         }
 
-        public async Task<IActionResult> Type(string key)
+        public async Task<IActionResult> Type(MangaType key)
         {
-            var titles = await dbContext.Manga.Where(m => m.Type == key).OrderByDescending(m => m.Rating).ToListAsync();
+            var titles = await dbContext.Titles.Where(m => m.MangaType == key).OrderByDescending(m => m.Rating).ToListAsync();
             var model = new MangaListViewModel().Initialize(titles, $"Манга по запросу: {key}");
             return View("List", model);
         }

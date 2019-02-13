@@ -13,9 +13,9 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
     {
         public static IndexViewModel Initialize(this IndexViewModel model,
             string login,
-            List<Anime> ongoings,
-            List<UserAnimeList> userAnimeLists,
-            List<UserMangaList> userMangaList,
+            List<Title> ongoings,
+            List<UserList> userAnimeLists,
+            List<UserList> userMangaList,
             List<AnimeSeason> seasons)
         {
             model.Login = login;

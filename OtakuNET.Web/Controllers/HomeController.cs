@@ -28,10 +28,10 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = userManager.GetUserId(User);
-            var profile = await dbContext.Profiles.Include(p => p.AnimeList).Include(p => p.MangaList).FirstOrDefaultAsync(p => p.ApplicationUserId == userId);
-            var animeUserLists = profile?.AnimeList;
-            var mangaUserLists = profile?.MangaList;
-            var ongoings = await dbContext.Anime.Include(a => a.Updates).Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing)).ToListAsync();
+            var profile = await dbContext.Profiles.Include(p => p.UserListSet).Include(p => p.UserListSet).FirstOrDefaultAsync(p => p.ApplicationUserId == userId);
+            var animeUserLists = profile?.UserListSet;
+            var mangaUserLists = profile?.UserListSet;
+            var ongoings = await dbContext.Titles.Include(a => a.Updates).Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing)).ToListAsync();
             var seasons = await dbContext.Seasons.ToListAsync();
             var model = new IndexViewModel().Initialize(profile?.Login, ongoings, animeUserLists, mangaUserLists, seasons);
 

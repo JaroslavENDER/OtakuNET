@@ -1,4 +1,6 @@
-﻿using OtakuNET.Web.Services.ProfileCreater;
+﻿using OtakuNET.Domain.Enums;
+using OtakuNET.Web.Services.ProfileCreater;
+using System.Linq;
 using Xunit;
 
 namespace OtakuNET.Web.Tests.Services
@@ -15,8 +17,8 @@ namespace OtakuNET.Web.Tests.Services
 
             Assert.Equal(applicationUserId, result.ApplicationUserId);
             Assert.Equal(login, result.Login);
-            Assert.Equal(6, result.AnimeList.Count);
-            Assert.Equal(6, result.MangaList.Count);
+            Assert.Equal(6, result.UserListSet.Count(ul => ul.Type == TitleType.Anime));
+            Assert.Equal(6, result.UserListSet.Count(ul => ul.Type == TitleType.Manga));
             Assert.Single(result.History);
         }
     }

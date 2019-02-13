@@ -6,11 +6,10 @@ namespace OtakuNET.Web.Services.CommentCreater
 {
     public class CommentCreater : ICommentCreater
     {
-        public Comment Create(Profile profile, CommentSendViewModel comment, Animanga animanga)
+        public Comment Create(Profile profile, CommentSendViewModel comment, Title title)
         {
             var result = Create(profile, comment.Text);
-            result.Anime = animanga as Anime;
-            result.Manga = animanga as Manga;
+            result.Title = title;
 
             return result;
         }

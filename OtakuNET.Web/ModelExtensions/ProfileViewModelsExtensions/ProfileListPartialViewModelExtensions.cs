@@ -8,28 +8,12 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
 {
     public static class ProfileListPartialViewModelExtensions
     {
-        public static ProfileListPartialViewModel Initialize(this ProfileListPartialViewModel model, UserAnimeList userAnimeList)
+        public static ProfileListPartialViewModel Initialize(this ProfileListPartialViewModel model, UserList userList)
         {
-            model.Initialize(userAnimeList as UserList);
             model.ControllerName = "Anime";
-            model.Titles = userAnimeList.Anime.Select(a => new TitlePreviewViewModel().Initialize(a.Anime)).ToList();
-
-            return model;
-        }
-
-        public static ProfileListPartialViewModel Initialize(this ProfileListPartialViewModel model, UserMangaList userMangaList)
-        {
-            model.Initialize(userMangaList as UserList);
-            model.ControllerName = "Manga";
-            model.Titles = userMangaList.Manga.Select(m => new TitlePreviewViewModel().Initialize(m.Manga)).ToList();
-
-            return model;
-        }
-
-        private static ProfileListPartialViewModel Initialize(this ProfileListPartialViewModel model, UserList userList)
-        {
             model.Key = userList.Key;
             model.Name = userList.Name;
+            model.Titles = userList.TitleList.Select(a => new TitlePreviewViewModel().Initialize(a.Title)).ToList();
 
             return model;
         }

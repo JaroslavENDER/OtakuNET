@@ -11,11 +11,7 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
         {
             model.UserLogin = profile.Login;
             model.Lists = userLists
-                .Select(l =>
-                {
-                    if (l is UserAnimeList) return new ProfileListPartialViewModel().Initialize(l as UserAnimeList);
-                                        else return new ProfileListPartialViewModel().Initialize(l as UserMangaList);
-                })
+                .Select(l => new ProfileListPartialViewModel().Initialize(l))
                 .ToList();
 
             return model;

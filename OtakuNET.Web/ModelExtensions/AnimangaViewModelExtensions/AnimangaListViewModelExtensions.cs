@@ -7,7 +7,7 @@ namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
 {
     public static class AnimangaListViewModelExtensions
     {
-        public static AnimangaListViewModel Initialize(this AnimangaListViewModel model, IEnumerable<Animanga> titles, string actionName = "")
+        public static AnimangaListViewModel Initialize(this AnimangaListViewModel model, IEnumerable<Title> titles, string actionName = "")
         {
             model.Header = actionName;
             model.Titles = titles.Select(t => new TitlePreviewViewModel().Initialize(t)).ToList();

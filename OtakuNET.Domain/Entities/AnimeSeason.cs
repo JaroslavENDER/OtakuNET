@@ -10,6 +10,6 @@ namespace OtakuNET.Domain.Entities
         public string Name { get; set; }
         public string FullName { get; set; }
 
-        public List<Anime> AnimeList { get; set; } = new List<Anime>();
+        public List<Title> AnimeList { get; set; } = new List<Title>();
     }
 }

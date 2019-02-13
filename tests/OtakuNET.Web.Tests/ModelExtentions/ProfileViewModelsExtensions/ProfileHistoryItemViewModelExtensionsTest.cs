@@ -32,7 +32,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
         {
             var historyItem = new ProfileHistoryItem
             {
-                Anime = new Anime()
+                Title = new Title()
             };
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());
@@ -45,7 +45,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
         {
             var historyItem = new ProfileHistoryItem
             {
-                Manga = new Manga()
+                Title = new Title()
             };
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());
@@ -58,8 +58,8 @@ namespace OtakuNET.Web.Tests.ModelExtentions.ProfileViewModelsExtensions
         {
             var historyItem = new ProfileHistoryItem
             {
-                Anime = new Anime(),
-                UserList = new UserAnimeList()
+                Title = new Title(),
+                UserList = new UserList()
             };
 
             var result = new ProfileHistoryItemViewModel().Initialize(historyItem, GetTimestampFormatter());

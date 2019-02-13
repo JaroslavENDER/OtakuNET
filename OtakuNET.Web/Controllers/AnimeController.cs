@@ -25,16 +25,16 @@ namespace OtakuNET.Web.Controllers
 
         public async Task<IActionResult> Title(string key)
         {
-            var title = await dbContext.Anime.Include(a => a.Links).Include(a => a.Information).FirstOrDefaultAsync(a => a.Key == key);
+            var title = await dbContext.Titles.Include(a => a.Links).Include(a => a.Information).FirstOrDefaultAsync(a => a.Key == key);
             if (title == null) return NotFound();
-            var userLists = new List<UserAnimeList>();
+            var userLists = new List<UserList>();
             var model = new TitleViewModel().Initialize(title, userLists, tagTranslator);
             return View(model);
         }
 
         public async Task<IActionResult> List()
         {
-            var titles = await dbContext.Anime.OrderByDescending(a => a.Rating).ToListAsync();
+            var titles = await dbContext.Titles.OrderByDescending(a => a.Rating).ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, "Аниме, отсортированные по рейтингу");
             return View(model);
         }
@@ -49,14 +49,14 @@ namespace OtakuNET.Web.Controllers
 
         public async Task<IActionResult> Studio(string key)
         {
-            var titles = await dbContext.Anime.Where(a => a.StudioName == key).OrderByDescending(a => a.Rating).ToListAsync();
+            var titles = await dbContext.Titles.Where(a => a.StudioName == key).OrderByDescending(a => a.Rating).ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, $"Аниме студии {key}");
             return View("List", model);
         }
 
         public async Task<IActionResult> Ongoings()
         {
-            var titles = await dbContext.Anime
+            var titles = await dbContext.Titles
                 .Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing))
                 .OrderByDescending(a => a.Rating)
                 .ToListAsync();

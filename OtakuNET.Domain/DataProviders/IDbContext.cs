@@ -7,12 +7,11 @@ namespace OtakuNET.Domain.DataProviders
 {
     public interface IDbContext : IDisposable
     {
-        DbSet<Anime> Anime { get; set; }
-        DbSet<Manga> Manga { get; set; }
+        DbSet<Title> Titles { get; set; }
         DbSet<AnimeSeason> Seasons { get; set; }
         DbSet<Profile> Profiles { get; set; }
         DbSet<Image> Images { get; set; }
-        DbSet<Update> Updates { get; set; }
+        DbSet<TitleUpdate> TitleUpdates { get; set; }
         DbSet<News> News { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : EntityBase;

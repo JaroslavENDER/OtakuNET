@@ -1,6 +1,7 @@
 ﻿using OtakuNET.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using OtakuNET.Domain.Enums;
 
 namespace OtakuNET.Web.Services.ProfileCreater
 {
@@ -20,68 +21,77 @@ namespace OtakuNET.Web.Services.ProfileCreater
                         Text = "Зарегистрировался на сайте"
                     }
                 },
-                AnimeList = new List<UserAnimeList>
+                UserListSet = new List<UserList>
                     {
-                        new UserAnimeList
+                        new UserList
                         {
+                            Type = TitleType.Anime,
                             Key = "a-planed",
                             Name = "Запланировано",
                         },
-                        new UserAnimeList
+                        new UserList
                         {
+                            Type = TitleType.Anime,
                             Key = "a-watching",
                             Name = "Смотрю",
                         },
-                        new UserAnimeList
+                        new UserList
                         {
+                            Type = TitleType.Anime,
                             Key = "a-rewatching",
                             Name = "Пересматриваю",
                         },
-                        new UserAnimeList
+                        new UserList
                         {
+                            Type = TitleType.Anime,
                             Key = "a-completed",
                             Name = "Просмотрено",
                         },
-                        new UserAnimeList
+                        new UserList
                         {
+                            Type = TitleType.Anime,
                             Key = "a-paused",
                             Name = "Отложено",
                         },
-                        new UserAnimeList
+                        new UserList
                         {
+                            Type = TitleType.Anime,
                             Key = "a-droped",
                             Name = "Брошено",
-                        }
-                    },
-                MangaList = new List<UserMangaList>
-                    {
-                        new UserMangaList
+                        },
+                        new UserList
                         {
+                            Type = TitleType.Manga,
                             Key = "m-planed",
                             Name = "Запланировано",
                         },
-                        new UserMangaList
+                        new UserList
                         {
+                            Type = TitleType.Manga,
                             Key = "m-watching",
                             Name = "Читаю",
                         },
-                        new UserMangaList
+                        new UserList
                         {
+                            Type = TitleType.Manga,
                             Key = "m-rewatching",
                             Name = "Перечитываю",
                         },
-                        new UserMangaList
+                        new UserList
                         {
+                            Type = TitleType.Manga,
                             Key = "m-completed",
                             Name = "Прочитано",
                         },
-                        new UserMangaList
+                        new UserList
                         {
+                            Type = TitleType.Manga,
                             Key = "m-paused",
                             Name = "Отложено",
                         },
-                        new UserMangaList
+                        new UserList
                         {
+                            Type = TitleType.Manga,
                             Key = "m-droped",
                             Name = "Брошено",
                         }
