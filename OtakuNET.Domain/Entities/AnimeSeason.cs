@@ -1,17 +1,15 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OtakuNET.Domain.Entities
 {
-    public class AnimeSeason
+    public class AnimeSeason : EntityBase
     {
-        [Key, MaxLength(10)] public string Key { get; set; }
-        [Required, MaxLength(15)] public string Name { get; set; }
-        [Required, MaxLength(25)] public string FullName { get; set; }
+        public string Key { get; set; }
+        public string Name { get; set; }
+        public string FullName { get; set; }
 
-        public List<Anime> Animes { get; set; }
-
-        public AnimeSeason()
-            => Animes = new List<Anime>();
+        public List<Anime> AnimeList { get; set; } = new List<Anime>();
     }
 }

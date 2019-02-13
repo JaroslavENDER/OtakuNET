@@ -77,7 +77,7 @@ namespace OtakuNET.Domain.Migrations
                     b.ToTable("AnimangaLink");
                 });
 
-            modelBuilder.Entity("OtakuNET.Domain.Entities.Anime_AnimeList", b =>
+            modelBuilder.Entity("OtakuNET.Domain.Entities.AnimeAnimeList", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -93,7 +93,7 @@ namespace OtakuNET.Domain.Migrations
 
                     b.HasIndex("ListId");
 
-                    b.ToTable("Anime_AnimeList");
+                    b.ToTable("AnimeAnimeList");
                 });
 
             modelBuilder.Entity("OtakuNET.Domain.Entities.AnimeSeason", b =>
@@ -146,7 +146,7 @@ namespace OtakuNET.Domain.Migrations
                     b.ToTable("Comment");
                 });
 
-            modelBuilder.Entity("OtakuNET.Domain.Entities.DataListInfomation", b =>
+            modelBuilder.Entity("OtakuNET.Domain.Entities.DataListInformation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -172,7 +172,7 @@ namespace OtakuNET.Domain.Migrations
 
                     b.HasIndex("UpdateId");
 
-                    b.ToTable("DataListInfomation");
+                    b.ToTable("DataListInformation");
                 });
 
             modelBuilder.Entity("OtakuNET.Domain.Entities.Image", b =>
@@ -189,7 +189,7 @@ namespace OtakuNET.Domain.Migrations
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("OtakuNET.Domain.Entities.Manga_MangaList", b =>
+            modelBuilder.Entity("OtakuNET.Domain.Entities.MangaMangaList", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -205,7 +205,7 @@ namespace OtakuNET.Domain.Migrations
 
                     b.HasIndex("MangaKey");
 
-                    b.ToTable("Manga_MangaList");
+                    b.ToTable("MangaMangaList");
                 });
 
             modelBuilder.Entity("OtakuNET.Domain.Entities.News", b =>
@@ -392,7 +392,7 @@ namespace OtakuNET.Domain.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("OtakuNET.Domain.Entities.Anime_AnimeList", b =>
+            modelBuilder.Entity("OtakuNET.Domain.Entities.AnimeAnimeList", b =>
                 {
                     b.HasOne("OtakuNET.Domain.Entities.Anime", "Anime")
                         .WithMany("UserLists")
@@ -424,7 +424,7 @@ namespace OtakuNET.Domain.Migrations
                         .HasForeignKey("ProfileId");
                 });
 
-            modelBuilder.Entity("OtakuNET.Domain.Entities.DataListInfomation", b =>
+            modelBuilder.Entity("OtakuNET.Domain.Entities.DataListInformation", b =>
                 {
                     b.HasOne("OtakuNET.Domain.Entities.Anime", "Anime")
                         .WithMany("Information")
@@ -439,7 +439,7 @@ namespace OtakuNET.Domain.Migrations
                         .HasForeignKey("UpdateId");
                 });
 
-            modelBuilder.Entity("OtakuNET.Domain.Entities.Manga_MangaList", b =>
+            modelBuilder.Entity("OtakuNET.Domain.Entities.MangaMangaList", b =>
                 {
                     b.HasOne("OtakuNET.Domain.Entities.UserMangaList", "List")
                         .WithMany("Manga")

@@ -11,7 +11,7 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
         public static ProfileHistoryItemViewModel Initialize(this ProfileHistoryItemViewModel model, ProfileHistoryItem historyItem, ITimestampFormatter timestampFormatter)
         {
             model.Text = historyItem.Text;
-            model.Timestamp = timestampFormatter.Format(historyItem.Timestamp);
+            model.Timestamp = timestampFormatter.Format(historyItem.CreatedAt.GetValueOrDefault());
 
             if (historyItem.Anime != null)
                 model.TitleInfo = new TitlePreviewPartialViewModel

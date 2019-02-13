@@ -8,15 +8,15 @@ namespace OtakuNET.Web.Tests.Services
         [Fact]
         public void Create()
         {
-            var id = "qwe";
+            var applicationUserId = "qwe";
             var login = "testLogin";
 
-            var result = new ProfileCreater().Create(id, login);
+            var result = new ProfileCreater().Create(applicationUserId, login);
 
-            Assert.Equal(id, result.Id);
+            Assert.Equal(applicationUserId, result.ApplicationUserId);
             Assert.Equal(login, result.Login);
-            Assert.Equal(6, result.AnimeListSet.Count);
-            Assert.Equal(6, result.MangaListSet.Count);
+            Assert.Equal(6, result.AnimeList.Count);
+            Assert.Equal(6, result.MangaList.Count);
             Assert.Single(result.History);
         }
     }

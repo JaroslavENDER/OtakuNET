@@ -7,7 +7,7 @@ namespace OtakuNET.Web.ModelExtensions
 {
     public static class DataListInformationViewModelExtensions
     {
-        public static List<DataListInformationViewModel> Initialize(this List<DataListInformationViewModel> model, List<DataListInfomation> info)
+        public static List<DataListInformationViewModel> Initialize(this List<DataListInformationViewModel> model, List<DataListInformation> info)
         {
             model.AddRange(info.GroupBy(i => i.Name)
                     .Select(group => new DataListInformationViewModel

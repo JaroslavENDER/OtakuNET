@@ -4,6 +4,6 @@ namespace OtakuNET.Web.Services.ProfileCreater
 {
     public interface IProfileCreater
     {
-        Profile Create(string id, string login);
+        Profile Create(string applicationUserId, string login);
     }
 }

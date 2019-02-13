@@ -11,7 +11,7 @@ namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions
         {
             model.UserLogin = profile.Login;
             model.HistoryItems = profile.History
-                .OrderByDescending(h => h.Timestamp)
+                .OrderByDescending(h => h.CreatedAt)
                 .Select(h => new ProfileHistoryItemViewModel().Initialize(h, timestampFormatter))
                 .ToList();
 

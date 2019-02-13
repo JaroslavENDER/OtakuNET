@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OtakuNET.Domain.Entities
 {
     public class UserMangaList : UserList
     {
-        public List<Manga_MangaList> Manga { get; set; }
-
-        public UserMangaList()
-            => Manga = new List<Manga_MangaList>();
+        public List<MangaMangaList> Manga { get; set; } = new List<MangaMangaList>();
     }
 }

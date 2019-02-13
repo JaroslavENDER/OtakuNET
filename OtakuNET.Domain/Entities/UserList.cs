@@ -1,14 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OtakuNET.Domain.Entities
 {
-    public abstract class UserList
+    public abstract class UserList : EntityBase
     {
-        [Key] public int Id { get; set; }
-        [Required, MaxLength(50)] public string Key { get; set; }
-        [Required, MaxLength(100)] public string Name { get; set; }
+        public int ProfileId { get; set; }
+        public string Key { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
 
-        [Required] public Profile Profile { get; set; }
+        public Profile Profile { get; set; }
     }
 }

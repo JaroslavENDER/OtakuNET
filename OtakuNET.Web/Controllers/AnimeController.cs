@@ -34,22 +34,22 @@ namespace OtakuNET.Web.Controllers
 
         public async Task<IActionResult> List()
         {
-            var titles = await dbContext.Anime.OrderByDescending(a => a.Raiting).ToListAsync();
+            var titles = await dbContext.Anime.OrderByDescending(a => a.Rating).ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, "Аниме, отсортированные по рейтингу");
             return View(model);
         }
 
         public async Task<IActionResult> Season(string key)
         {
-            var season = await dbContext.Seasons.Include(s => s.Animes).FirstOrDefaultAsync(s => s.Key == key);
+            var season = await dbContext.Seasons.Include(s => s.AnimeList).FirstOrDefaultAsync(s => s.Key == key);
             if (season == null) return NotFound();
-            var model = new AnimeListViewModel().Initialize(season.Animes.OrderByDescending(a => a.Raiting), season.FullName);
+            var model = new AnimeListViewModel().Initialize(season.AnimeList.OrderByDescending(a => a.Rating), season.FullName);
             return View("List", model);
         }
 
         public async Task<IActionResult> Studio(string key)
         {
-            var titles = await dbContext.Anime.Where(a => a.StudioName == key).OrderByDescending(a => a.Raiting).ToListAsync();
+            var titles = await dbContext.Anime.Where(a => a.StudioName == key).OrderByDescending(a => a.Rating).ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, $"Аниме студии {key}");
             return View("List", model);
         }
@@ -58,7 +58,7 @@ namespace OtakuNET.Web.Controllers
         {
             var titles = await dbContext.Anime
                 .Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing))
-                .OrderByDescending(a => a.Raiting)
+                .OrderByDescending(a => a.Rating)
                 .ToListAsync();
             var model = new AnimeListViewModel().Initialize(titles, "Аниме онгоинги");
             return View("List", model);

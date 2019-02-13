@@ -1,27 +1,21 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OtakuNET.Domain.Entities
 {
-    public class Profile
+    public class Profile : EntityBase
     {
-        [Key] public string Id { get; set; }
-        [Required] public string Login { get; set; }
+        public int? AvatarId { get; set; }
+        public string ApplicationUserId { get; set; }
+        public string Login { get; set; }
         public string Name { get; set; }
 
         public Image Avatar { get; set; }
         
-        public List<UserAnimeList> AnimeListSet { get; set; }
-        public List<UserMangaList> MangaListSet { get; set; }
-        public List<ProfileHistoryItem> History { get; set; }
-        public List<Comment> Comments { get; set; }
-
-        public Profile()
-        {
-            AnimeListSet = new List<UserAnimeList>();
-            MangaListSet = new List<UserMangaList>();
-            History = new List<ProfileHistoryItem>();
-            Comments = new List<Comment>();
-        }
+        public List<UserAnimeList> AnimeList { get; set; } = new List<UserAnimeList>();
+        public List<UserMangaList> MangaList { get; set; } = new List<UserMangaList>();
+        public List<ProfileHistoryItem> History { get; set; } = new List<ProfileHistoryItem>();
+        public List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

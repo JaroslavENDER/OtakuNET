@@ -78,7 +78,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "megalobox",
                 Title = "Мегалобокс",
                 ImageSrc = "https://desu.shikimori.org/system/animes/original/36563.jpg?1524534309",
-                Raiting = 8.41,
+                Rating = 8.41,
                 StudioName = "TMS Entertaiment",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/73.?1413190852",
                 Tag = "ongoing",
@@ -102,44 +102,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "8 / 13"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 5 апр. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Экшен"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Драмма"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Спорт"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "R-17"
@@ -151,7 +151,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "seven-deathest-bad-actions",
                 Title = "Семь смертных грехов",
                 ImageSrc = "https://moe.shikimori.org/system/animes/original/34577.jpg?1524426711",
-                Raiting = 7.94,
+                Rating = 7.94,
                 StudioName = "A-1 Pictures Inc.",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/56.?1434707196",
                 Tag = "ongoing",
@@ -175,44 +175,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "5 / 24"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 13 янв. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Экшен"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Приключения"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Сверхъестественное"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -224,7 +224,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "crying-cyclist",
                 Title = "Трусливый велосипедист",
                 ImageSrc = "https://dere.shikimori.org/system/animes/original/35789.jpg?1524471359",
-                Raiting = 7.86,
+                Rating = 7.86,
                 StudioName = "TMS Entertaiment",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/73.?1413190852",
                 Tag = "ongoing",
@@ -248,44 +248,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "21 / 25"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "23 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 8 янв. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Комедия"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Драмма"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Сенен"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -297,7 +297,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "cold-blood-kazuki",
                 Title = "Хладнокровный Казуки",
                 ImageSrc = "https://dere.shikimori.org/system/animes/original/37029.jpg?1524543379",
-                Raiting = 7.8,
+                Rating = 7.8,
                 StudioName = "Studio DEEN",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/37.?1434707541",
                 Tag = "ongoing",
@@ -321,44 +321,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "8 / 13"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "23 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 8 апр. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Комедия"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Демоны"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Фэнтези"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -370,7 +370,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "higest-school-dxd",
                 Title = "Старшая школа DxD",
                 ImageSrc = "https://kawai.shikimori.org/system/animes/original/34281.jpg?1524528930",
-                Raiting = 7.52,
+                Rating = 7.52,
                 StudioName = "Passione",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/911.jpg?1402343502",
                 Tag = "ongoing",
@@ -394,44 +394,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "7 / 12"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "23 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 5 июня 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Экшен"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Комедия"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Школа"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "R+"
@@ -443,7 +443,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "second-maid-joo",
                 Title = "Второй Мейджор",
                 ImageSrc = "https://nyaa.shikimori.org/system/animes/original/36565.jpg?1524536113",
-                Raiting = 7.59,
+                Rating = 7.59,
                 StudioName = "NHK Enterprises",
                 StudioImageSrc = "",
                 Tag = "ongoing",
@@ -467,44 +467,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "8 / ?"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 7 апр. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Комедия"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Спорт"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Драмма"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -516,7 +516,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "hisone-and-maco",
                 Title = "Хисонэ и Масо",
                 ImageSrc = "https://dere.shikimori.org/system/animes/original/36884.jpg?1524527111",
-                Raiting = 7.5,
+                Rating = 7.5,
                 StudioName = "Bones",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/4.png?1311292711",
                 Tag = "ongoing",
@@ -540,44 +540,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "7 / ?"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 12 апр. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Военное"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Комедия"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Драмма"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -589,7 +589,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "persona5",
                 Title = "Персона 5",
                 ImageSrc = "https://desu.shikimori.org/system/animes/original/36023.jpg?1524543344",
-                Raiting = 7.17,
+                Rating = 7.17,
                 StudioName = "A-1 Pictures Inc.",
                 StudioImageSrc = "",
                 Tag = "ongoing",
@@ -613,44 +613,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "8 / 12"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 7 апр. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Экшен"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Сверхъестественное"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Фэнтези"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-17"
@@ -662,7 +662,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "somas-kitchen",
                 Title = "Повар-боец Сома: Третье блюдо - Часть II",
                 ImageSrc = "",
-                Raiting = 8.56,
+                Rating = 8.56,
                 StudioName = "J.C. Staff",
                 StudioImageSrc = "https://shikimori.org/system/studios/original/7.?1434707490",
                 Tag = "ongoing",
@@ -686,44 +686,44 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "8 / 12"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 8 апр. 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Этти"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Школа"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Сенен"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -748,24 +748,24 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "OVA"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "на июль 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Фантастика"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Драма"
@@ -777,7 +777,7 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "kemping-on-fresh-air",
                 Title = "Лагерь на свежем воздухе",
                 ImageSrc = "https://desu.shikimori.org/system/animes/original/34798.jpg?1520779534",
-                Raiting = 8.35,
+                Rating = 8.35,
                 StudioName = "C-Station",
                 StudioImageSrc = "",
                 Tag = "release",
@@ -796,39 +796,39 @@ namespace OtakuNET.DatabaseInitializer
                         Href = ""
                     }
                 },
-                Information = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизоды",
                         Value = "12"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Длительность эпизода",
                         Value = "24 мин."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Статус",
                         Value = "с 4 янв. по 22 марта 2018 г."
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Повседневность"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Жанры",
                         Value = "Комедия"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Рейтинг",
                         Value = "PG-13"
@@ -855,185 +855,185 @@ namespace OtakuNET.DatabaseInitializer
                 {
                     Anime = megalobox,
                     Tag = "announce",
-                    Timestamp = DateTime.Now.AddMonths(-1),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddMonths(-1),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Жанры", Value = "Боевые искуства" },
-                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Name = "Жанры", Value = "Драмма" },
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Жанры", Value = "Боевые искуства" },
+                        new DataListInformation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInformation { Name = "Жанры", Value = "Драмма" },
                     }
                 },
                 new Update
                 {
                     Anime = sevenDeathestBagActions,
                     Tag = "1",
-                    Timestamp = DateTime.Now.AddDays(-25),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddDays(-25),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "1 / ?" },
-                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Name = "Жанры", Value = "Драмма" },
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Эпизоды", Value = "1 / ?" },
+                        new DataListInformation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInformation { Name = "Жанры", Value = "Драмма" },
                     }
                 },
                 new Update
                 {
                     Anime = cryingCyclist,
                     Tag = "2",
-                    Timestamp = DateTime.Now.AddDays(-8),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddDays(-8),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "G" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "2 / 12" },
-                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "G" },
+                        new DataListInformation { Name = "Эпизоды", Value = "2 / 12" },
+                        new DataListInformation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" },
                     }
                 },
                 new Update
                 {
                     Anime = coldBloodKazuki,
                     Tag = "2",
-                    Timestamp = DateTime.Now.AddDays(-7),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddDays(-7),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "G" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "2 / 12" },
-                        new DataListInfomation { Name = "Жанры", Value = "Приключения" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Name = "Жанры", Value = "Экшен" },
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "G" },
+                        new DataListInformation { Name = "Эпизоды", Value = "2 / 12" },
+                        new DataListInformation { Name = "Жанры", Value = "Приключения" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInformation { Name = "Жанры", Value = "Экшен" },
                     }
                 },
                 new Update
                 {
                     Anime = higestSchoolDxD,
                     Tag = "5",
-                    Timestamp = DateTime.Now.AddDays(-6),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddDays(-6),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "G" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "5 / 12" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Name = "Жанры", Value = "Экшен" },
-                        new DataListInfomation { Name = "Жанры", Value = "Этти" },
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "G" },
+                        new DataListInformation { Name = "Эпизоды", Value = "5 / 12" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInformation { Name = "Жанры", Value = "Экшен" },
+                        new DataListInformation { Name = "Жанры", Value = "Этти" },
                     }
                 },
                 new Update
                 {
                     Anime = secondMaidJoo,
                     Tag = "announce",
-                    Timestamp = DateTime.Now.AddDays(-1),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddDays(-1),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Name = "Жанры", Value = "Этти" },
-                        new DataListInfomation { Name = "Жанры", Value = "Сенен Ай" },
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInformation { Name = "Жанры", Value = "Этти" },
+                        new DataListInformation { Name = "Жанры", Value = "Сенен Ай" },
                     }
                 },
                 new Update
                 {
                     Anime = hisoneAndMaco,
                     Tag = "announce",
-                    Timestamp = DateTime.Now.AddHours(-2),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddHours(-2),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "ONA" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" }
+                        new DataListInformation { Name = "Тип", Value = "ONA" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" }
                     }
                 },
                 new Update
                 {
                     Anime = persona5,
                     Tag = "10",
-                    Timestamp = DateTime.Now.AddMinutes(-30),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddMinutes(-30),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "10 / 12" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Name = "Жанры", Value = "Экшен" },
-                        new DataListInfomation { Name = "Жанры", Value = "Мистика" }
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Эпизоды", Value = "10 / 12" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInformation { Name = "Жанры", Value = "Экшен" },
+                        new DataListInformation { Name = "Жанры", Value = "Мистика" }
                     }
                 },
                 new Update
                 {
                     Anime = somasKitchen,
                     Tag = "12",
-                    Timestamp = DateTime.Now.AddSeconds(-50),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddSeconds(-50),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "12 / 24" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" },
-                        new DataListInfomation { Name = "Жанры", Value = "Сенен" },
-                        new DataListInfomation { Name = "Жанры", Value = "Этти" },
-                        new DataListInfomation { Name = "Жанры", Value = "Школа" }
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Эпизоды", Value = "12 / 24" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" },
+                        new DataListInformation { Name = "Жанры", Value = "Сенен" },
+                        new DataListInformation { Name = "Жанры", Value = "Этти" },
+                        new DataListInformation { Name = "Жанры", Value = "Школа" }
                     }
                 },
                 new Update
                 {
                     Anime = island,
                     Tag = "announce",
-                    Timestamp = DateTime.Now.AddSeconds(-30),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddSeconds(-30),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2018 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Жанры", Value = "Выживание" },
-                        new DataListInfomation { Name = "Жанры", Value = "Сенен" },
-                        new DataListInfomation { Name = "Жанры", Value = "Драма" }
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2018 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Жанры", Value = "Выживание" },
+                        new DataListInformation { Name = "Жанры", Value = "Сенен" },
+                        new DataListInformation { Name = "Жанры", Value = "Драма" }
                     }
                 },
                 new Update
                 {
                     Anime = kempingOnFreshAir,
                     Tag = "12",
-                    Timestamp = DateTime.Now.AddYears(-1).AddSeconds(-12),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddYears(-1).AddSeconds(-12),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2017 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "12 / 12" },
-                        new DataListInfomation { Name = "Жанры", Value = "Выживание" },
-                        new DataListInfomation { Name = "Жанры", Value = "В лесу" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" }
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2017 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Эпизоды", Value = "12 / 12" },
+                        new DataListInformation { Name = "Жанры", Value = "Выживание" },
+                        new DataListInformation { Name = "Жанры", Value = "В лесу" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" }
                     }
                 },
                 new Update
                 {
                     Anime = kempingOnFreshAir,
                     Tag = "release",
-                    Timestamp = DateTime.Now.AddYears(-1),
-                    Infomation = new List<DataListInfomation>
+                    CreatedAt = DateTime.Now.AddYears(-1),
+                    Information = new List<DataListInformation>
                     {
-                        new DataListInfomation { Name = "Тип", Value = "TV Сериал" },
-                        new DataListInfomation { Name = "Тип", Value = "2017 год" },
-                        new DataListInfomation { Name = "Тип", Value = "PG-13" },
-                        new DataListInfomation { Name = "Эпизоды", Value = "12" },
-                        new DataListInfomation { Name = "Жанры", Value = "Выживание" },
-                        new DataListInfomation { Name = "Жанры", Value = "В лесу" },
-                        new DataListInfomation { Name = "Жанры", Value = "Повседневность" }
+                        new DataListInformation { Name = "Тип", Value = "TV Сериал" },
+                        new DataListInformation { Name = "Тип", Value = "2017 год" },
+                        new DataListInformation { Name = "Тип", Value = "PG-13" },
+                        new DataListInformation { Name = "Эпизоды", Value = "12" },
+                        new DataListInformation { Name = "Жанры", Value = "Выживание" },
+                        new DataListInformation { Name = "Жанры", Value = "В лесу" },
+                        new DataListInformation { Name = "Жанры", Value = "Повседневность" }
                     }
                 }
             });
@@ -1042,7 +1042,7 @@ namespace OtakuNET.DatabaseInitializer
                 new News
                 {
                     Title = "Старкон в Петербурге",
-                    Timestamp = DateTime.Now.AddDays(-1),
+                    CreatedAt = DateTime.Now.AddDays(-1),
                     Tag = "news",
                     ImageSrc = "",
                     Text = "10 и 11 июня в Петербурге пройдёт ежегодный международный фестиваль фантастики, кино и науки — Старкон. Как и в прошлом году, “Старкон” пройдет в конгрессно-выставочном центре «Экспофорум». Всего в этом году ожидается больше 1300 косплееров из России и стран ближнего зарубежья. На главной сцене вы увидите зрелищные выступления косплееров и грандиозную шоу-программу."
@@ -1050,7 +1050,7 @@ namespace OtakuNET.DatabaseInitializer
                 new News
                 {
                     Title = "Маньхуа «Magmel of the Sea Blue» получит экранизацию",
-                    Timestamp = DateTime.Now.AddHours(-12),
+                    CreatedAt = DateTime.Now.AddHours(-12),
                     Tag = "news",
                     ImageSrc = "https://nyaa.shikimori.org/system/user_images/preview/136187/589235.jpg",
                     Text = "Компания Shueisha объявила, что маньхуа Magmel of the Sea Blue будет экранизирована. Также, стала известна команда, которая будет работать над адаптацией: Режиссёр — Хаято Датэ (Наруто: Ураганные хроники, Парни из магазинчика); Сценарист — Тюдзи Микасано(Токийский гуль, Токийский гуль √A); Музыка — Ясухару Таканаси (Сказка о Хвосте феи, Усопшие); Студия производства — Pierrot."
@@ -1058,7 +1058,7 @@ namespace OtakuNET.DatabaseInitializer
                 new News
                 {
                     Title = "Промо ролик телеканала \"FAN\" и другие подробности.",
-                    Timestamp = DateTime.Now,
+                    CreatedAt = DateTime.Now,
                     Tag = "news",
                     ImageSrc = "https://kawai.shikimori.org/system/user_images/preview/33635/590241.jpg",
                     Text = "Формат вещания: 16:9 / HD / Stereo.\nFAN — единственный в России телеканал, показывающий анимационное и игровое кино в жанре фэнтези и фантастики. Нарисованные миры, альтернативные реальности,наделенные сверхспособностями супергерои, яркие эмоции и новые впечатления — основа привлечения новой, самой большой потенциальной аудитории. В эфире телеканала — популярный и востребованный контент: культовые картины от основоположников жанра японских производителей"
@@ -1070,13 +1070,13 @@ namespace OtakuNET.DatabaseInitializer
                 Key = "custom-list",
                 Name = "Кастомный список",
                 Description = "Список с двумя аниме, созданный пользователем",
-                Anime = new List<Anime_AnimeList>
+                Anime = new List<AnimeAnimeList>
                 {
-                    new Anime_AnimeList
+                    new AnimeAnimeList
                     {
                         Anime = kempingOnFreshAir
                     },
-                    new Anime_AnimeList
+                    new AnimeAnimeList
                     {
                         Anime = somasKitchen
                     }
@@ -1085,11 +1085,10 @@ namespace OtakuNET.DatabaseInitializer
 
             var profile = new Profile
             {
-                Id = "testId",
                 Login = "JaroslavENDER",
                 Name = "Ender",
                 Avatar = null,
-                AnimeListSet = new List<UserAnimeList>
+                AnimeList = new List<UserAnimeList>
                     {
                         new UserAnimeList
                         {
@@ -1110,9 +1109,9 @@ namespace OtakuNET.DatabaseInitializer
                         {
                             Key = "a-completed",
                             Name = "Просмотрено",
-                            Anime = new List<Anime_AnimeList>
+                            Anime = new List<AnimeAnimeList>
                             {
-                                new Anime_AnimeList
+                                new AnimeAnimeList
                                 {
                                     Anime = kempingOnFreshAir
                                 }
@@ -1130,7 +1129,7 @@ namespace OtakuNET.DatabaseInitializer
                         },
                         customUserList
                     },
-                MangaListSet = new List<UserMangaList>
+                MangaList = new List<UserMangaList>
                     {
                         new UserMangaList
                         {
@@ -1167,26 +1166,26 @@ namespace OtakuNET.DatabaseInitializer
                     {
                         new ProfileHistoryItem
                         {
-                            Timestamp = DateTime.Now.AddYears(-1),
+                            CreatedAt = DateTime.Now.AddYears(-1),
                             Text = "Зарегистрировался на сайте"
                         },
                         new ProfileHistoryItem
                         {
-                            Timestamp = DateTime.Now.AddDays(-2),
+                            CreatedAt = DateTime.Now.AddDays(-2),
                             Text = "Добавлено в список",
                             Anime = somasKitchen,
                             UserList = customUserList
                         },
                         new ProfileHistoryItem
                         {
-                            Timestamp = DateTime.Now.AddDays(-2),
+                            CreatedAt = DateTime.Now.AddDays(-2),
                             Text = "Добавлено в список",
                             Anime = kempingOnFreshAir,
                             UserList = customUserList
                         },
                         new ProfileHistoryItem
                         {
-                            Timestamp = DateTime.Now.AddSeconds(-30),
+                            CreatedAt = DateTime.Now.AddSeconds(-30),
                             Text = "Просмотрено",
                             Anime = kempingOnFreshAir
                         }
@@ -1208,13 +1207,13 @@ namespace OtakuNET.DatabaseInitializer
                 new Comment
                 {
                     Anime = somasKitchen,
-                    Timestamp = DateTime.Now,
+                    CreatedAt = DateTime.Now,
                     Text = "First comment to anime Soma`s kitchen"
                 },
                 new Comment
                 {
                     Anime = somasKitchen,
-                    Timestamp = DateTime.Now.AddSeconds(20),
+                    CreatedAt = DateTime.Now.AddSeconds(20),
                     Text = "Second comment to anime Soma`s kitchen"
                 }
             });

@@ -25,7 +25,7 @@ namespace OtakuNET.Web.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int count = 20)
         {
             var news = await dbContext.News
-                .OrderByDescending(n => n.Timestamp)
+                .OrderByDescending(n => n.CreatedAt)
                 .Take(count)
                 .ToListAsync();
             var model = new NewsComponentViewModel().Initialize(news, tagTranslator, timestampFormatter);

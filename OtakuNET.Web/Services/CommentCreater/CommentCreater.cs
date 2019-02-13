@@ -27,7 +27,7 @@ namespace OtakuNET.Web.Services.CommentCreater
             => new Comment
             {
                 Profile = profile,
-                Timestamp = DateTime.Now,
+                CreatedAt = DateTime.Now,
                 Text = text
             };
     }

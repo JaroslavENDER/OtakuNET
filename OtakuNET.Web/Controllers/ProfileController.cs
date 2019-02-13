@@ -38,8 +38,8 @@ namespace OtakuNET.Web.Controllers
         {
             var profile = await dbContext.Profiles
                 .Include(p => p.Avatar)
-                .Include(p => p.AnimeListSet).ThenInclude(l => l.Anime)
-                .Include(p => p.MangaListSet).ThenInclude(l => l.Manga)
+                .Include(p => p.AnimeList).ThenInclude(l => l.Anime)
+                .Include(p => p.MangaList).ThenInclude(l => l.Manga)
                 .Include(p => p.History).ThenInclude(h => h.Anime)
                 .Include(p => p.History).ThenInclude(h => h.Manga)
                 .Include(p => p.History).ThenInclude(h => h.UserList)
@@ -52,17 +52,17 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> List(string login, string key)
         {
             var profile = await dbContext.Profiles
-                .Include(p => p.AnimeListSet).ThenInclude(l => l.Anime).ThenInclude(a => a.Anime)
-                .Include(p => p.MangaListSet).ThenInclude(l => l.Manga).ThenInclude(m => m.Manga)
+                .Include(p => p.AnimeList).ThenInclude(l => l.Anime).ThenInclude(a => a.Anime)
+                .Include(p => p.MangaList).ThenInclude(l => l.Manga).ThenInclude(m => m.Manga)
                 .FirstOrDefaultAsync(p => string.Equals(p.Login, login, StringComparison.OrdinalIgnoreCase));
             if (profile == null) return NotFound();
             IEnumerable<UserList> lists;
             if (key == "Anime")
-                lists = profile.AnimeListSet;
+                lists = profile.AnimeList;
             else if (key == "Manga")
-                lists = profile.MangaListSet;
+                lists = profile.MangaList;
             else
-                lists = (profile.AnimeListSet.Where(l => l.Key == key) as IEnumerable<UserList>).Concat(profile.MangaListSet.Where(l => l.Key == key)).ToList();
+                lists = (profile.AnimeList.Where(l => l.Key == key) as IEnumerable<UserList>).Concat(profile.MangaList.Where(l => l.Key == key)).ToList();
             if (lists.Count() == 0) return NotFound();
             var model = new ProfileListViewModel().Initialize(profile, lists);
             return View(model);

@@ -24,19 +24,19 @@ namespace OtakuNET.Web.Tests.ModelExtentions.NewsViewModelsExtensions
             var update = new Update
             {
                 Anime = new Anime(),
-                Infomation = new List<DataListInfomation>
+                Information = new List<DataListInformation>
                 {
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "OVA"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Тип",
                         Value = "Сериал"
                     },
-                    new DataListInfomation
+                    new DataListInformation
                     {
                         Name = "Эпизодов",
                         Value = "12"

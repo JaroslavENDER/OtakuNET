@@ -21,7 +21,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
             model.Login = login;
 
             model.Ongoings = ongoings
-                .OrderByDescending(a => a.Updates.Max(u => u.Timestamp))
+                .OrderByDescending(a => a.Updates.Max(u => u.CreatedAt))
                 .Take(8)
                 .Select(a => new TitlePreviewViewModel().Initialize(a))
                 .ToList();

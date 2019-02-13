@@ -1,13 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OtakuNET.Domain.Entities
 {
-    public class AnimangaLink
+    public class AnimangaLink: EntityBase
     {
-        [Key] public int Id { get; set; }
-        [Required, MaxLength(30)] public string Text { get; set; }
-        [Required] public string Href { get; set; }
+        public int AnimangaId { get; set; }
+        public string Text { get; set; }
+        public string Href { get; set; }
 
-        [Required] public Animanga Animanga { get; set; }
+        public Animanga Animanga { get; set; }
     }
 }

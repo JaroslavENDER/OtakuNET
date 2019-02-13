@@ -46,7 +46,7 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.GetUserAsync(User);
-            var profile = await _dbContext.Profiles.FindAsync(user.Id);
+            var profile = await _dbContext.Profiles.SingleOrDefaultAsync(p => p.ApplicationUserId == user.Id);
             if (user == null)
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
 
@@ -70,7 +70,7 @@ namespace OtakuNET.Web.Controllers
                 return View(model);
 
             var user = await _userManager.GetUserAsync(User);
-            var profile = await _dbContext.Profiles.FindAsync(user.Id);
+            var profile = await _dbContext.Profiles.SingleOrDefaultAsync(p => p.ApplicationUserId == user.Id);
             if (user == null)
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             
@@ -97,7 +97,7 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> ChangeAvatar()
         {
             var user = await _userManager.GetUserAsync(User);
-            var profile = await _dbContext.Profiles.Include(p => p.Avatar).FirstOrDefaultAsync(p => p.Id == user.Id);
+            var profile = await _dbContext.Profiles.Include(p => p.Avatar).FirstOrDefaultAsync(p => p.ApplicationUserId == user.Id);
             if (user == null)
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
 
@@ -120,7 +120,7 @@ namespace OtakuNET.Web.Controllers
             }
 
             var user = await _userManager.GetUserAsync(User);
-            var profile = await _dbContext.Profiles.FindAsync(user.Id);
+            var profile = await _dbContext.Profiles.SingleOrDefaultAsync(p => p.ApplicationUserId == user.Id);
             if (user == null)
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
 

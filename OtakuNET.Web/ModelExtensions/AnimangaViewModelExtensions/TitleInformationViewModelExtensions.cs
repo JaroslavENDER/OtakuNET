@@ -7,7 +7,7 @@ namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
 {
     public static class TitleInformationViewModelExtensions
     {
-        public static TitleInformationViewModel Initialize(this TitleInformationViewModel model, List<DataListInfomation> info, Tag tag)
+        public static TitleInformationViewModel Initialize(this TitleInformationViewModel model, List<DataListInformation> info, Tag tag)
         {
             model.Information = new List<DataListInformationViewModel>().Initialize(info);
             model.Tag = tag;

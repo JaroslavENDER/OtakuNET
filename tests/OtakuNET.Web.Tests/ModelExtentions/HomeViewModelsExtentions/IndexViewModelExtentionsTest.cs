@@ -11,7 +11,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
     public class IndexViewModelExtentionsTest
     {
         [Fact]
-        public void Returns8OngoingsWithLatestUpdateTimestamp()
+        public void Returns8OngoingsWithLatestUpdateCreatedAt()
         {
             var ongoings = new List<Anime>
             {
@@ -22,7 +22,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddMonths(-1),
+                            CreatedAt = DateTime.Now.AddMonths(-1),
                         }
                     }
                 },
@@ -33,7 +33,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddDays(-25),
+                            CreatedAt = DateTime.Now.AddDays(-25),
                         }
                     }
                 },
@@ -44,7 +44,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                 {
                     new Update
                     {
-                        Timestamp = DateTime.Now.AddDays(-8),
+                        CreatedAt = DateTime.Now.AddDays(-8),
                     }
                 }
             },
@@ -55,7 +55,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddDays(-7),
+                            CreatedAt = DateTime.Now.AddDays(-7),
                         }
                     }
                 },
@@ -66,7 +66,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddDays(-6),
+                            CreatedAt = DateTime.Now.AddDays(-6),
                         }
                     }
                 },
@@ -77,7 +77,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddDays(-1),
+                            CreatedAt = DateTime.Now.AddDays(-1),
                         }
                     }
                 },
@@ -88,7 +88,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddHours(-2),
+                            CreatedAt = DateTime.Now.AddHours(-2),
                         }
                     }
                 },
@@ -99,7 +99,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now.AddMinutes(-30),
+                            CreatedAt = DateTime.Now.AddMinutes(-30),
                         }
                     }
                 },
@@ -110,7 +110,7 @@ namespace OtakuNET.Web.Tests.ModelExtentions.HomeViewModelsExtentions
                     {
                         new Update
                         {
-                            Timestamp = DateTime.Now,
+                            CreatedAt = DateTime.Now,
                         }
                     }
                 }

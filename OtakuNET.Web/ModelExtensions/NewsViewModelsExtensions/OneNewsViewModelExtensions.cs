@@ -13,7 +13,7 @@ namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
             model.Title = news.Title;
             model.Tag = tagTranslator.ToTag(news.Tag);
             model.TagInfo = news.Tag;
-            model.Timestamp = timestampFormatter.Format(news.Timestamp);
+            model.Timestamp = timestampFormatter.Format(news.CreatedAt.GetValueOrDefault());
             model.ImageSrc = news.ImageSrc;
             model.Text = news.Text;
 

@@ -26,7 +26,7 @@ namespace OtakuNET.Web.ViewComponents
         {
             var updates = await dbContext.Updates
                 .Include(u => u.Anime)
-                .OrderByDescending(u => u.Timestamp)
+                .OrderByDescending(u => u.CreatedAt)
                 .Take(count)
                 .ToListAsync();
             var model = new UpdatesComponentViewModel().Initialize(updates, tagTranslator, timestampFormatter);

@@ -1,4 +1,5 @@
-﻿using Ender.TimestampFormatterCore;
+﻿using System;
+using Ender.TimestampFormatterCore;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models.CommentsViewModels;
 
@@ -11,7 +12,7 @@ namespace OtakuNET.Web.ModelExtensions.CommentsViewModelsExtensions
             model.AvatarSrc = comment.Profile.Avatar?.Id.ToString() ?? "/images/missing-square.jpg";
             model.Login = comment.Profile.Login;
             model.Text = comment.Text;
-            model.Timestamp = timestampFormatter.Format(comment.Timestamp);
+            model.Timestamp = timestampFormatter.Format(comment.CreatedAt.GetValueOrDefault());
 
             return model;
         }

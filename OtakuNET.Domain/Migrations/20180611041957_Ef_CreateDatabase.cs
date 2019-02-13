@@ -173,7 +173,7 @@ namespace OtakuNET.Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Anime_AnimeList",
+                name: "AnimeAnimeList",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -199,7 +199,7 @@ namespace OtakuNET.Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Manga_MangaList",
+                name: "MangaMangaList",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -267,7 +267,7 @@ namespace OtakuNET.Domain.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DataListInfomation",
+                name: "DataListInformation",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -313,37 +313,37 @@ namespace OtakuNET.Domain.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_Anime_AnimeList_AnimeKey",
-                table: "Anime_AnimeList",
+                table: "AnimeAnimeList",
                 column: "AnimeKey");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Anime_AnimeList_ListId",
-                table: "Anime_AnimeList",
+                table: "AnimeAnimeList",
                 column: "ListId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DataListInfomation_AnimeKey",
-                table: "DataListInfomation",
+                table: "DataListInformation",
                 column: "AnimeKey");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DataListInfomation_MangaKey",
-                table: "DataListInfomation",
+                table: "DataListInformation",
                 column: "MangaKey");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DataListInfomation_UpdateId",
-                table: "DataListInfomation",
+                table: "DataListInformation",
                 column: "UpdateId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Manga_MangaList_ListId",
-                table: "Manga_MangaList",
+                table: "MangaMangaList",
                 column: "ListId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Manga_MangaList_MangaKey",
-                table: "Manga_MangaList",
+                table: "MangaMangaList",
                 column: "MangaKey");
 
             migrationBuilder.CreateIndex(
@@ -393,13 +393,13 @@ namespace OtakuNET.Domain.Migrations
                 name: "AnimangaLink");
 
             migrationBuilder.DropTable(
-                name: "Anime_AnimeList");
+                name: "AnimeAnimeList");
 
             migrationBuilder.DropTable(
-                name: "DataListInfomation");
+                name: "DataListInformation");
 
             migrationBuilder.DropTable(
-                name: "Manga_MangaList");
+                name: "MangaMangaList");
 
             migrationBuilder.DropTable(
                 name: "News");

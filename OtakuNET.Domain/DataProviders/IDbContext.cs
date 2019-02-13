@@ -15,6 +15,8 @@ namespace OtakuNET.Domain.DataProviders
         DbSet<Update> Updates { get; set; }
         DbSet<News> News { get; set; }
 
+        DbSet<TEntity> Set<TEntity>() where TEntity : EntityBase;
+        EntityState GetEntityState<TEntity>(TEntity entity) where TEntity : EntityBase;
         int SaveChanges();
         Task<int> SaveChangesAsync();
     }

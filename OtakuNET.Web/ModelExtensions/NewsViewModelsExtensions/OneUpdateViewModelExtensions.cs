@@ -15,9 +15,9 @@ namespace OtakuNET.Web.ModelExtensions.NewsViewModelsExtensions
             model.TitleKey = update.Anime.Key;
             model.Tag = tagTranslator.ToTag(update.Tag);
             model.TagInfo = update.Tag;
-            model.Timestamp = timestampFormatter.Format(update.Timestamp);
+            model.Timestamp = timestampFormatter.Format(update.CreatedAt.GetValueOrDefault());
             model.ImageSrc = update.Anime.ImageSrc;
-            model.Info = new List<DataListInformationViewModel>().Initialize(update.Infomation);
+            model.Info = new List<DataListInformationViewModel>().Initialize(update.Information);
 
             return model;
         }

@@ -6,21 +6,21 @@ namespace OtakuNET.Web.Services.ProfileCreater
 {
     public class ProfileCreater : IProfileCreater
     {
-        public Profile Create(string id, string login)
+        public Profile Create(string applicationUserId, string login)
         {
             return new Profile
             {
-                Id = id,
+                ApplicationUserId = applicationUserId,
                 Login = login,
                 History = new List<ProfileHistoryItem>
                 {
                     new ProfileHistoryItem
                     {
-                        Timestamp = DateTime.Now,
+                        CreatedAt = DateTime.Now,
                         Text = "Зарегистрировался на сайте"
                     }
                 },
-                AnimeListSet = new List<UserAnimeList>
+                AnimeList = new List<UserAnimeList>
                     {
                         new UserAnimeList
                         {
@@ -53,7 +53,7 @@ namespace OtakuNET.Web.Services.ProfileCreater
                             Name = "Брошено",
                         }
                     },
-                MangaListSet = new List<UserMangaList>
+                MangaList = new List<UserMangaList>
                     {
                         new UserMangaList
                         {

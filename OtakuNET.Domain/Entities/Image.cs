@@ -1,8 +1,11 @@
-﻿namespace OtakuNET.Domain.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace OtakuNET.Domain.Entities
 {
-    public class Image
+    public class Image : EntityBase
     {
-        public int Id { get; set; }
         public string MimeType { get; set; }
         public byte[] Data { get; set; }
     }

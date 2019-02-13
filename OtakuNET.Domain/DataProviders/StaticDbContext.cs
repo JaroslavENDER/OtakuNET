@@ -16,6 +16,12 @@ namespace OtakuNET.Domain.DataProviders
 
         private static bool isInitialized = false;
 
+        public DbSet<TEntity> Set<TEntity>() where TEntity : EntityBase
+            => base.Set<TEntity>();
+
+        public EntityState GetEntityState<TEntity>(TEntity entity) where TEntity : EntityBase
+            => Entry(entity).State;
+
         public async Task<int> SaveChangesAsync()
             => await base.SaveChangesAsync();
 
