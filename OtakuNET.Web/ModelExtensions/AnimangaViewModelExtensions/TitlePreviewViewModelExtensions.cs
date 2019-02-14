@@ -1,5 +1,5 @@
 ﻿using OtakuNET.Domain.Entities;
-using OtakuNET.Web.Models.AnimangaViewModels;
+using OtakuNET.Web.Models.TitleViewModels;
 
 namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
 {

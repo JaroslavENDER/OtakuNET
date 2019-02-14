@@ -1,4 +1,4 @@
-﻿@using OtakuNET.Web.Models.AnimangaViewModels
+﻿@using OtakuNET.Web.Models.TitleViewModels
 @using OtakuNET.Web.Models.HomeViewModels
 @model IndexViewModel
 @{
@@ -6,7 +6,7 @@
 }
 
 @{
-    Model.AnimeRecomendationsFirstBlock.Reverse();
+    Model.AnimeRecommendationsFirstBlock.Reverse();
 }
 
 
@@ -63,7 +63,7 @@
                     <header class="section__header section__header--seasons">Аниме</header>
                 </a>
                 <ul class="middle-section__first__column__list">
-                    @foreach (var season in Model.AnimeRecomendationsFirstBlock)
+                    @foreach (var season in Model.AnimeRecommendationsFirstBlock)
                     {
                         <a href="@season.Href" title="@season.LinkTitle">
                             <li class="middle-section__first__column__list-item">@season.Text</li>
@@ -73,13 +73,13 @@
             </div>
             <div class="middle-section__first__column">
                 <a asp-controller="Anime" asp-action="List">
-                    <header class="section__header section__header--recomendations">Рекомендации</header>
+                    <header class="section__header section__header--Recommendations">Рекомендации</header>
                 </a>
                 <ul class="middle-section__first__column__list">
-                    @foreach (var recomendations in Model.AnimeRecomendationsSecondBlock)
+                    @foreach (var Recommendations in Model.AnimeRecommendationsSecondBlock)
                     {
-                        <a href="@recomendations.Href" title="@recomendations.LinkTitle">
-                            <li class="middle-section__first__column__list-item">@recomendations.Text</li>
+                        <a href="@Recommendations.Href" title="@Recommendations.LinkTitle">
+                            <li class="middle-section__first__column__list-item">@Recommendations.Text</li>
                         </a>
                     }
                 </ul>
@@ -116,7 +116,7 @@
                     <header class="section__header section__header--seasons">Манга</header>
                 </a>
                 <ul class="middle-section__first__column__list">
-                    @foreach (var mangaType in Model.MangaRecomendationsFirstBlock)
+                    @foreach (var mangaType in Model.MangaRecommendationsFirstBlock)
                     {
                         <a href="@mangaType.Href" title="@mangaType.LinkTitle">
                             <li class="middle-section__first__column__list-item">@mangaType.Text</li>
@@ -126,10 +126,10 @@
             </div>
             <div class="middle-section__first__column">
                 <a asp-controller="Manga" asp-action="List">
-                    <header class="section__header section__header--recomendations">Рекомендации</header>
+                    <header class="section__header section__header--Recommendations">Рекомендации</header>
                 </a>
                 <ul class="middle-section__first__column__list">
-                    @foreach (var recomendation in Model.MangaRecomendationsSecondBlock)
+                    @foreach (var recomendation in Model.MangaRecommendationsSecondBlock)
                     {
                         <a href="@recomendation.Href" title="@recomendation.LinkTitle">
                             <li class="middle-section__first__column__list-item">@recomendation.Text</li>

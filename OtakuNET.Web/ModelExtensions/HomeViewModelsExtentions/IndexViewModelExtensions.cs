@@ -1,7 +1,7 @@
 ﻿using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
 using OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions;
-using OtakuNET.Web.Models.AnimangaViewModels;
+using OtakuNET.Web.Models.TitleViewModels;
 using OtakuNET.Web.Models.HomeViewModels;
 using OtakuNET.Web.Models.ProfileViewModels;
 using System.Collections.Generic;
@@ -54,8 +54,8 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                         new UserListInfoViewModel{ TitleCount = 0, Name = "Брошено", Description = string.Empty }
                 };
 
-            model.AnimeRecomendationsFirstBlock = seasons.Skip(seasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Href = $"/Anime/Season/{n.Key}", LinkTitle = n.FullName }).ToList();
-            model.AnimeRecomendationsSecondBlock = new List<RecomendationInfoViewModel>
+            model.AnimeRecommendationsFirstBlock = seasons.Skip(seasons.Count - 4).Select(n => new RecomendationInfoViewModel { Text = n.Name, Href = $"/Anime/Season/{n.Key}", LinkTitle = n.FullName }).ToList();
+            model.AnimeRecommendationsSecondBlock = new List<RecomendationInfoViewModel>
             {
                 new RecomendationInfoViewModel
                 {
@@ -76,7 +76,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                     LinkTitle = "Персонализированные"
                 }
             };
-            model.MangaRecomendationsFirstBlock = new List<RecomendationInfoViewModel>
+            model.MangaRecommendationsFirstBlock = new List<RecomendationInfoViewModel>
             {
                 new RecomendationInfoViewModel
                 {
@@ -103,7 +103,7 @@ namespace OtakuNET.Web.ModelExtensions.HomeViewModelsExtentions
                     LinkTitle = "Маньхуа"
                 }
             };
-            model.MangaRecomendationsSecondBlock = new List<RecomendationInfoViewModel>
+            model.MangaRecommendationsSecondBlock = new List<RecomendationInfoViewModel>
             {
                 new RecomendationInfoViewModel
                 {

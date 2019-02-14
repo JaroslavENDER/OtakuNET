@@ -1,6 +1,6 @@
 ﻿using OtakuNET.Domain.Entities;
 using OtakuNET.Web.Models;
-using OtakuNET.Web.Models.AnimangaViewModels;
+using OtakuNET.Web.Models.TitleViewModels;
 using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
             model.StudioImageSrc = title.StudioImageSrc;
             model.Description = title.Description;
             model.Information = new TitleInformationViewModel().Initialize(title.Information, tagTranslator.ToTag(title.Tag));
-            model.Raiting = new RaitingViewModel().Initialize(title.Rating);
+            model.Rating = new RatingViewModel().Initialize(title.Rating);
             model.InUserLists = new TitleInUserListsViewModel().Initialize(/*title.UserLists*/);
             model.Links = title.Links.Select(link => new LinkViewModel().Initialize(link)).ToList();
 

@@ -1,4 +1,4 @@
-﻿using OtakuNET.Web.Models.AnimangaViewModels;
+﻿using OtakuNET.Web.Models.TitleViewModels;
 using System.Collections.Generic;
 
 namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions

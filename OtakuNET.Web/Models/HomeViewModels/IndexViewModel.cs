@@ -1,4 +1,4 @@
-﻿using OtakuNET.Web.Models.AnimangaViewModels;
+﻿using OtakuNET.Web.Models.TitleViewModels;
 using OtakuNET.Web.Models.ProfileViewModels;
 using System.Collections.Generic;
 
@@ -10,9 +10,9 @@ namespace OtakuNET.Web.Models.HomeViewModels
         public List<TitlePreviewViewModel> Ongoings { get; set; }
         public List<UserListInfoViewModel> UserAnimeLists { get; set; }
         public List<UserListInfoViewModel> UserMangaLists { get; set; }
-        public List<RecomendationInfoViewModel> AnimeRecomendationsFirstBlock { get; set; }
-        public List<RecomendationInfoViewModel> AnimeRecomendationsSecondBlock { get; set; }
-        public List<RecomendationInfoViewModel> MangaRecomendationsFirstBlock { get; set; }
-        public List<RecomendationInfoViewModel> MangaRecomendationsSecondBlock { get; set; }
+        public List<RecomendationInfoViewModel> AnimeRecommendationsFirstBlock { get; set; }
+        public List<RecomendationInfoViewModel> AnimeRecommendationsSecondBlock { get; set; }
+        public List<RecomendationInfoViewModel> MangaRecommendationsFirstBlock { get; set; }
+        public List<RecomendationInfoViewModel> MangaRecommendationsSecondBlock { get; set; }
     }
 }

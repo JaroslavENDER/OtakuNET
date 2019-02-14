@@ -3,8 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OtakuNET.Domain.DataProviders;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
-using OtakuNET.Web.Models.AnimangaViewModels;
-using OtakuNET.Web.Models.MangaViewModels;
+using OtakuNET.Web.Models.TitleViewModels;
 using OtakuNET.Web.Services;
 using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
@@ -36,14 +35,14 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> List()
         {
             var titles = await dbContext.Titles.OrderByDescending(m => m.Rating).ToListAsync();
-            var model = new MangaListViewModel().Initialize(titles, "Манга, отсортированная по рейтингу");
+            var model = new TitleListViewModel().Initialize(titles, "Манга, отсортированная по рейтингу");
             return View(model);
         }
 
         public async Task<IActionResult> Type(MangaType key)
         {
             var titles = await dbContext.Titles.Where(m => m.MangaType == key).OrderByDescending(m => m.Rating).ToListAsync();
-            var model = new MangaListViewModel().Initialize(titles, $"Манга по запросу: {key}");
+            var model = new TitleListViewModel().Initialize(titles, $"Манга по запросу: {key}");
             return View("List", model);
         }
     }

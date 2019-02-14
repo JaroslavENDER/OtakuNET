@@ -1,4 +1,4 @@
-﻿namespace OtakuNET.Web.Models.AnimangaViewModels
+﻿namespace OtakuNET.Web.Models.TitleViewModels
 {
     public class TitlePreviewPartialViewModel
     {

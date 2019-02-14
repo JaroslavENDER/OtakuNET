@@ -1,7 +1,7 @@
 ﻿using Ender.TimestampFormatterCore;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
-using OtakuNET.Web.Models.AnimangaViewModels;
+using OtakuNET.Web.Models.TitleViewModels;
 using OtakuNET.Web.Models.ProfileViewModels;
 
 namespace OtakuNET.Web.ModelExtensions.ProfileViewModelsExtensions

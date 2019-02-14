@@ -1,17 +1,17 @@
-﻿using OtakuNET.Web.Models.AnimangaViewModels;
+﻿using OtakuNET.Web.Models.TitleViewModels;
 using System.Collections.Generic;
 
 namespace OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions
 {
-    public static class RaitingViewModelExtensions
+    public static class RatingViewModelExtensions
     {
         /// <summary>
         /// Fake initializator
         /// </summary>
-        public static RaitingViewModel Initialize(this RaitingViewModel model, double raiting)
+        public static RatingViewModel Initialize(this RatingViewModel model, double Rating)
         {
-            model.CurrentUserRaiting = 0;
-            model.Raiting = raiting;
+            model.CurrentUserRating = 0;
+            model.Rating = Rating;
             model.UserAssessments = new Dictionary<int, int>
             {
                 [10] = 902,

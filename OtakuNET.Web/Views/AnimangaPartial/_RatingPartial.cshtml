@@ -1,0 +1,19 @@
+﻿@using OtakuNET.Web.Models.TitleViewModels
+@model RatingPartialViewModel
+
+@if (Model.IsActive)
+{
+    <div class="star star--active-empt"></div>
+    <div class="star star--active-empt"></div>
+    <div class="star star--active-empt"></div>
+    <div class="star star--active-empt"></div>
+    <div class="star star--active-empt"></div>
+}
+else
+{
+    <div class="star star--passive-fill" title="@Model.Rating.Rating Отлично"></div>
+    <div class="star star--passive-fill" title="@Model.Rating.Rating Отлично"></div>
+    <div class="star star--passive-fill" title="@Model.Rating.Rating Отлично"></div>
+    <div class="star star--passive-fill" title="@Model.Rating.Rating Отлично"></div>
+    <div class="star star--passive-part" title="@Model.Rating.Rating Отлично"></div>
+}

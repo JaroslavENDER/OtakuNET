@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OtakuNET.Web.Models.AnimangaViewModels
+namespace OtakuNET.Web.Models.TitleViewModels
 {
     public class TitleViewModel
     {
@@ -9,7 +9,7 @@ namespace OtakuNET.Web.Models.AnimangaViewModels
         public string ImageSrc { get; set; }
         public UserListsControlViewModel UserListControls { get; set; }
         public TitleInformationViewModel Information { get; set; }
-        public RaitingViewModel Raiting { get; set; }
+        public RatingViewModel Rating { get; set; }
         public string StudioName { get; set; }
         public string StudioImageSrc { get; set; }
         public string Description { get; set; }

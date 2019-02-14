@@ -1,4 +1,4 @@
-﻿@using OtakuNET.Web.Models.AnimangaViewModels
+﻿@using OtakuNET.Web.Models.TitleViewModels
 @model TitleViewModel
 @{
     ViewData["Title"] = Model.Title;
@@ -24,11 +24,11 @@
         <section class="title__section-art">
             <img src="@Model.ImageSrc" alt="" class="title__section-art__image" />
             @await Html.PartialAsync("/Views/AnimangaPartial/_UserListsControlPartial.cshtml", Model.UserListControls)
-            <div class="title__my-raiting">
-                @await Html.PartialAsync("/Views/AnimangaPartial/_RaitingPartial.cshtml", new RaitingPartialViewModel
+            <div class="title__my-Rating">
+                @await Html.PartialAsync("/Views/AnimangaPartial/_RatingPartial.cshtml", new RatingPartialViewModel
                 {
                     IsActive = true,
-                    Raiting = Model.Raiting
+                    Rating = Model.Rating
                 })
             </div>
         </section>
@@ -42,12 +42,12 @@
                         <header class="section__header section__header--min">Информация</header>
                         @await Html.PartialAsync("/Views/AnimangaPartial/_TitleInformationPartial.cshtml", Model.Information)
                     </section>
-                    <section class="title__section-raiting">
+                    <section class="title__section-Rating">
                         <header class="section__header section__header--min">Рейтинг</header>
-                        @await Html.PartialAsync("/Views/AnimangaPartial/_RaitingPartial.cshtml", new RaitingPartialViewModel
+                        @await Html.PartialAsync("/Views/AnimangaPartial/_RatingPartial.cshtml", new RatingPartialViewModel
                         {
                             IsActive = false,
-                            Raiting = Model.Raiting
+                            Rating = Model.Rating
                         })
                     </section>
                 </div>
@@ -81,7 +81,7 @@
     <div class="flex__right-panel">
         <section class="title__diagram-section">
             <header class="section__header section__header--min">Оценки людей</header>
-            @await Html.PartialAsync("/Views/AnimangaPartial/_UserAssessmentsPartial.cshtml", Model.Raiting)
+            @await Html.PartialAsync("/Views/AnimangaPartial/_UserAssessmentsPartial.cshtml", Model.Rating)
         </section>
         <section class="title__diagram-section">
             <header class="section__header section__header--min">В списках у людей</header>

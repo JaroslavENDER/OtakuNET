@@ -4,8 +4,7 @@ using OtakuNET.Domain.DataProviders;
 using OtakuNET.Domain.Entities;
 using OtakuNET.Web.ModelExtensions.AnimangaViewModelExtensions;
 using OtakuNET.Web.Models;
-using OtakuNET.Web.Models.AnimangaViewModels;
-using OtakuNET.Web.Models.AnimeViewModels;
+using OtakuNET.Web.Models.TitleViewModels;
 using OtakuNET.Web.Services.TagTranslator;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +34,7 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> List()
         {
             var titles = await dbContext.Titles.OrderByDescending(a => a.Rating).ToListAsync();
-            var model = new AnimeListViewModel().Initialize(titles, "Аниме, отсортированные по рейтингу");
+            var model = new TitleListViewModel().Initialize(titles, "Аниме, отсортированные по рейтингу");
             return View(model);
         }
 
@@ -43,14 +42,14 @@ namespace OtakuNET.Web.Controllers
         {
             var season = await dbContext.Seasons.Include(s => s.AnimeList).FirstOrDefaultAsync(s => s.Key == key);
             if (season == null) return NotFound();
-            var model = new AnimeListViewModel().Initialize(season.AnimeList.OrderByDescending(a => a.Rating), season.FullName);
+            var model = new TitleListViewModel().Initialize(season.AnimeList.OrderByDescending(a => a.Rating), season.FullName);
             return View("List", model);
         }
 
         public async Task<IActionResult> Studio(string key)
         {
             var titles = await dbContext.Titles.Where(a => a.StudioName == key).OrderByDescending(a => a.Rating).ToListAsync();
-            var model = new AnimeListViewModel().Initialize(titles, $"Аниме студии {key}");
+            var model = new TitleListViewModel().Initialize(titles, $"Аниме студии {key}");
             return View("List", model);
         }
 
@@ -60,7 +59,7 @@ namespace OtakuNET.Web.Controllers
                 .Where(a => a.Tag == tagTranslator.ToString(Tag.Ongoing))
                 .OrderByDescending(a => a.Rating)
                 .ToListAsync();
-            var model = new AnimeListViewModel().Initialize(titles, "Аниме онгоинги");
+            var model = new TitleListViewModel().Initialize(titles, "Аниме онгоинги");
             return View("List", model);
         }
     }
