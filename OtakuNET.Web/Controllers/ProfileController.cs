@@ -38,7 +38,7 @@ namespace OtakuNET.Web.Controllers
         {
             var profile = await dbContext.Profiles
                 .Include(p => p.Avatar)
-                .Include(p => p.UserListSet).ThenInclude(l => l.TitleList)
+                .Include(p => p.UserLists).ThenInclude(l => l.TitleList)
                 .Include(p => p.History).ThenInclude(h => h.Title)
                 .Include(p => p.History).ThenInclude(h => h.Title)
                 .Include(p => p.History).ThenInclude(h => h.UserList)
@@ -51,16 +51,16 @@ namespace OtakuNET.Web.Controllers
         public async Task<IActionResult> List(string login, string key)
         {
             var profile = await dbContext.Profiles
-                .Include(p => p.UserListSet).ThenInclude(l => l.TitleList).ThenInclude(a => a.Title)
+                .Include(p => p.UserLists).ThenInclude(l => l.TitleList).ThenInclude(a => a.Title)
                 .FirstOrDefaultAsync(p => string.Equals(p.Login, login, StringComparison.OrdinalIgnoreCase));
             if (profile == null) return NotFound();
             IEnumerable<UserList> lists;
             if (key == "Anime")
-                lists = profile.UserListSet;
+                lists = profile.UserLists;
             else if (key == "Manga")
-                lists = profile.UserListSet;
+                lists = profile.UserLists;
             else
-                lists = profile.UserListSet.Where(l => l.Key == key).Concat(profile.UserListSet.Where(l => l.Key == key)).ToList();
+                lists = profile.UserLists.Where(l => l.Key == key).Concat(profile.UserLists.Where(l => l.Key == key)).ToList();
             if (lists.Count() == 0) return NotFound();
             var model = new ProfileListViewModel().Initialize(profile, lists);
             return View(model);

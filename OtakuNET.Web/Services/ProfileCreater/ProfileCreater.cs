@@ -21,7 +21,7 @@ namespace OtakuNET.Web.Services.ProfileCreater
                         Text = "Зарегистрировался на сайте"
                     }
                 },
-                UserListSet = new List<UserList>
+                UserLists = new List<UserList>
                     {
                         new UserList
                         {

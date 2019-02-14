@@ -34,41 +34,41 @@ namespace OtakuNET.DatabaseInitializer
         {
             var leto = new AnimeSeason
             {
-                Key = "leto2018",
+                Key = "leto2019",
                 Name = "Летний сезон",
-                FullName = "Летний сезон 2018 года"
+                FullName = "Летний сезон 2019 года"
             };
             var vesna = new AnimeSeason
             {
-                Key = "vesna2018",
+                Key = "vesna2019",
                 Name = "Весенний сезон",
-                FullName = "Весенний сезон 2018 года"
+                FullName = "Весенний сезон 2019 года"
             };
             var zima = new AnimeSeason
             {
-                Key = "zima2017",
+                Key = "zima2018",
                 Name = "Зимний сезон",
-                FullName = "Зимний сезон 2017 года"
+                FullName = "Зимний сезон 2018 года"
             };
             dbContext.Seasons.AddRange(new[]
             {
                 new AnimeSeason
                 {
-                    Key = "vesna2017",
+                    Key = "vesna2018",
                     Name = "Весенний сезон",
-                    FullName = "Весенний сезон 2017 года"
+                    FullName = "Весенний сезон 2018 года"
                 },
                 new AnimeSeason
                 {
-                    Key = "leto2017",
+                    Key = "leto2018",
                     Name = "Летний сезон",
-                    FullName = "Летний сезон 2017 года"
+                    FullName = "Летний сезон 2018 года"
                 },
                 new AnimeSeason
                 {
-                    Key = "osen2017",
+                    Key = "osen2018",
                     Name = "Осенний сезон",
-                    FullName = "Осенний сезон 2017 года"
+                    FullName = "Осенний сезон 2018 года"
                 },
                 zima,
                 vesna,
@@ -123,7 +123,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 5 апр. 2018 г."
+                        Value = "с 5 апр. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -196,7 +196,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 13 янв. 2018 г."
+                        Value = "с 13 янв. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -269,7 +269,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 8 янв. 2018 г."
+                        Value = "с 8 янв. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -342,7 +342,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 8 апр. 2018 г."
+                        Value = "с 8 апр. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -415,7 +415,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 5 июня 2018 г."
+                        Value = "с 5 июня 2019 г."
                     },
                     new TitleInformation
                     {
@@ -488,7 +488,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 7 апр. 2018 г."
+                        Value = "с 7 апр. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -561,7 +561,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 12 апр. 2018 г."
+                        Value = "с 12 апр. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -634,7 +634,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 7 апр. 2018 г."
+                        Value = "с 7 апр. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -707,7 +707,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 8 апр. 2018 г."
+                        Value = "с 8 апр. 2019 г."
                     },
                     new TitleInformation
                     {
@@ -759,7 +759,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "на июль 2018 г."
+                        Value = "на июль 2019 г."
                     },
                     new TitleInformation
                     {
@@ -817,7 +817,7 @@ namespace OtakuNET.DatabaseInitializer
                     new TitleInformation
                     {
                         Name = "Статус",
-                        Value = "с 4 янв. по 22 марта 2018 г."
+                        Value = "с 4 янв. по 22 марта 2019 г."
                     },
                     new TitleInformation
                     {
@@ -860,7 +860,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Жанры", Value = "Боевые искуства" },
                         new TitleInformation { Name = "Жанры", Value = "Приключения" },
@@ -875,7 +875,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Эпизоды", Value = "1 / ?" },
                         new TitleInformation { Name = "Жанры", Value = "Приключения" },
@@ -890,7 +890,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "G" },
                         new TitleInformation { Name = "Эпизоды", Value = "2 / 12" },
                         new TitleInformation { Name = "Жанры", Value = "Приключения" },
@@ -905,7 +905,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "G" },
                         new TitleInformation { Name = "Эпизоды", Value = "2 / 12" },
                         new TitleInformation { Name = "Жанры", Value = "Приключения" },
@@ -921,7 +921,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "G" },
                         new TitleInformation { Name = "Эпизоды", Value = "5 / 12" },
                         new TitleInformation { Name = "Жанры", Value = "Повседневность" },
@@ -937,7 +937,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Жанры", Value = "Повседневность" },
                         new TitleInformation { Name = "Жанры", Value = "Этти" },
@@ -952,7 +952,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "ONA" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Жанры", Value = "Повседневность" }
                     }
@@ -965,7 +965,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Эпизоды", Value = "10 / 12" },
                         new TitleInformation { Name = "Жанры", Value = "Повседневность" },
@@ -981,7 +981,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Эпизоды", Value = "12 / 24" },
                         new TitleInformation { Name = "Жанры", Value = "Повседневность" },
@@ -998,7 +998,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2018 год" },
+                        new TitleInformation { Name = "Тип", Value = "2019 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Жанры", Value = "Выживание" },
                         new TitleInformation { Name = "Жанры", Value = "Сенен" },
@@ -1013,7 +1013,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2017 год" },
+                        new TitleInformation { Name = "Тип", Value = "2018 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Эпизоды", Value = "12 / 12" },
                         new TitleInformation { Name = "Жанры", Value = "Выживание" },
@@ -1029,7 +1029,7 @@ namespace OtakuNET.DatabaseInitializer
                     Information = new List<TitleInformation>
                     {
                         new TitleInformation { Name = "Тип", Value = "TV Сериал" },
-                        new TitleInformation { Name = "Тип", Value = "2017 год" },
+                        new TitleInformation { Name = "Тип", Value = "2018 год" },
                         new TitleInformation { Name = "Тип", Value = "PG-13" },
                         new TitleInformation { Name = "Эпизоды", Value = "12" },
                         new TitleInformation { Name = "Жанры", Value = "Выживание" },
@@ -1089,7 +1089,7 @@ namespace OtakuNET.DatabaseInitializer
                 Login = "JaroslavENDER",
                 Name = "Ender",
                 Avatar = null,
-                UserListSet = new List<UserList>
+                UserLists = new List<UserList>
                     {
                         new UserList
                         {
@@ -1176,7 +1176,7 @@ namespace OtakuNET.DatabaseInitializer
                     {
                         new ProfileHistoryItem
                         {
-                            CreatedAt = DateTime.Now.AddYears(-1),
+                            CreatedAt = DateTime.Now.AddDays(-4),
                             Text = "Зарегистрировался на сайте"
                         },
                         new ProfileHistoryItem

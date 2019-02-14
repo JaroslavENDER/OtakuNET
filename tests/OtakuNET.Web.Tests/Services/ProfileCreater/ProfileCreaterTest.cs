@@ -17,8 +17,8 @@ namespace OtakuNET.Web.Tests.Services
 
             Assert.Equal(applicationUserId, result.ApplicationUserId);
             Assert.Equal(login, result.Login);
-            Assert.Equal(6, result.UserListSet.Count(ul => ul.Type == TitleType.Anime));
-            Assert.Equal(6, result.UserListSet.Count(ul => ul.Type == TitleType.Manga));
+            Assert.Equal(6, result.UserLists.Count(ul => ul.Type == TitleType.Anime));
+            Assert.Equal(6, result.UserLists.Count(ul => ul.Type == TitleType.Manga));
             Assert.Single(result.History);
         }
     }
